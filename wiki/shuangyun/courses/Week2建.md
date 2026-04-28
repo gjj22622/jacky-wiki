@@ -151,6 +151,6 @@ updated: 2026-04-29
 
 ## 相關連結
 
-- Agent 說明書 9 區塊完整定義 → [agents-methodology.md §3.2](../concepts/agents-methodology.md)
-- 4 階段操作流程（拆 → 建 → 部署 → 進化）→ [ai-marketing-team.md Part F](../concepts/ai-marketing-team.md)
-- 下一週 → [Week 3 殘酷測試](week3.md)
+- Agent 說明書 9 區塊完整定義 → [AGENTS方法論落地.md §3.2](../concepts/AGENTS方法論落地.md)
+- 4 階段操作流程（拆 → 建 → 部署 → 進化）→ [AI行銷部定義.md Part F](../concepts/AI行銷部定義.md)
+- 下一週 → [Week 3 殘酷測試](Week3修.md)

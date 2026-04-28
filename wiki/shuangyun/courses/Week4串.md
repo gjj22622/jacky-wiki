@@ -97,7 +97,7 @@ Barbie 品質審查 / 詩媛邏輯審查
 
 ## 模組 2.5｜三種協作模式 + Jacky 現場展示
 
-> 接力 / 呼叫（Sub Agent）/ 並行（Parallel）— 完整定義見 [agents-methodology.md §3.5](../concepts/agents-methodology.md)。
+> 接力 / 呼叫（Sub Agent）/ 並行（Parallel）— 完整定義見 [AGENTS方法論落地.md §3.5](../concepts/AGENTS方法論落地.md)。
 
 **Jacky 現場震撼展示**：在 Cowork 中即時展示三個以上 Skill 同時運作。
 
@@ -116,7 +116,7 @@ Barbie 品質審查 / 詩媛邏輯審查
 
 ## 模組 3｜Skill 瘦身術
 
-> 三個健康指標 + 三步驟瘦身法見 [agents-methodology.md §3.7](../concepts/agents-methodology.md)。
+> 三個健康指標 + 三步驟瘦身法見 [AGENTS方法論落地.md §3.7](../concepts/AGENTS方法論落地.md)。
 
 **現場練習**：每人拿出自己的 Agent 設定檔做盤點
 
@@ -319,7 +319,7 @@ Step 5：完成測試，交付客戶
 
 ## 工廠藍圖 v2（含 API 調度中心）
 
-> 完整圖見 [agents-methodology.md §5](../concepts/agents-methodology.md)。
+> 完整圖見 [AGENTS方法論落地.md §5](../concepts/AGENTS方法論落地.md)。
 >
 > **2026-04-21 縮編注記**：原 7 人團隊設計的藍圖，現團隊為 3 人（Sophia、藝嘉、政澔），藍圖中「潘潘/蕙瑄/岱恩並行產內容」「Barbie 品管」「詩媛策略審核」需重新指派。
 
@@ -336,8 +336,8 @@ Step 5：完成測試，交付客戶
 
 ## 相關連結
 
-- 三種協作模式詳解 → [agents-methodology.md §3.5](../concepts/agents-methodology.md)
-- Skill 瘦身術 → [agents-methodology.md §3.7](../concepts/agents-methodology.md)
-- API Gateway 路由表 → [agents-methodology.md §4.6](../concepts/agents-methodology.md)
-- 上一週 → [Week 3 修](week3.md)
-- 下一週 → [Week 5 通](week5.md)
+- 三種協作模式詳解 → [AGENTS方法論落地.md §3.5](../concepts/AGENTS方法論落地.md)
+- Skill 瘦身術 → [AGENTS方法論落地.md §3.7](../concepts/AGENTS方法論落地.md)
+- API Gateway 路由表 → [AGENTS方法論落地.md §4.6](../concepts/AGENTS方法論落地.md)
+- 上一週 → [Week 3 修](Week3修.md)
+- 下一週 → [Week 5 通](Week5通.md)

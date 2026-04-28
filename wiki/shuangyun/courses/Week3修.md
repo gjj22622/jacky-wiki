@@ -23,7 +23,7 @@ updated: 2026-04-29
 2. **修 Agent 比建 Agent 更重要** — 學習發生在「發現漏洞 → 現場修復」
 3. **失敗是資產** — 每個被測出來的 bug 都是 Agent 進化的燃料
 
-> 三色情境定義（🟢 標準 / 🟡 邊界 / 🔴 錯誤）見 [agents-methodology.md §3.4](../concepts/agents-methodology.md)。
+> 三色情境定義（🟢 標準 / 🟡 邊界 / 🔴 錯誤）見 [AGENTS方法論落地.md §3.4](../concepts/AGENTS方法論落地.md)。
 
 ---
 
@@ -214,6 +214,6 @@ Jacky 用比喻帶觀念：
 
 ## 相關連結
 
-- 殘酷測試 3 色情境定義 → [agents-methodology.md §3.4](../concepts/agents-methodology.md)
-- 上一週 → [Week 2 建](week2.md)
-- 下一週 → [Week 4 串](week4.md)
+- 殘酷測試 3 色情境定義 → [AGENTS方法論落地.md §3.4](../concepts/AGENTS方法論落地.md)
+- 上一週 → [Week 2 建](Week2建.md)
+- 下一週 → [Week 4 串](Week4串.md)

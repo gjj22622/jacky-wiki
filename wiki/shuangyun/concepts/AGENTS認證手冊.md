@@ -9,7 +9,7 @@ updated: 2026-04-29
 > **版本**：v1.0（2026-04-06）｜**用途**：講師／考核官的操作手冊，每位學員一份考核表
 > 來源：`11_AGENTS_知識體系/02_AGENTS認證考核手冊.md`
 
-> 方法論本身（六字訣／三級認證概念）見 [`agents-knowledge-system.md`](agents-knowledge-system.md)。
+> 方法論本身（六字訣／三級認證概念）見 [`AGENTS知識體系.md`](AGENTS知識體系.md)。
 
 ---
 
@@ -305,6 +305,6 @@ updated: 2026-04-29
 
 ## 相關連結
 
-- AGENTS® 方法論定義（六字訣 / 三級認證設計） → [agents-knowledge-system.md](agents-knowledge-system.md)
-- 双云實戰落地狀態 → [agents-methodology.md](agents-methodology.md)
+- AGENTS® 方法論定義（六字訣 / 三級認證設計） → [AGENTS知識體系.md](AGENTS知識體系.md)
+- 双云實戰落地狀態 → [AGENTS方法論落地.md](AGENTS方法論落地.md)
 - 通用版考核表（移除組織名稱）→ OneDrive `AGENTS知識體系_通用版/02_AGENTS認證考核手冊_通用版.md`

@@ -11,8 +11,8 @@ updated: 2026-04-29
 > 來源：`11_AGENTS_知識體系/01_AGENTS方法論_知識體系全書.md`
 
 > 本頁是 **AGENTS®** 作為方法論框架的正式定義（六字訣／三級認證／三場景部署）。
-> 双云的專案落地狀態、API Gateway 路由表、工廠藍圖 v2 等執行細節見 [`agents-methodology.md`](agents-methodology.md)。
-> 認證考核操作手冊見 [`agents-certification.md`](agents-certification.md)。
+> 双云的專案落地狀態、API Gateway 路由表、工廠藍圖 v2 等執行細節見 [`AGENTS方法論落地.md`](AGENTS方法論落地.md)。
+> 認證考核操作手冊見 [`AGENTS認證手冊.md`](AGENTS認證手冊.md)。
 > 對外通用版（移除組織名稱、人名、內部數據）存於 OneDrive `AGENTS知識體系_通用版/`。
 
 ---
@@ -215,7 +215,7 @@ A      G      E      N      T      S
 2. **進化日誌**：自動彙整最近 10 次品管回饋；累積 5+ 次相同類型修改 → 自動產出 Prompt 修改建議
 3. **人工確認**：所有 Prompt 變更必須 Jacky（或指定管理者）確認，**Agent 不允許自行修改自己的 System Prompt**
 
-> 完整路由表（9 GET + 8 POST）見 [`agents-methodology.md` §4.6](agents-methodology.md)。
+> 完整路由表（9 GET + 8 POST）見 [`AGENTS方法論落地.md` §4.6](AGENTS方法論落地.md)。
 
 **驗收標準**：至少一條完整自動化流水線跑通，品管 Agent 能自動攔截不合格產出，Trace Log 完整。
 
@@ -244,7 +244,7 @@ A      G      E      N      T      S
 
 ## 4. 三級認證體系
 
-> 操作細節（評分表、評分標準、考核流程）見 [`agents-certification.md`](agents-certification.md)。
+> 操作細節（評分表、評分標準、考核流程）見 [`AGENTS認證手冊.md`](AGENTS認證手冊.md)。
 
 | 等級 | 名稱 | 對應階段 | 核心能力 | 取得方式 |
 |---|---|---|---|---|
@@ -419,7 +419,7 @@ SOSTAC® 是策略層，AGENTS® 是執行層。
 | 基礎設施 Skill | 1 個（API Gateway） |
 | Skill OS 進階框架 | 8 個模組 |
 
-> 各夥伴成長軌跡見 [`agents-methodology.md` §1](agents-methodology.md)（含 2026-04-21 縮編注記）。
+> 各夥伴成長軌跡見 [`AGENTS方法論落地.md` §1](AGENTS方法論落地.md)（含 2026-04-21 縮編注記）。
 
 ---
 
@@ -455,8 +455,8 @@ SOSTAC® 是策略層，AGENTS® 是執行層。
 
 ## 相關連結
 
-- 認證考核操作手冊 → [agents-certification.md](agents-certification.md)
-- 双云專案落地狀態（API 路由表、工廠藍圖 v2、團隊縮編） → [agents-methodology.md](agents-methodology.md)
-- AI 行銷部模型（4 Agent 委員會 / 老闆 1-4 / AI 5-8） → [ai-marketing-team.md](ai-marketing-team.md)
+- 認證考核操作手冊 → [AGENTS認證手冊.md](AGENTS認證手冊.md)
+- 双云專案落地狀態（API 路由表、工廠藍圖 v2、團隊縮編） → [AGENTS方法論落地.md](AGENTS方法論落地.md)
+- AI 行銷部模型（4 Agent 委員會 / 老闆 1-4 / AI 5-8） → [AI行銷部定義.md](AI行銷部定義.md)
 - AGENTS® 知識體系架構圖（互動式 HTML） → OneDrive `11_AGENTS_知識體系/AGENTS_知識體系架構圖.html`
 - 內部提案簡報 → OneDrive `11_AGENTS_知識體系/03_AGENTS方法論內部提案簡報.pptx`（14 張）

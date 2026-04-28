@@ -11,8 +11,8 @@ cases: 2
 > 賣點不是被發明的，是被發現的。這份 SOP 記錄 Jacky 如何系統性地做到這件事。
 
 **案例來源**：目前萃取自兩個案例
-- [濂-直火割烹](../cases/lian-restaurant.md)
-- [晟光建設](../cases/shenguang-construction.md)
+- [濂-直火割烹](../cases/濂直火割烹.md)
+- [晟光建設](../cases/晟光建設.md)
 
 ---
 

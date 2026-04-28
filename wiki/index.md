@@ -27,29 +27,29 @@ updated: 2026-04-29
 shuangyun/
 ├── index.md                   # 域首頁
 ├── concepts/  (5 頁)          # 方法論與框架定義
-│   ├── agents-knowledge-system.md   # AGENTS® 六字訣 / 三級認證 / 三場景部署
-│   ├── agents-certification.md      # L1/L2/L3 評分表
-│   ├── agents-methodology.md        # 双云專案落地狀態（API 路由、工廠藍圖 v2）
-│   ├── ai-marketing-team.md         # AI 行銷部模型（4 Agent 委員會 / 老闆 1-4 / AI 5-8）
-│   └── lesson-prep-workflow.md      # Jacky 的 AI 備課 7 階段流程
+│   ├── AGENTS知識體系.md   # AGENTS® 六字訣 / 三級認證 / 三場景部署
+│   ├── AGENTS認證手冊.md      # L1/L2/L3 評分表
+│   ├── AGENTS方法論落地.md        # 双云專案落地狀態（API 路由、工廠藍圖 v2）
+│   ├── AI行銷部定義.md         # AI 行銷部模型（4 Agent 委員會 / 老闆 1-4 / AI 5-8）
+│   └── AI備課流程.md      # Jacky 的 AI 備課 7 階段流程
 ├── courses/   (5 頁)          # 双云 AI Agent 實戰課程教案
-│   ├── index.md, week2.md, week3.md, week4.md, week5.md
+│   ├── index.md, Week2建.md, Week3修.md, Week4串.md, Week5通.md
 ├── skills/    (13 頁)         # 双云域 Skill 集（涵蓋 22 個 Skill）
 │   ├── index.md
-│   ├── api-gateway.md, scoring-agent.md, completion-coach.md,
-│   │   config-converter.md, wisdom-merger.md, progress-tracker.md,
-│   │   personalized-cruelty-test.md, jacky-agent.md, client-onboarding.md
-│   └── 集成頁: skill-os.md, automation.md, brand-templates.md
+│   ├── API調度總機.md, 評分Agent.md, 補完教練.md,
+│   │   設定檔轉換.md, 集體智慧合併.md, 進度追蹤.md,
+│   │   個人化殘酷測試.md, Jacky分身Agent.md, 客戶導入.md
+│   └── 集成頁: SkillOS系統.md, 自動化流程.md, 品牌模板.md
 ├── cases/     (2 頁)          # 客戶專案紀錄
-│   ├── lian-restaurant.md, shenguang-construction.md
+│   ├── 濂直火割烹.md, 晟光建設.md
 └── sop/       (1 頁)          # 標準流程
-    └── finding-sellpoint.md
+    └── 找賣點SOP.md
 ```
 
 ## 跨域素材
 
 - [cross-domain/index.md](cross-domain/index.md)
-- [cross-domain/sellpoint-naming-theory.md](cross-domain/sellpoint-naming-theory.md)
+- [cross-domain/賣點命名理論.md](cross-domain/賣點命名理論.md)
 
 ## 工作流程
 

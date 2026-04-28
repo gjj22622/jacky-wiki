@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "12e45d12fa1b588f",
+    "type": "split",
+    "children": [
+      {
+        "id": "6863c31d44a2a15f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ebf4bff78fd37d77",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "關聯圖檢視"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "015716a538a29b4f",
+    "type": "split",
+    "children": [
+      {
+        "id": "4e85178c13deb83c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db1543f26abbeaa5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "檔案瀏覽器"
+            }
+          },
+          {
+            "id": "ec5f54e46b20639f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜尋"
+            }
+          },
+          {
+            "id": "2adb751de2d58cb2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "書籤"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a4f3d6a40d2831ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "06dddbb132a536bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28d7cffbb510f5e4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向連結"
+            }
+          },
+          {
+            "id": "f437eb70765e7649",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "對外連結"
+            }
+          },
+          {
+            "id": "32dc3bce35930b24",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "標籤"
+            }
+          },
+          {
+            "id": "7d533ca67bc19b88",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "所有屬性"
+            }
+          },
+          {
+            "id": "729d0e7380457c79",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大綱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "bases:建立新的 base": false
+    }
+  },
+  "active": "ebf4bff78fd37d77",
+  "lastOpenFiles": [
+    "wiki/shuangyun/cases/seduM35Mu",
+    "wiki/cross-domain/sedlsbwHQ",
+    "wiki/cross-domain/sedEIUyWT",
+    "wiki/cross-domain/sedR6eWSu",
+    "wiki/cross-domain/賣點命名理論.md",
+    "wiki/shuangyun/skills/品牌模板.md",
+    "wiki/shuangyun/skills/自動化流程.md",
+    "wiki/shuangyun/skills/SkillOS系統.md",
+    "wiki/shuangyun/skills/客戶導入.md",
+    "wiki/shuangyun/skills/Jacky分身Agent.md",
+    "wiki/shuangyun/skills/個人化殘酷測試.md",
+    "wiki/shuangyun/skills/進度追蹤.md",
+    "wiki/shuangyun/skills/集體智慧合併.md",
+    "wiki/shuangyun/skills/設定檔轉換.md",
+    "wiki/shuangyun/skills/補完教練.md",
+    "wiki/shuangyun/skills/評分Agent.md",
+    "wiki/shuangyun/skills/API調度總機.md",
+    "wiki/shuangyun/courses/課程總覽.md",
+    "wiki/shuangyun/courses/Week5通.md",
+    "wiki/shuangyun/courses/Week4串.md",
+    "wiki/shuangyun/courses/Week3修.md",
+    "wiki/shuangyun/courses/Week2建.md",
+    "wiki/shuangyun/concepts/AI備課流程.md",
+    "wiki/shuangyun/concepts/AI行銷部定義.md",
+    "wiki/shuangyun/concepts/AGENTS認證手冊.md",
+    "wiki/shuangyun/concepts/AGENTS知識體系.md",
+    "wiki/shuangyun/concepts/AGENTS方法論落地.md",
+    "wiki/shuangyun/sop/找賣點SOP.md",
+    "wiki/shuangyun/cases/晟光建設.md",
+    "未命名"
+  ]
+}

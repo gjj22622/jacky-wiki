@@ -52,7 +52,7 @@ shuangyun-api-gateway/
 
 ## 完整路由表
 
-> 9 GET（讀路由）+ 8 POST（寫路由 / 含執行鏈）詳見 [agents-methodology.md §4.6](../concepts/agents-methodology.md)。
+> 9 GET（讀路由）+ 8 POST（寫路由 / 含執行鏈）詳見 [AGENTS方法論落地.md §4.6](../concepts/AGENTS方法論落地.md)。
 
 ## 讀／寫分離原則
 
@@ -74,6 +74,6 @@ shuangyun-api-gateway/
 
 ## 相關連結
 
-- 完整路由表 → [agents-methodology.md §4.6](../concepts/agents-methodology.md)
-- API 互控架構（四層設計） → [agents-methodology.md §4](../concepts/agents-methodology.md)
-- Week 5 課程設計（v1 已棄用，v3 不直接帶夥伴看 API） → [Week 5](../courses/week5.md)
+- 完整路由表 → [AGENTS方法論落地.md §4.6](../concepts/AGENTS方法論落地.md)
+- API 互控架構（四層設計） → [AGENTS方法論落地.md §4](../concepts/AGENTS方法論落地.md)
+- Week 5 課程設計（v1 已棄用，v3 不直接帶夥伴看 API） → [Week 5](../courses/Week5通.md)

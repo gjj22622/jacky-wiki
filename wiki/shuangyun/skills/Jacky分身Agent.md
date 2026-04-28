@@ -100,6 +100,6 @@ updated: 2026-04-29
 
 ## 相關連結
 
-- 双云專案落地狀態 → [agents-methodology.md](../concepts/agents-methodology.md)
-- AI 行銷部模型（4 Agent 委員會） → [ai-marketing-team.md](../concepts/ai-marketing-team.md)
-- 路由表 GET 對應 → `client.status`、`client.strategy`、`prompt.history`、`workflow.create`、`factory.blueprint` → [api-gateway.md](api-gateway.md)
+- 双云專案落地狀態 → [AGENTS方法論落地.md](../concepts/AGENTS方法論落地.md)
+- AI 行銷部模型（4 Agent 委員會） → [AI行銷部定義.md](../concepts/AI行銷部定義.md)
+- 路由表 GET 對應 → `client.status`、`client.strategy`、`prompt.history`、`workflow.create`、`factory.blueprint` → [API調度總機.md](API調度總機.md)

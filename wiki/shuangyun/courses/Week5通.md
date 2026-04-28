@@ -118,7 +118,7 @@ Week 5「通」→ 把這些全部接起來
 | ③ | 執行細節被遺忘 | 客戶說不要用「！！！」→ 每篇都有 |
 | ④ | 品牌一致性崩潰 | 換執行人 → 品牌感覺整個跑掉 |
 
-> 詳細定義 → [ai-marketing-team.md Part A-B](../concepts/ai-marketing-team.md)
+> 詳細定義 → [AI行銷部定義.md Part A-B](../concepts/AI行銷部定義.md)
 
 ---
 
@@ -167,7 +167,7 @@ Week 5「通」→ 把這些全部接起來
 
 > **鐵律**：老闆只輸入 1-4，不問「你喜歡哪個版本」。AI 行銷部只做 5-8，不打擾老闆確認每一篇貼文。
 >
-> 詳見 [ai-marketing-team.md Part C](../concepts/ai-marketing-team.md)
+> 詳見 [AI行銷部定義.md Part C](../concepts/AI行銷部定義.md)
 
 ### 4 Agent 委員會 — 一個 Agent 消除一個摩擦
 
@@ -322,6 +322,6 @@ Week 5「通」→ 把這些全部接起來
 
 ## 相關連結
 
-- AI 行銷部完整定義（4 Agent 委員會 / 老闆 1-4 / AI 5-8 / 串）→ [ai-marketing-team.md](../concepts/ai-marketing-team.md)
-- API Gateway 路由表（Jacky 後台維護）→ [agents-methodology.md §4.6](../concepts/agents-methodology.md)
-- 上一週 → [Week 4 串](week4.md)
+- AI 行銷部完整定義（4 Agent 委員會 / 老闆 1-4 / AI 5-8 / 串）→ [AI行銷部定義.md](../concepts/AI行銷部定義.md)
+- API Gateway 路由表（Jacky 後台維護）→ [AGENTS方法論落地.md §4.6](../concepts/AGENTS方法論落地.md)
+- 上一週 → [Week 4 串](Week4串.md)

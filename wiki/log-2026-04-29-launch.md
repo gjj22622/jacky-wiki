@@ -64,29 +64,29 @@ wiki/  (31 個 .md)
 ├── log.md                      ← 操作日誌
 ├── cross-domain/               (2 頁)
 │   ├── index.md
-│   └── sellpoint-naming-theory.md  ← 賣點命名理論
+│   └── 賣點命名理論.md  ← 賣點命名理論
 └── shuangyun/                  (27 頁)
     ├── index.md
     ├── concepts/               (5 頁)
-    │   ├── agents-knowledge-system.md   ← AGENTS® 方法論全書
-    │   ├── agents-certification.md      ← L1/L2/L3 認證手冊
-    │   ├── agents-methodology.md        ← 双云專案落地狀態
-    │   ├── ai-marketing-team.md         ← AI 行銷部定義
-    │   └── lesson-prep-workflow.md      ← AI 備課 7 階段流程
+    │   ├── AGENTS知識體系.md   ← AGENTS® 方法論全書
+    │   ├── AGENTS認證手冊.md      ← L1/L2/L3 認證手冊
+    │   ├── AGENTS方法論落地.md        ← 双云專案落地狀態
+    │   ├── AI行銷部定義.md         ← AI 行銷部定義
+    │   └── AI備課流程.md      ← AI 備課 7 階段流程
     ├── courses/                (5 頁)
     │   ├── index.md
-    │   ├── week2.md ~ week5.md ← 拆建修串通
+    │   ├── Week2建.md ~ Week5通.md ← 拆建修串通
     ├── skills/                 (13 頁，涵蓋 22 個 Skill)
     │   ├── index.md
-    │   ├── api-gateway.md
-    │   ├── scoring-agent.md
-    │   ├── completion-coach.md
+    │   ├── API調度總機.md
+    │   ├── 評分Agent.md
+    │   ├── 補完教練.md
     │   └── ... (9 個獨立頁 + 3 個集成頁)
     ├── cases/                  (2 頁)
-    │   ├── lian-restaurant.md       ← 濂-直火割烹（浮誇感）
-    │   └── shenguang-construction.md ← 晟光建設（狂）
+    │   ├── 濂直火割烹.md       ← 濂-直火割烹（浮誇感）
+    │   └── 晟光建設.md ← 晟光建設（狂）
     └── sop/                    (1 頁)
-        └── finding-sellpoint.md     ← 找賣點 SOP（Step 1-2）
+        └── 找賣點SOP.md     ← 找賣點 SOP（Step 1-2）
 ```
 
 ---

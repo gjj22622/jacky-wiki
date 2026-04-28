@@ -51,7 +51,7 @@ for table in doc.tables:
 
 > 之所以強調，是因為實戰中發生過「學員用 Word 表格寫了 17 步 100+ 子步驟，因為只讀段落而被判為空白」的嚴重錯誤。
 
-**6 維度權重表**（詳見 [agents-methodology.md §3.1](../concepts/agents-methodology.md)）：基本資訊 15% / 步驟拆解 25% / 判斷邏輯 25% / 資料來源 15% / AI 適配 10% / 眉角紀錄 10%
+**6 維度權重表**（詳見 [AGENTS方法論落地.md §3.1](../concepts/AGENTS方法論落地.md)）：基本資訊 15% / 步驟拆解 25% / 判斷邏輯 25% / 資料來源 15% / AI 適配 10% / 眉角紀錄 10%
 
 **三級評分**：✅（滿分）／ ⚠️（60%）／ ❌（0 分）
 
@@ -98,7 +98,7 @@ for table in doc.tables:
 ## 邊界
 
 - 只評流程文件完整度，不評學員個人能力
-- 不幫學員補寫缺漏（那是 [completion-coach](completion-coach.md) 的工作）
+- 不幫學員補寫缺漏（那是 [completion-coach](補完教練.md) 的工作）
 - 不修改學員原始文件
 - 文件讀取結果異常時必須二次確認（段落 + 表格都檢查）才能判定空白
 
@@ -113,6 +113,6 @@ for table in doc.tables:
 
 ## 相關連結
 
-- 6 維度拆解表定義 → [agents-knowledge-system.md §A](../concepts/agents-knowledge-system.md)
-- 補完引導下游 → [completion-coach.md](completion-coach.md)
-- Week 2 教案（用法情境） → [Week 2](../courses/week2.md)
+- 6 維度拆解表定義 → [AGENTS知識體系.md §A](../concepts/AGENTS知識體系.md)
+- 補完引導下游 → [補完教練.md](補完教練.md)
+- Week 2 教案（用法情境） → [Week 2](../courses/Week2建.md)

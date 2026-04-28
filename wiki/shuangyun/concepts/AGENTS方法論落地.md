@@ -9,8 +9,8 @@ updated: 2026-04-29
 > 双云行銷 AI Agent 全面轉型的**專案落地狀態**——團隊組成、課程進度、API Gateway 路由表、工廠藍圖 v2、商業模式。
 > 來源：`双云AI轉型教育訓練/AGENTS.md`（2026-04-21 版，原為 Codex Instructions）
 
-> **方法論的正式定義（AGENTS® 六字訣 / 三級認證 / 三場景部署）見 [`agents-knowledge-system.md`](agents-knowledge-system.md)。**
-> 認證評分表見 [`agents-certification.md`](agents-certification.md)。
+> **方法論的正式定義（AGENTS® 六字訣 / 三級認證 / 三場景部署）見 [`AGENTS知識體系.md`](AGENTS知識體系.md)。**
+> 認證評分表見 [`AGENTS認證手冊.md`](AGENTS認證手冊.md)。
 > 本頁聚焦双云的**專案執行**面（誰負責什麼、現在跑到哪、API 路由怎麼設計、工廠藍圖長什麼樣）。
 
 ---
