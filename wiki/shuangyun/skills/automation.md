@@ -1,0 +1,177 @@
+---
+title: 双云自動化 Skills（社群發佈 + LINE 串接）
+domain: shuangyun
+updated: 2026-04-29
+---
+
+# 双云自動化 Skills（社群發佈 + LINE 串接）
+
+> **層級**：Hand（自動化執行手）
+> **共同 parent**：`jacky.brain.commander`
+> 來源：`06_Skills/双云技能包/{fb-auto-publish, ig-auto-publish, reels-auto-create, line-channel-setup-agent}/`
+
+> 4 個 Hand 層自動化 Skill。**接收品牌腦指令，完成執行。**
+
+---
+
+## fb-auto-publish｜FB 自動發佈
+
+- **三段式名稱**：`sy.hand.fb-auto`
+- **產出**：FB 貼文（文案 + 圖片 + 發佈）
+
+**執行流程**
+
+1. 根據品牌腦指令撰寫 FB 長文案
+2. 生成配圖描述
+3. 呼叫 DALL-E 產圖
+4. 呼叫 FB API 發佈
+
+**輸出格式**
+
+```yaml
+## actions
+- action: generate_image
+  connector: dall-e
+  prompt: {{圖片描述，英文}}
+  size: 1792x1024
+
+- action: publish_post
+  connector: fb-publish
+  image_url: {{prev}}
+  message: {{文案內容}}
+```
+
+**注意事項**
+
+- FB 文案可以比 IG 長（500-800 字）
+- 圖片用橫幅 1792x1024（FB 最佳比例）
+- 含 CTA 和連結
+
+---
+
+## ig-auto-publish｜IG 自動發佈
+
+- **三段式名稱**：`sy.hand.ig-auto`
+- **產出**：IG 貼文（文案 + 圖片 + 發佈）
+
+**執行流程**
+
+1. 根據品牌腦指令撰寫 IG 文案（含 hashtag）
+2. 根據品牌視覺風格生成配圖描述
+3. 呼叫 DALL-E 產圖
+4. 呼叫 IG API 發佈（**草稿模式，需人工確認**）
+
+**輸出格式**
+
+```yaml
+## actions
+- action: generate_image
+  connector: dall-e
+  prompt: {{根據品牌風格描述的圖片 prompt}}
+  size: 1024x1024
+
+- action: publish_post
+  connector: ig-publish
+  image_url: {{prev}}
+  caption: {{文案內容}}
+```
+
+**注意事項**
+
+- 圖片 prompt 必須用**英文**（DALL-E 英文效果最好）
+- 文案用**繁體中文**
+- hashtag 控制在 10-15 個
+- IG 發佈預設**草稿模式**，需人工確認
+
+---
+
+## reels-auto-create｜Reels 影片自動生成
+
+- **三段式名稱**：`sy.hand.reels-auto`
+- **產出**：Reels 影片（腳本 + 影片生成）
+
+**執行流程**
+
+1. 根據品牌腦指令撰寫 15 秒 Reels 腳本（分鏡表）
+2. 為第一個關鍵幀生成圖片描述
+3. 呼叫 DALL-E 產關鍵幀圖片
+4. 呼叫 Runway 從圖片生成 5 秒影片
+
+**輸出格式**
+
+```yaml
+## actions
+- action: generate_image
+  connector: dall-e
+  prompt: {{關鍵幀描述，英文，電影感}}
+  size: 1024x1792
+  quality: hd
+
+- action: generate_video
+  connector: runway
+  promptImage: {{prev}}
+  prompt: {{動作描述，如 slow zoom in, gentle movement}}
+  duration: 5
+```
+
+**注意事項**
+
+- 關鍵幀用直式 1024x1792（Reels 9:16）
+- 影片描述用英文
+- duration 建議 5 秒（成本 ~$0.25）
+- Runway 需要等待 1-3 分鐘
+
+---
+
+## line-channel-setup-agent｜LINE Channel 串接設定
+
+- **三段式名稱**：`sy.hand.line-channel`
+- **產出**：LINE Channel 設定完成 + 測試通過
+
+**核心架構**
+
+```
+LINE 使用者 → LINE Platform → Webhook POST → ngrok 隧道 → Bun MCP Server → Claude Code Session → 回覆
+```
+
+**完整設定 9 步驟**
+
+1. 安裝 Bun Runtime（**踩坑**：screenpipe 內建舊版 Bun，用 `which bun` 確認路徑是 `/opt/homebrew/bin/bun`）
+2. LINE Official Account 建立
+3. Channel 建立 + Channel Access Token / Channel Secret 取得
+4. Webhook 設定
+5. ngrok 隧道（讓 LINE Platform 連到本地）
+6. MCP Server 設定
+7. 白名單控管（避免被陌生人惡意呼叫）
+8. 群組設定（讓 Bot 進入特定群組）
+9. 測試與除錯
+
+**踩坑與排除**
+
+> 完整踩坑情境（含 Bun 版本衝突、ngrok URL 過期、Webhook 簽章驗證、群組 Bot 不回應、白名單設定錯誤）見 OneDrive `06_Skills/双云技能包/line-channel-setup-agent/SKILL.md`。
+
+**用途**
+
+- 需要設定 LINE Bot / LINE Channel
+- 需要串接 Claude Code 到 LINE
+- LINE Bot 不回應的除錯
+- 需要設定 LINE 群組 Bot
+
+---
+
+## 共同模式
+
+| 設計原則 | 說明 |
+|---|---|
+| Brain 指揮 → Hand 執行 | Hand 不做策略判斷，只執行明確指令 |
+| 文案中文、圖／影 prompt 英文 | DALL-E / Runway 英文輸入效果最佳 |
+| 預設草稿模式 | IG 發佈需人工確認；技術設定（LINE）需測試通過才上線 |
+| connector 抽象 | 用 `dall-e` / `fb-publish` / `ig-publish` / `runway` 等 connector 名稱，方便日後替換 |
+
+---
+
+## 相關連結
+
+- 命名規範（三段式 sy.hand.*） → [skills index](index.md)
+- 上游 Brain 層 → [brand-templates.md](brand-templates.md)（客戶腦範本）
+- API Gateway 路由（content.generate / content.batch） → [api-gateway.md](api-gateway.md)

@@ -1,13 +1,17 @@
 ---
 title: AGENTS 方法論 — 双云 AI 轉型總覽
 domain: shuangyun
-updated: 2026-04-28
+updated: 2026-04-29
 ---
 
 # AGENTS 方法論 — 双云 AI 轉型總覽
 
-> 双云行銷 AI Agent 全面轉型的方法論集成。已完成 4 週實戰課程（拆 → 建 → 修 → 串），現進入「API 互控」階段，目標是讓 Agent 之間透過 API 自動協作，最終開放給客戶使用。
-> 來源：`双云AI轉型教育訓練/AGENTS.md`（2026-04-21 版）
+> 双云行銷 AI Agent 全面轉型的**專案落地狀態**——團隊組成、課程進度、API Gateway 路由表、工廠藍圖 v2、商業模式。
+> 來源：`双云AI轉型教育訓練/AGENTS.md`（2026-04-21 版，原為 Codex Instructions）
+
+> **方法論的正式定義（AGENTS® 六字訣 / 三級認證 / 三場景部署）見 [`agents-knowledge-system.md`](agents-knowledge-system.md)。**
+> 認證評分表見 [`agents-certification.md`](agents-certification.md)。
+> 本頁聚焦双云的**專案執行**面（誰負責什麼、現在跑到哪、API 路由怎麼設計、工廠藍圖長什麼樣）。
 
 ---
 
