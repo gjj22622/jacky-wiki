@@ -1,0 +1,35 @@
+---
+title: 双云 AI Agent 實戰課程總覽
+domain: shuangyun
+updated: 2026-04-29
+---
+
+# 双云 AI Agent 實戰課程總覽
+
+> **完整框架（六步）**：拆 → 建 → 修 → 串 → 管 → 交
+> **架構師養成**：四週基礎課程 = AI Agent 架構師能力 1-4；Week 5-8 = 進階能力升級。
+
+| 階段 | Week | 主題 | 核心動詞 | 教案頁 |
+|---|---|---|---|---|
+| 基礎 | 1 | 拆 | 流程拆解 | _尚未整理_ |
+| 基礎 | 2 | 建 | Agent 設定檔 | [Week 2](week2.md) |
+| 基礎 | 3 | 修 | 殘酷測試 | [Week 3](week3.md) |
+| 基礎 | 4 | 串 | Agent 工廠 | [Week 4](week4.md) |
+| 進階 | 5 | 通 | AI 行銷部 | [Week 5](week5.md) |
+| 進階 | 6 | 控 | Main Agent | _規劃中_ |
+| 進階 | 7 | 開 | 客戶 API | _規劃中_ |
+| 進階 | 8 | 營 | 自動進化 | _規劃中_ |
+
+## 相關方法論頁面
+
+- [AGENTS 方法論 — 双云 AI 轉型總覽](../concepts/agents-methodology.md)
+- [双云 AI 行銷部 — 定義與操作指南](../concepts/ai-marketing-team.md)
+- [Jacky 的 AI 備課流程](../concepts/lesson-prep-workflow.md)
+
+## 教學核心原則（Jacky 框架）
+
+1. 一步一 Agent — 不建巨石 Agent
+2. 說明書 > 工具 — 規格可攜帶跨平台
+3. 測 > 做 — 90% 學習發生在發現 bug 的過程
+4. 人 + AI 協作 — 人定義判斷邏輯，AI 執行重複步驟
+5. 團隊工廠 > 個人工具 — 多 Agent 連接 = 組織轉型

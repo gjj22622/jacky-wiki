@@ -1,7 +1,7 @@
 ---
 title: 双云行銷
 domain: shuangyun
-updated: 2026-04-28
+updated: 2026-04-29
 ---
 
 # 双云行銷（Shuangyun）⭐ 優先域
@@ -19,14 +19,22 @@ updated: 2026-04-28
 
 ## 子主題
 
-- `clients/`：客戶專案紀錄
-- `brand/`：品牌識別、文案風格指南
-- `campaigns/`：行銷活動策劃與復盤
-- `ai-tools/`：AI 工具應用於行銷工作流
+- `concepts/`：方法論與框架定義
+  - [AGENTS 方法論 — 双云 AI 轉型總覽](concepts/agents-methodology.md)
+  - [双云 AI 行銷部 — 定義與操作指南](concepts/ai-marketing-team.md)
+  - [Jacky 的 AI 備課流程（7 階段人機協作）](concepts/lesson-prep-workflow.md)
+- `courses/`：双云 AI Agent 實戰課程教案
+  - [課程總覽](courses/index.md)
+  - [Week 2 建](courses/week2.md) · [Week 3 修](courses/week3.md) · [Week 4 串](courses/week4.md) · [Week 5 通](courses/week5.md)
+- `cases/`：客戶專案紀錄
+  - [蓮餐廳](cases/lian-restaurant.md)
+  - [神光建設](cases/shenguang-construction.md)
+- `sop/`：標準流程
+  - [尋找賣點 SOP](sop/finding-sellpoint.md)
 
 ## 快速連結
 
-- [总覽 wiki 首頁](../index.md)
+- [總覽 wiki 首頁](../index.md)
 
 ---
 > 此域為最高優先，所有跨域素材若與行銷相關，優先歸入此域。
