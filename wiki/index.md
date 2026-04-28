@@ -8,13 +8,13 @@ updated: 2026-04-29
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：30（不含本頁）
+**目前頁面數**：31（不含本頁）
 
 ## 知識域導航
 
 | 域 | 說明 | 頁面數 | 連結 |
 |---|---|:---:|---|
-| ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 27 | [進入](shuangyun/index.md) |
+| ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 28 | [進入](shuangyun/index.md) |
 | cross-domain | 跨域素材——共用模板、框架、可複用 | 2 | [進入](cross-domain/) |
 | tbsa | TBSA 協會——活動、會員、倡議 | 0 | _尚未建立_ |
 | nchu | 中興大學博士研究——論文、研究方法、文獻 | 0 | _尚未建立_ |
@@ -32,8 +32,8 @@ shuangyun/
 │   ├── AGENTS方法論落地.md        # 双云專案落地狀態（API 路由、工廠藍圖 v2）
 │   ├── AI行銷部定義.md         # AI 行銷部模型（4 Agent 委員會 / 老闆 1-4 / AI 5-8）
 │   └── AI備課流程.md      # Jacky 的 AI 備課 7 階段流程
-├── courses/   (5 頁)          # 双云 AI Agent 實戰課程教案
-│   ├── index.md, Week2建.md, Week3修.md, Week4串.md, Week5通.md
+├── courses/   (6 頁)          # 双云 AI Agent 實戰課程教案
+│   ├── 課程總覽.md, Week1拆.md, Week2建.md, Week3修.md, Week4串.md, Week5通.md
 ├── skills/    (13 頁)         # 双云域 Skill 集（涵蓋 22 個 Skill）
 │   ├── index.md
 │   ├── API調度總機.md, 評分Agent.md, 補完教練.md,

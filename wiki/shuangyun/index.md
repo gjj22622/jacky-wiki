@@ -27,7 +27,7 @@ updated: 2026-04-29
   - [Jacky 的 AI 備課流程（7 階段人機協作）](concepts/AI備課流程.md)
 - `courses/`：双云 AI Agent 實戰課程教案
   - [課程總覽](courses/課程總覽.md)
-  - [Week 2 建](courses/Week2建.md) · [Week 3 修](courses/Week3修.md) · [Week 4 串](courses/Week4串.md) · [Week 5 通](courses/Week5通.md)
+  - [Week 1 拆](courses/Week1拆.md) · [Week 2 建](courses/Week2建.md) · [Week 3 修](courses/Week3修.md) · [Week 4 串](courses/Week4串.md) · [Week 5 通](courses/Week5通.md)
 - `skills/`：双云域 Skill 集
   - [Skills 總覽（含三層架構 + 命名規範）](skills/index.md)
   - 5 助教：[scoring](skills/評分Agent.md) · [completion-coach](skills/補完教練.md) · [config-converter](skills/設定檔轉換.md) · [wisdom-merger](skills/集體智慧合併.md) · [progress-tracker](skills/進度追蹤.md)
