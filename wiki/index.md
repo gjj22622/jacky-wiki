@@ -8,7 +8,7 @@ updated: 2026-04-29
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：43（不含本頁）
+**目前頁面數**：46（不含本頁）
 
 ## 知識域導航
 
@@ -16,7 +16,7 @@ updated: 2026-04-29
 |---|---|:---:|---|
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 28 | [進入](shuangyun/index.md) |
 | jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 6 | [進入](jwood/index.md) |
-| jlife | Jacky 人生回憶錄——五卷書稿、儀表板、Facebook 28,715 events | 6 | [進入](jlife/index.md) |
+| jlife | Jacky 人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/index.md) |
 | cross-domain | 跨域素材——共用模板、框架、可複用 | 2 | [進入](cross-domain/) |
 | tbsa | TBSA 協會——活動、會員、倡議 | 0 | _尚未建立_ |
 | nchu | 中興大學博士研究——論文、研究方法、文獻 | 0 | _尚未建立_ |
@@ -64,15 +64,18 @@ jwood/  (6 頁)
 ## jlife 域結構
 
 ```
-jlife/  (6 頁)
-├── index.md                                 # 域首頁
-├── concepts/  (3 頁)
-│   ├── 書的結構.md                          # D 版五卷 + E 版六卷職業身分版
-│   ├── 旅行儀表板系統.md                    # 7 旅行儀表板 + 林小眼人物儀表板 + 技術架構
-│   └── facebook資料架構.md                  # JSON 28,715 筆 events 解析
-└── sop/       (2 頁)
-    ├── 新增儀表板.md                        # extract → day_meta → build → Zeabur 部署
-    └── 書稿編寫規範.md                      # Markdown / fb:標記 / author:pending
+jlife/  (9 頁)
+├── index.md                       # 成長脈絡導覽
+├── concepts/  (2 頁)
+│   ├── 書的結構.md                # D 版五卷 + E 版六卷
+│   └── 跨域對應.md                # jlife 階段如何長成 shuangyun / jwood / tbsa / nchu
+└── stages/  (6 頁，E 版骨架)
+    ├── 受僱練功_2008-2010.md     # E 卷一 別人的場
+    ├── 佳醫三年半_2010-2013.md   # E 卷二
+    ├── 自己搭場_2014-2020.md     # E 卷三 → shuangyun 起源
+    ├── 作品線_2015-2026.md       # E 卷四 → jwood + tbsa 起源
+    ├── AI與博士_2023-2026.md     # E 卷五 → nchu 起源
+    └── 家庭線_2009-2026.md       # E 卷六（穿越線收束）
 ```
 
 ## 跨域素材
