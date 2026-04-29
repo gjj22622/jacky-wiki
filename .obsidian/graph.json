@@ -48,6 +48,13 @@
         "a": 1,
         "rgb": 6073814
       }
+    },
+    {
+      "query": "jwood",
+      "color": {
+        "a": 1,
+        "rgb": 6053078
+      }
     }
   ],
   "collapse-display": false,
