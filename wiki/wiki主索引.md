@@ -8,7 +8,7 @@ updated: 2026-04-29
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：54（不含本頁）
+**目前頁面數**：61（不含本頁）
 
 ## 知識域導航（5 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -17,7 +17,7 @@ updated: 2026-04-29
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 28 | [進入](shuangyun/双云索引.md) |
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
-| tbsa | TBSA 商務企劃協會——三大方法論、与双云人才循環 | 3 | [進入](tbsa/TBSA索引.md) |
+| tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、与双云人才循環 | 8 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——學術 Skill 體系、AI 重組學術根基 | 3 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——共用模板、框架、可複用 | 2 | [進入](cross-domain/跨域索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
@@ -101,11 +101,16 @@ jlife/  (9 頁)
 ## tbsa 域結構
 
 ```
-tbsa/  (3 頁)
-├── TBSA索引.md                # 域首頁（14 年弧線、与双云人才循環）
-└── concepts/  (2 頁)
-    ├── 三大方法論體系.md      # SOSTAC × SPEAKS × AGENTS
-    └── 与双云的人才循環.md
+tbsa/  (8 頁)
+├── TBSA索引.md                            # 域首頁（14 年弧線、学習行銷起點）
+└── concepts/  (7 頁)
+    ├── 初階知識體系_找方向找對象找方法.md   # 洪敏莉初階教材（**學習起點**）
+    ├── SOSTAC方法論.md                    # 鄭沂珊進階教材（6 階段 + 5 表單）
+    ├── 三大方法論體系.md                   # SOSTAC × SPEAKS × AGENTS 整合圖
+    ├── SPEAKS方法論總覽.md                # 雙軌品牌、IP 治理
+    ├── SPEAKS六步驟詳解.md                # S/P/E/A/K/S 操作
+    ├── SPEAKS體系建設.md                  # 22 份文件、三級認證、教學
+    └── 与双云的人才循環.md                 # TBSA ↔ 双云
 ```
 
 ## nchu 域結構

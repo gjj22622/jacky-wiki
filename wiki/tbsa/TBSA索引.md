@@ -14,9 +14,23 @@ updated: 2026-04-29
 
 ## 一句話定位
 
-> **TBSA 是「會想 + 會說 + 會做」的方法論協會**——SOSTAC 教你想（行銷企劃）、SPEAKS 教你說（口說表達）、AGENTS 教你做（AI Agent）。
+> **TBSA 是「會想 + 會說 + 會做 + 會建」的方法論協會**——SOSTAC 教你想（行銷企劃）、SPEAKS 教你說（口說表達）、AGENTS 教你建（AI Agent）。
 >
 > Jacky 是這三大方法論的整合者：用 SOSTAC 服務客戶、用 SPEAKS 提案、用 AGENTS 規模化。
+
+---
+
+## 學習行銷的起點
+
+> 本域的核心知識體系從 TBSA 兩本教材開始：
+
+| 階段 | 教材 | 主筆 | 在 wiki |
+|:--:|---|---|---|
+| **初階** | 《2025TBSA 商務企劃能力初級檢定學習手冊》 | 洪敏莉 | [初階知識體系](concepts/初階知識體系_找方向找對象找方法.md) |
+| **進階** | 《TBSA 商務企劃能力進階檢定學習手冊》 | 鄭沂珊 | [SOSTAC® 方法論](concepts/SOSTAC方法論.md) |
+
+> 這就是 Jacky 從 2011 年加入 WBSA → 2025 年當選 TBSA 理事長 14 年弧線的**教材本身**。
+> 完整學習脈絡 → [jlife / 作品線 卷四](../jlife/stages/作品線_2015-2026.md) 第 8 章。
 
 ---
 
@@ -39,8 +53,17 @@ updated: 2026-04-29
 ## 子主題
 
 - `concepts/`：方法論與關係定義
-  - [三大方法論體系](concepts/三大方法論體系.md) — SOSTAC × SPEAKS × AGENTS 的整合圖
-  - [与双云的人才循環](concepts/与双云的人才循環.md) — TBSA 養人才 → 双云用人才 → 回饋 TBSA
+  - **學習行銷的起點（兩本教材）**
+    - [初階知識體系｜找方向、找對象、找方法](concepts/初階知識體系_找方向找對象找方法.md) — 洪敏莉主筆 / 5 篇 13 章
+    - [SOSTAC® 方法論（進階）](concepts/SOSTAC方法論.md) — 鄭沂珊主筆 / 6 階段 + 5 大表單
+  - **三大方法論整合**
+    - [三大方法論體系](concepts/三大方法論體系.md) — SOSTAC × SPEAKS × AGENTS 的整合圖
+  - **SPEAKS 子體系**（會說 + 會教）
+    - [SPEAKS 方法論總覽](concepts/SPEAKS方法論總覽.md) — 策略性口說表達工程、雙軌品牌、IP 治理
+    - [SPEAKS 六步驟詳解](concepts/SPEAKS六步驟詳解.md) — S/P/E/A/K/S 操作要點
+    - [SPEAKS 體系建設](concepts/SPEAKS體系建設.md) — 22 份文件、三級認證、四種班型
+  - **協會生態**
+    - [与双云的人才循環](concepts/与双云的人才循環.md) — TBSA 養人才 → 双云用人才 → 回饋 TBSA
 
 ---
 
@@ -49,10 +72,11 @@ updated: 2026-04-29
 | 方法論 | 教什麼 | 在 TBSA 中 | 在 [shuangyun](../shuangyun/双云索引.md) 中 |
 |:---:|---|---|---|
 | **SOSTAC** | 行銷企劃（會想 + 會做） | 教材主軸、認證考試核心 | 客戶服務的執行框架 |
-| **SPEAKS** | 口說表達（會說） | 表達訓練模組 | 提案能力 |
+| **SPEAKS** | 口說表達（會說 + 會教） | **被授權使用**（Jacky 任期內無償，由商標權人 Zoe 公司持有） | 提案能力 |
 | **AGENTS** | AI Agent（會建） | 新增模組（双云首創） | [完整六字訣方法論](../shuangyun/concepts/AGENTS知識體系.md) |
 
 > **整合圖**：[三大方法論體系](concepts/三大方法論體系.md) 詳細展開三者交集。
+> **SPEAKS 詳細**：[SPEAKS 方法論總覽](concepts/SPEAKS方法論總覽.md) — 雙軌品牌（商務軌 + 兒少教育軌）、六步驟、IP 治理。
 
 ---
 
