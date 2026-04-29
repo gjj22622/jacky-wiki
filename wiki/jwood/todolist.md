@@ -108,7 +108,7 @@ updated: 2026-04-29
 
 ## 相關連結
 
-- 域首頁 → [index.md](index.md)
+- 域首頁 → [木作索引.md](木作索引.md)
 - Agent 團隊架構 → [concepts/agent-team.md](concepts/agent-team.md)
 - 4 系列影片策略 → [concepts/content-strategy.md](concepts/content-strategy.md)
 - 週排程 SOP → [sop/weekly-operations.md](sop/weekly-operations.md)

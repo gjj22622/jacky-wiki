@@ -63,10 +63,10 @@ wiki/  (31 個 .md)
 ├── index.md                    ← 總覽
 ├── log.md                      ← 操作日誌
 ├── cross-domain/               (2 頁)
-│   ├── index.md
+│   ├── 双云技能索引.md
 │   └── 賣點命名理論.md  ← 賣點命名理論
 └── shuangyun/                  (27 頁)
-    ├── index.md
+    ├── 双云技能索引.md
     ├── concepts/               (5 頁)
     │   ├── AGENTS知識體系.md   ← AGENTS® 方法論全書
     │   ├── AGENTS認證手冊.md      ← L1/L2/L3 認證手冊
@@ -74,10 +74,10 @@ wiki/  (31 個 .md)
     │   ├── AI行銷部定義.md         ← AI 行銷部定義
     │   └── AI備課流程.md      ← AI 備課 7 階段流程
     ├── courses/                (5 頁)
-    │   ├── index.md
+    │   ├── 双云技能索引.md
     │   ├── Week2建.md ~ Week5通.md ← 拆建修串通
     ├── skills/                 (13 頁，涵蓋 22 個 Skill)
-    │   ├── index.md
+    │   ├── 双云技能索引.md
     │   ├── API調度總機.md
     │   ├── 評分Agent.md
     │   ├── 補完教練.md

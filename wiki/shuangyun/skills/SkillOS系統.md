@@ -177,5 +177,5 @@ workflow-mapper → review-rule-builder → task-skill-builder
 ## 相關連結
 
 - 三層架構詳解 → [Week 4 §模組 7.5](../courses/Week4串.md)
-- 命名規範（三段式） → [skills index](index.md)
+- 命名規範（三段式） → [skills 索引](双云技能索引.md)
 - API Gateway（基礎設施層協作） → [API調度總機.md](API調度總機.md)
