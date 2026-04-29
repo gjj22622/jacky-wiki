@@ -8,28 +8,28 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "jlife",
+      "query": "cases",
       "color": {
         "a": 1,
         "rgb": 14048348
       }
     },
     {
-      "query": "jwood",
+      "query": "skills",
       "color": {
         "a": 1,
         "rgb": 14069084
       }
     },
     {
-      "query": "shuangyun",
+      "query": "courses",
       "color": {
         "a": 1,
         "rgb": 11392604
       }
     },
     {
-      "query": "tbsa",
+      "query": "concepts",
       "color": {
         "a": 1,
         "rgb": 6084188
@@ -40,6 +40,20 @@
       "color": {
         "a": 1,
         "rgb": 6084269
+      }
+    },
+    {
+      "query": "shuangyun",
+      "color": {
+        "a": 1,
+        "rgb": 6073814
+      }
+    },
+    {
+      "query": "jwood",
+      "color": {
+        "a": 1,
+        "rgb": 6053078
       }
     }
   ],
@@ -53,6 +67,6 @@
   "repelStrength": 9.44636678200692,
   "linkStrength": 1,
   "linkDistance": 302,
-  "scale": 0.4422482000102196,
+  "scale": 0.999999999999998,
   "close": true
 }
