@@ -9,13 +9,14 @@
 SOSTAC + AI First
 
 ### 知識域（優先順序）
-| 域代碼 | 名稱 | 優先級 |
-|--------|------|--------|
-| shuangyun | 双云行銷 | ⭐ 優先域 |
-| tbsa | TBSA 協會 | 次要 |
-| nchu | 中興大學博士研究 | 次要 |
-| yinian | 一念清涼 | 次要 |
-| laodehao | 老的好回憶錄 | 次要 |
+| 域代碼 | 名稱 | 類型 | 優先級 |
+|--------|------|------|--------|
+| shuangyun | 双云行銷 | 事業（客戶服務） | ⭐ 優先域 |
+| jwood | Jwood 基的木藝 | 事業（Jacky 自有品牌） | ⭐ 優先域 |
+| tbsa | TBSA 協會 | 社會職務 | 次要 |
+| nchu | 中興大學博士研究 | 學術 | 次要 |
+| yinian | 一念清涼 | 個人修行 | 次要 |
+| laodehao | 老的好回憶錄 | 社會專案 | 次要 |
 
 ### 目錄結構
 ```
@@ -24,6 +25,12 @@ wiki/
   cross-domain/         # 跨域素材（模板、公用框架）
   shuangyun/
     index.md            # 双云行銷域首頁
+    cases/              # 客戶案例
+  jwood/
+    index.md            # Jwood 品牌總覽
+    ai-workflow.md      # AI 圖片生成工作流（Codex CLI + gpt-image-2）
+    yt-video-sop.md     # YouTube 影片生產 SOP
+    ig-post-sop.md      # IG Post 每日生產 SOP
   tbsa/
     index.md
   nchu/
