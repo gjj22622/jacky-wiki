@@ -8,13 +8,14 @@ updated: 2026-04-29
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：31（不含本頁）
+**目前頁面數**：37（不含本頁）
 
 ## 知識域導航
 
 | 域 | 說明 | 頁面數 | 連結 |
 |---|---|:---:|---|
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 28 | [進入](shuangyun/index.md) |
+| jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 6 | [進入](jwood/index.md) |
 | cross-domain | 跨域素材——共用模板、框架、可複用 | 2 | [進入](cross-domain/) |
 | tbsa | TBSA 協會——活動、會員、倡議 | 0 | _尚未建立_ |
 | nchu | 中興大學博士研究——論文、研究方法、文獻 | 0 | _尚未建立_ |
@@ -44,6 +45,20 @@ shuangyun/
 │   ├── 濂直火割烹.md, 晟光建設.md
 └── sop/       (1 頁)          # 標準流程
     └── 找賣點SOP.md
+```
+
+## jwood 域結構
+
+```
+jwood/  (6 頁)
+├── index.md                                 # 域首頁
+├── todolist.md                              # 待辦狀態（含 2 個阻擋點）
+├── concepts/  (3 頁)
+│   ├── brand-overview.md                    # 品牌識別 / 創辦人 / 視覺 DNA
+│   ├── agent-team.md                        # 11+2 Agent 團隊架構
+│   └── content-strategy.md                  # Series A/B/C/D 並行 + 月度日曆
+└── sop/       (1 頁)
+    └── weekly-operations.md                 # 週一/週五自動排程 SOP
 ```
 
 ## 跨域素材
