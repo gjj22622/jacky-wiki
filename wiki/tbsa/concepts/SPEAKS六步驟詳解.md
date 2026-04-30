@@ -278,4 +278,4 @@ Level 4：會建（Architect）— 能將口說知識轉化為 AI Skill / Agent 
 - 體系配套（認證、教學、22 份文件） → [SPEAKS 體系建設](SPEAKS體系建設.md)
 - 在 TBSA 三大方法論中的位置 → [三大方法論體系](三大方法論體系.md)
 - 域首頁 → [TBSA索引](../TBSA索引.md)
-- 對應 SOSTAC（在 jlife 看到 14 年養成過程）→ [jlife / 作品線](../../jlife/stages/作品線_2015-2026.md)
+- 對應 SOSTAC（在 jlife 看到 20 年三段身分養成過程）→ [jlife / 作品線](../../jlife/stages/作品線_2015-2026.md)

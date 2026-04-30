@@ -30,7 +30,7 @@ updated: 2026-04-29
 ### Jacky 的方法論作品脈絡
 
 ```
-SOSTAC®（國際引進，Jacky 學習與整合 14 年）
+SOSTAC®（國際引進｜Jacky 20 年三段身分：學習者 → 實踐者 → 倡議者）
    │
    ├──→ SPEAKS®（Jacky 從 SOSTAC 產出，口說領域）
    │     IP：Zoe 公司持有；TBSA 無償授權使用
