@@ -64,6 +64,13 @@ updated: 2026-04-29
     - [SPEAKS 體系建設](concepts/SPEAKS體系建設.md) — 22 份文件、三級認證、四種班型
   - **協會生態**
     - [与双云的人才循環](concepts/与双云的人才循環.md) — TBSA 養人才 → 双云用人才 → 回饋 TBSA
+- `templates/`：5 大企劃工具表單（**進階檢定核心**）
+  - [五大表單總覽](templates/五大表單總覽.md) — 流程圖、依賴關係、SOSTAC 對應
+  - [表單 1：企劃情報／概念分析](templates/表單1_企劃情報概念分析.md) — PESTEL + 產業 + 競爭 + 消費者 + 內部
+  - [表單 2：現況分析與策略目標設定](templates/表單2_現況分析與策略目標設定.md) — SWOT 矩陣 + SMART 目標
+  - [表單 3：STP 市場策略設計](templates/表單3_STP市場策略設計.md) — 區隔 → 目標市場 → 定位
+  - [表單 4：行銷戰術及溝通活動設計](templates/表單4_行銷戰術及溝通活動設計.md) — 7Ps + AIDAS
+  - [表單 5：一頁企劃書](templates/表單5_一頁企劃書.md) — 全 SOSTAC 收束
 
 ---
 
