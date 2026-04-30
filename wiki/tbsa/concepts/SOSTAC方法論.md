@@ -23,6 +23,30 @@ updated: 2026-04-29
 
 ---
 
+## SOSTAC 在 Jacky 的方法論作品中的位置
+
+> **SOSTAC 是 Jacky 後續兩套方法論（SPEAKS、AGENTS）的源頭。**
+
+```
+SOSTAC®（國際引進，Jacky 學習 + 整合 + 教學 14 年）  ← 本頁
+   │
+   ├──→ SPEAKS®（Jacky 從 SOSTAC 產出 — 口說領域）
+   │     IP：Zoe 公司持有；TBSA 無償授權
+   │
+   └──→ AGENTS®（Jacky 從 SOSTAC 產出 — AI Agent 領域）
+         IP：双云行銷持有；TBSA 無償授權
+```
+
+| 方法論 | Jacky 的角色 | 時間 | 商標／著作權 |
+|---|---|---|---|
+| **SOSTAC®** | 學習 → 整合 → 教學（**整合者**）| 2011-2025（14 年弧線） | 國際第三方（非 Jacky / 非 TBSA 持有） |
+| [**SPEAKS®**](SPEAKS方法論總覽.md) | **主筆**（從 SOSTAC 升級） | 2025-11 接任理事長後 | Zoe 公司持有 |
+| [**AGENTS®**](../../shuangyun/concepts/AGENTS知識體系.md) | **主筆**（從 SOSTAC 衍生） | 2025-2026 双云 AI 轉型 | 双云行銷持有（Jacky 公司） |
+
+> 完整血緣關係圖見 [三大方法論體系](三大方法論體系.md)。
+
+---
+
 ## 為什麼需要方法論
 
 > 來源：鄭沂珊作者序

@@ -67,16 +67,18 @@ updated: 2026-04-29
 
 ---
 
-## 三大方法論一覽
+## 三大方法論一覽（Jacky 主導的方法論作品）
 
-| 方法論 | 教什麼 | 在 TBSA 中 | 在 [shuangyun](../shuangyun/双云索引.md) 中 |
-|:---:|---|---|---|
-| **SOSTAC** | 行銷企劃（會想 + 會做） | 教材主軸、認證考試核心 | 客戶服務的執行框架 |
-| **SPEAKS** | 口說表達（會說 + 會教） | **被授權使用**（Jacky 任期內無償，由商標權人 Zoe 公司持有） | 提案能力 |
-| **AGENTS** | AI Agent（會建） | 新增模組（双云首創） | [完整六字訣方法論](../shuangyun/concepts/AGENTS知識體系.md) |
+| 方法論 | 角色 | Jacky 的角色 | 商標／著作權 | TBSA 使用 |
+|:---:|---|---|---|---|
+| **SOSTAC** | 源頭（會想 + 會做） | **整合者**（14 年深耕） | 國際第三方持有 | 教材主軸、認證考試核心 |
+| **SPEAKS** | 從 SOSTAC 產出（會說 + 會教） | **主筆**（接任理事長後升級） | **Zoe 公司持有** | **無償授權**（Jacky 任期內） |
+| **AGENTS** | 從 SOSTAC 衍生（會建） | **主筆**（双云 AI 轉型創立） | **双云行銷持有**（Jacky 創辦的公司） | **無償授權**（Jacky 任期內） |
 
-> **整合圖**：[三大方法論體系](concepts/三大方法論體系.md) 詳細展開三者交集。
-> **SPEAKS 詳細**：[SPEAKS 方法論總覽](concepts/SPEAKS方法論總覽.md) — 雙軌品牌（商務軌 + 兒少教育軌）、六步驟、IP 治理。
+> **核心血緣**：SOSTAC 是源頭；SPEAKS 與 AGENTS 都是 Jacky 從 SOSTAC 產出的方法論延伸。
+> **完整血緣關係圖**：[三大方法論體系](concepts/三大方法論體系.md)
+> **SPEAKS 詳細**：[SPEAKS 方法論總覽](concepts/SPEAKS方法論總覽.md) — 主軌（商務） + 場景延伸（兒少教育）+ IP 治理
+> **AGENTS 詳細**：[shuangyun/AGENTS 知識體系](../shuangyun/concepts/AGENTS知識體系.md) — 六字訣 / 三級認證 / 三場景部署
 
 ---
 

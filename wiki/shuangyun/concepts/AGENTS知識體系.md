@@ -6,8 +6,10 @@ updated: 2026-04-29
 
 # AGENTS® 方法論 — 知識體系全書
 
-> **版本**：v1.0（2026-04-06）｜**作者**：鐘基啟（Jacky）× Claude 共創
+> **版本**：v1.0（2026-04-06）｜**主筆**：鐘基啟（Jacky）｜AI 協作工具：Claude
 > **定位**：双云行銷 AI 轉型的標準知識體系，可複製於公司內部、企業客戶、外部授課
+> **創立背景**：AGENTS® 由 Jacky 從 [SOSTAC® 模型](../../tbsa/concepts/SOSTAC方法論.md) **產出**，作為 AI Agent 領域的方法論延伸
+> **商標／著作權**：双云行銷（Jacky 創辦的公司）持有；Jacky 任 [TBSA](../../tbsa/TBSA索引.md) 理事長期間，**無償授權 TBSA 使用**
 > 來源：`11_AGENTS_知識體系/01_AGENTS方法論_知識體系全書.md`
 
 > 本頁是 **AGENTS®** 作為方法論框架的正式定義（六字訣／三級認證／三場景部署）。
@@ -24,6 +26,20 @@ updated: 2026-04-29
 第三，**零散的知識需要體系化**。四週實戰累積的方法論碎片（流程拆解表、九區塊設定檔、三色殘酷測試、三種協作模式、Skill 瘦身術）需要一個統一框架把它們串起來。
 
 > AGENTS® 是一個自指式縮寫（self-referential acronym）：用 AGENTS 六個字母，定義建構 AI Agent 系統的六個階段。
+
+### Jacky 的方法論作品脈絡
+
+```
+SOSTAC®（國際引進，Jacky 學習與整合 14 年）
+   │
+   ├──→ SPEAKS®（Jacky 從 SOSTAC 產出，口說領域）
+   │     IP：Zoe 公司持有；TBSA 無償授權使用
+   │
+   └──→ AGENTS®（Jacky 從 SOSTAC 產出，AI Agent 領域）  ← 本頁
+         IP：双云行銷持有；TBSA 無償授權使用
+```
+
+> AGENTS® 與 [SPEAKS®](../../tbsa/concepts/SPEAKS方法論總覽.md) 都是 Jacky 從 SOSTAC 模型「產出」的方法論——前者解決「會建（AI Agent）」，後者解決「會說會教（口說表達）」。
 
 ---
 
