@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jacky Wiki 3D 知識關聯圖</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1020;
+      --panel: rgba(12, 18, 34, 0.82);
+      --line: rgba(255, 255, 255, 0.18);
+      --text: #edf2ff;
+      --muted: #9aa8c7;
+      --accent: #58d5c9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(88, 213, 201, 0.18), transparent 32%),
+        radial-gradient(circle at 82% 76%, rgba(246, 192, 80, 0.12), transparent 30%),
+        linear-gradient(135deg, #0b1020 0%, #131a2e 48%, #080b13 100%);
+      color: var(--text);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      cursor: grab;
+    }
+
+    canvas:active { cursor: grabbing; }
+
+    .hud {
+      position: fixed;
+      inset: 20px auto auto 20px;
+      width: min(380px, calc(100vw - 40px));
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    button {
+      min-height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    button:hover,
+    button.active {
+      border-color: rgba(88, 213, 201, 0.7);
+      background: rgba(88, 213, 201, 0.16);
+    }
+
+    .legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 12px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+      box-shadow: 0 0 18px currentColor;
+    }
+
+    .details {
+      position: fixed;
+      inset: auto 20px 20px auto;
+      width: min(420px, calc(100vw - 40px));
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.38);
+    }
+
+    .details h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .details p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 4px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: var(--accent);
+      font-size: 12px;
+    }
+
+    .hint {
+      position: fixed;
+      inset: auto auto 20px 20px;
+      color: rgba(237, 242, 255, 0.58);
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .hud {
+        inset: 12px 12px auto 12px;
+        width: auto;
+        padding: 14px;
+      }
+
+      h1 { font-size: 18px; }
+      .lede { display: none; }
+
+      .details {
+        inset: auto 12px 12px 12px;
+        width: auto;
+      }
+
+      .hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="scene" aria-label="Jacky Wiki 3D 知識關聯圖"></canvas>
+
+  <section class="hud">
+    <h1>Jacky Wiki 3D 知識關聯圖</h1>
+    <p class="lede">以 3D 節點呈現 Jacky Wiki 的知識域、核心頁面、方法論與跨域關聯。拖曳旋轉，滾輪縮放，點擊節點查看脈絡。</p>
+    <div class="controls">
+      <button data-focus="all" class="active">全域</button>
+      <button data-focus="shuangyun">双云</button>
+      <button data-focus="jwood">木藝</button>
+      <button data-focus="jlife">人生</button>
+      <button data-focus="tbsa">TBSA</button>
+      <button data-focus="nchu">博士</button>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="color:#58d5c9;background:#58d5c9"></i>優先事業域</span>
+      <span><i class="dot" style="color:#f6c050;background:#f6c050"></i>方法論</span>
+      <span><i class="dot" style="color:#a985ff;background:#a985ff"></i>人生前傳</span>
+      <span><i class="dot" style="color:#7aa7ff;background:#7aa7ff"></i>學術教育</span>
+      <span><i class="dot" style="color:#ff8f9a;background:#ff8f9a"></i>案例流程</span>
+      <span><i class="dot" style="color:#d6dde8;background:#d6dde8"></i>索引/共用</span>
+    </div>
+  </section>
+
+  <aside class="details" id="details">
+    <span class="tag">核心框架：SOSTAC + AI First</span>
+    <h2>從 Jacky 的人生脈絡，看見現在的事業與學術系統</h2>
+    <p>這張圖把 jlife 放在後方作為「前傳層」，shuangyun / jwood / tbsa / nchu 放在現況層，cross-domain 與方法論作為共用骨架。</p>
+  </aside>
+
+  <div class="hint">拖曳：旋轉　滾輪：縮放　點擊：查看節點　空白鍵：暫停/播放</div>
+
+  <script>
+    const COLORS = {
+      core: "#ffffff",
+      business: "#58d5c9",
+      method: "#f6c050",
+      life: "#a985ff",
+      edu: "#7aa7ff",
+      case: "#ff8f9a",
+      common: "#d6dde8"
+    };
+
+    const nodes = [
+      node("core", "Jacky Wiki", "core", 0, 0, 0, 18, "總知識庫", "SOSTAC + AI First 是整個 wiki 的骨架，所有域都圍繞 Jacky 的事業、學術、作品與人生脈絡展開。"),
+      node("shuangyun", "双云行銷", "business", -190, -40, 80, 14, "優先事業域", "客戶服務事業主軸，包含 AGENTS、AI 行銷部、課程、Skill、案例與 SOP。"),
+      node("jwood", "Jwood 基的木藝", "business", 180, -50, 70, 13, "優先事業域", "Jacky 自有品牌，聚焦木作產品、內容策略、AI 圖片工作流、IG 與 YouTube SOP。"),
+      node("jlife", "人生回憶錄", "life", 0, 130, -150, 13, "前傳層", "記錄從 0 開始的成長脈絡，只放結構、章節主題、時間段與跨域連結，不放家人隱私或全文。"),
+      node("tbsa", "TBSA 商務企劃", "edu", -80, -155, -35, 12, "教育方法論", "社會職務與教學體系，承載 SOSTAC、SPEAKS、AGENTS 三大方法論的教學化整理。"),
+      node("nchu", "中興博士研究", "edu", 105, -155, -55, 12, "學術根基", "AI 重組學術根基與學術 Skill 體系，連回双云的 AI 體系與 Jacky 的博士脈絡。"),
+      node("cross", "跨域素材", "common", 0, -80, 160, 11, "共用框架", "跨域共用素材，例如賣點命名理論，避免同一方法論在多個域重複存放。"),
+
+      node("agents", "AGENTS 知識體系", "method", -260, -95, 10, 9, "方法論核心", "双云方法論核心頁，完整定義 6 維度拆解表，其他頁面應連回此處。"),
+      node("aiMarketing", "AI 行銷部", "method", -290, 12, 105, 8, "營運模型", "定義 AI 行銷部如何支援客戶服務、課程與 Skill 體系。"),
+      node("courses", "Week 1-5 課程", "case", -165, 65, 130, 8, "課程群", "双云課程設計，從拆、建、修、串、通形成教學路徑。"),
+      node("skills", "双云 22 Skills", "case", -315, 95, 15, 8, "能力模組", "客戶導入、評分 Agent、進度追蹤、自動化流程等可複用 Skill。"),
+      node("cases", "客戶案例", "case", -230, -5, -95, 8, "案例庫", "將客戶服務經驗沉澱成案例，支援未來提案與 SOP。"),
+      node("sop", "標準流程", "case", -115, 28, -30, 8, "SOP", "把可重複服務流程收斂成執行規範。"),
+
+      node("woodBrand", "木作品牌總覽", "method", 240, -105, 18, 8, "品牌策略", "整理 Jwood 的品牌定位、產品線與經營邏輯。"),
+      node("woodAgent", "Agent 團隊", "method", 318, -10, 65, 8, "AI 團隊", "木作品牌裡的 AI Agent 分工。"),
+      node("woodContent", "內容策略", "case", 240, 52, 120, 8, "內容系統", "Jwood 的內容主題、節奏與社群經營策略。"),
+      node("woodIG", "IG 每日貼文 SOP", "case", 305, 98, -15, 7, "日常行動", "把木作內容轉為日更社群產出。"),
+      node("woodYT", "YouTube 影片 SOP", "case", 175, 115, -20, 7, "影音行動", "將木作作品與故事整理成影片製作流程。"),
+      node("woodAI", "AI 圖片工作流", "case", 115, 20, 130, 7, "生成流程", "用 AI 輔助木作視覺生成與內容素材整理。"),
+
+      node("lifeWork", "作品線 2015-2026", "life", 65, 215, -85, 8, "人生階段", "連到 Jwood 與 TBSA，說明作品如何形成現在的品牌與教學體系。"),
+      node("lifeField", "自己搭場 2014-2020", "life", -95, 218, -80, 8, "人生階段", "連到双云，說明從自建舞台到客戶服務事業的形成。"),
+      node("lifeAI", "AI 與博士 2023-2026", "life", -15, 238, -215, 8, "人生階段", "連到双云 AGENTS 與中興博士研究，是 AI x 學術整合的前傳。"),
+      node("lifeBook", "書的結構", "life", 135, 150, -245, 7, "章節骨架", "人生回憶錄只保留結構層次，用來支援跨域敘事，不放全文。"),
+      node("lifeMap", "跨域對應", "life", -130, 145, -245, 7, "關聯表", "整理人生前傳與現況域之間的雙向關聯。"),
+
+      node("sostac", "SOSTAC", "method", -52, -235, 78, 8, "企劃框架", "情況、目標、策略、戰術、行動、管控，是事業域與 TBSA 教學的共同結構。"),
+      node("speaks", "SPEAKS", "method", -140, -232, -105, 8, "企劃教學", "TBSA 的企劃教學方法論，與 SOSTAC、AGENTS 組成三大方法論體系。"),
+      node("tbsaForms", "五大表單", "case", -20, -300, -105, 7, "教學模板", "把方法論轉成可填寫、可交付的一頁企劃與階段表單。"),
+      node("talentLoop", "人才循環", "method", -165, -150, 55, 7, "共生關係", "双云與 TBSA 之間的共生：教學培育人才，事業提供場域。"),
+
+      node("academicSkills", "學術 Skill 體系", "method", 165, -235, -115, 8, "研究能力", "中興博士域的 6 個學術 Skill。"),
+      node("aiAcademic", "AI 重組學術根基", "method", 210, -215, 32, 8, "研究方法", "AI 如何重組學術研究、知識管理與方法論沉澱。"),
+      node("aiBridge", "AI 體系互通", "method", 64, -105, 35, 7, "跨域橋接", "双云的 AI 實務與中興博士的學術研究互相補強。"),
+      node("naming", "賣點命名理論", "common", 52, -92, 235, 7, "跨域素材", "跨域共用的命名與賣點整理方法。"),
+      node("future", "一念清涼", "common", 285, 150, -160, 7, "待建域", "個人修行域，目前待建，可作為未來人生與事業節奏的調和層。")
+    ];
+
+    const links = [
+      link("core", "shuangyun", "核心域"), link("core", "jwood", "核心域"), link("core", "jlife", "前傳"),
+      link("core", "tbsa", "教育"), link("core", "nchu", "學術"), link("core", "cross", "共用"),
+      link("shuangyun", "agents", "方法論"), link("shuangyun", "aiMarketing", "營運"), link("shuangyun", "courses", "課程"),
+      link("shuangyun", "skills", "Skill"), link("shuangyun", "cases", "案例"), link("shuangyun", "sop", "SOP"),
+      link("jwood", "woodBrand", "品牌"), link("jwood", "woodAgent", "Agent"), link("jwood", "woodContent", "內容"),
+      link("jwood", "woodIG", "IG"), link("jwood", "woodYT", "YouTube"), link("jwood", "woodAI", "AI 生成"),
+      link("jlife", "lifeWork", "階段"), link("jlife", "lifeField", "階段"), link("jlife", "lifeAI", "階段"),
+      link("jlife", "lifeBook", "結構"), link("jlife", "lifeMap", "對應"),
+      link("tbsa", "sostac", "方法論"), link("tbsa", "speaks", "方法論"), link("tbsa", "tbsaForms", "模板"),
+      link("tbsa", "talentLoop", "人才"), link("nchu", "academicSkills", "Skill"), link("nchu", "aiAcademic", "AI 學術"),
+      link("cross", "naming", "素材"), link("core", "future", "待建"),
+      link("lifeWork", "jwood", "前傳↔現況", true), link("lifeWork", "tbsa", "前傳↔現況", true),
+      link("lifeField", "shuangyun", "前傳↔現況", true), link("lifeAI", "agents", "前傳↔現況", true),
+      link("lifeAI", "nchu", "前傳↔現況", true), link("shuangyun", "tbsa", "共生人才循環", true),
+      link("shuangyun", "nchu", "AI 體系互通", true), link("agents", "sostac", "方法論互補", true),
+      link("agents", "speaks", "三大方法論", true), link("aiBridge", "shuangyun", "橋接"), link("aiBridge", "nchu", "橋接"),
+      link("naming", "shuangyun", "共用"), link("naming", "jwood", "共用"), link("naming", "tbsa", "共用")
+    ];
+
+    function node(id, label, type, x, y, z, size, tag, desc) {
+      return { id, label, type, x, y, z, ox: x, oy: y, oz: z, vx: 0, vy: 0, vz: 0, size, tag, desc };
+    }
+
+    function link(source, target, label, strong = false) {
+      return { source, target, label, strong };
+    }
+
+    const nodeById = new Map(nodes.map(n => [n.id, n]));
+    const canvas = document.getElementById("scene");
+    const ctx = canvas.getContext("2d");
+    const details = document.getElementById("details");
+    const buttons = [...document.querySelectorAll("button[data-focus]")];
+
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let rx = -0.34;
+    let ry = 0.48;
+    let scale = 1.05;
+    let dragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    let hovered = null;
+    let selected = null;
+    let paused = false;
+    let focus = "all";
+    let tick = 0;
+
+    function resize() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function rotatePoint(p) {
+      const cx = Math.cos(rx), sx = Math.sin(rx);
+      const cy = Math.cos(ry), sy = Math.sin(ry);
+      let y = p.y * cx - p.z * sx;
+      let z = p.y * sx + p.z * cx;
+      let x = p.x * cy + z * sy;
+      z = -p.x * sy + z * cy;
+      const perspective = 820 / (820 + z);
+      return {
+        x: width / 2 + x * perspective * scale,
+        y: height / 2 + y * perspective * scale,
+        z,
+        p: perspective
+      };
+    }
+
+    function updatePhysics() {
+      const domain = nodeById.get(focus);
+      for (const n of nodes) {
+        const anchorPull = focus === "all" ? 0.015 : (n === domain ? 0.03 : 0.01);
+        let tx = n.ox;
+        let ty = n.oy;
+        let tz = n.oz;
+
+        if (focus !== "all" && domain) {
+          const linked = links.some(l =>
+            (l.source === focus && l.target === n.id) ||
+            (l.target === focus && l.source === n.id) ||
+            n.id === focus
+          );
+          tx = linked ? n.ox * 0.82 : n.ox * 1.28;
+          ty = linked ? n.oy * 0.82 : n.oy * 1.28;
+          tz = linked ? n.oz * 0.82 : n.oz * 1.28;
+        }
+
+        n.vx += (tx - n.x) * anchorPull;
+        n.vy += (ty - n.y) * anchorPull;
+        n.vz += (tz - n.z) * anchorPull;
+      }
+
+      for (const l of links) {
+        const a = nodeById.get(l.source);
+        const b = nodeById.get(l.target);
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const dz = b.z - a.z;
+        const dist = Math.hypot(dx, dy, dz) || 1;
+        const target = l.strong ? 172 : 126;
+        const force = (dist - target) * (l.strong ? 0.0026 : 0.0015);
+        const fx = dx / dist * force;
+        const fy = dy / dist * force;
+        const fz = dz / dist * force;
+        a.vx += fx; a.vy += fy; a.vz += fz;
+        b.vx -= fx; b.vy -= fy; b.vz -= fz;
+      }
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = b.x - a.x;
+          const dy = b.y - a.y;
+          const dz = b.z - a.z;
+          const dist = Math.hypot(dx, dy, dz) || 1;
+          if (dist < 82) {
+            const force = (82 - dist) * 0.0025;
+            const fx = dx / dist * force;
+            const fy = dy / dist * force;
+            const fz = dz / dist * force;
+            a.vx -= fx; a.vy -= fy; a.vz -= fz;
+            b.vx += fx; b.vy += fy; b.vz += fz;
+          }
+        }
+      }
+
+      for (const n of nodes) {
+        n.vx *= 0.88; n.vy *= 0.88; n.vz *= 0.88;
+        n.x += n.vx; n.y += n.vy; n.z += n.vz;
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      tick += paused ? 0 : 0.01;
+      if (!paused && !dragging) ry += 0.0012;
+      if (!paused) updatePhysics();
+
+      const projected = new Map();
+      for (const n of nodes) {
+        const float = Math.sin(tick + n.ox * 0.01) * 3.2;
+        projected.set(n.id, rotatePoint({ x: n.x, y: n.y + float, z: n.z }));
+      }
+
+      ctx.save();
+      ctx.globalCompositeOperation = "lighter";
+      for (const l of links) {
+        const a = projected.get(l.source);
+        const b = projected.get(l.target);
+        const alpha = l.strong ? 0.62 : 0.26;
+        const gradient = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+        gradient.addColorStop(0, rgba(colorOf(nodeById.get(l.source)), alpha));
+        gradient.addColorStop(1, rgba(colorOf(nodeById.get(l.target)), alpha));
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = l.strong ? 2.2 : 1.1;
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        const midX = (a.x + b.x) / 2 + (b.y - a.y) * 0.035;
+        const midY = (a.y + b.y) / 2 - (b.x - a.x) * 0.035;
+        ctx.quadraticCurveTo(midX, midY, b.x, b.y);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      const sorted = [...nodes].sort((a, b) => projected.get(a.id).z - projected.get(b.id).z);
+      for (const n of sorted) {
+        const p = projected.get(n.id);
+        const active = n === hovered || n === selected || focus === n.id;
+        const muted = focus !== "all" && !isFocusRelated(n.id);
+        const r = Math.max(4, n.size * p.p * scale * (active ? 1.32 : 1));
+        const color = colorOf(n);
+
+        ctx.save();
+        ctx.globalAlpha = muted ? 0.34 : 1;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = active ? 34 : 18;
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.shadowBlur = 0;
+        ctx.lineWidth = active ? 2 : 1;
+        ctx.strokeStyle = "rgba(255,255,255,0.78)";
+        ctx.stroke();
+
+        if (r > 6 || active) {
+          ctx.font = `${active ? 15 : 12}px "Microsoft JhengHei", sans-serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "top";
+          ctx.fillStyle = active ? "#ffffff" : "rgba(237,242,255,0.82)";
+          ctx.shadowColor = "rgba(0,0,0,0.85)";
+          ctx.shadowBlur = 8;
+          wrapLabel(n.label, p.x, p.y + r + 7, active ? 112 : 88, active ? 18 : 15);
+        }
+        ctx.restore();
+
+        n.screen = { x: p.x, y: p.y, r };
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    function wrapLabel(text, x, y, maxWidth, lineHeight) {
+      const chars = [...text];
+      let line = "";
+      let lines = [];
+      for (const ch of chars) {
+        const test = line + ch;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = ch;
+        } else {
+          line = test;
+        }
+      }
+      lines.push(line);
+      for (let i = 0; i < Math.min(lines.length, 2); i++) {
+        ctx.fillText(lines[i], x, y + i * lineHeight);
+      }
+    }
+
+    function colorOf(n) {
+      return COLORS[n.type] || COLORS.common;
+    }
+
+    function rgba(hex, alpha) {
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
+      return `rgba(${r},${g},${b},${alpha})`;
+    }
+
+    function isFocusRelated(id) {
+      return focus === "all" || id === focus || links.some(l =>
+        (l.source === focus && l.target === id) ||
+        (l.target === focus && l.source === id)
+      );
+    }
+
+    function nearestNode(x, y) {
+      let best = null;
+      let bestD = Infinity;
+      for (const n of nodes) {
+        if (!n.screen) continue;
+        const d = Math.hypot(x - n.screen.x, y - n.screen.y);
+        if (d < Math.max(16, n.screen.r + 8) && d < bestD) {
+          best = n;
+          bestD = d;
+        }
+      }
+      return best;
+    }
+
+    function showDetails(n) {
+      selected = n;
+      details.innerHTML = `
+        <span class="tag">${n.tag}</span>
+        <h2>${n.label}</h2>
+        <p>${n.desc}</p>
+      `;
+    }
+
+    canvas.addEventListener("pointerdown", e => {
+      dragging = true;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      canvas.setPointerCapture(e.pointerId);
+    });
+
+    canvas.addEventListener("pointermove", e => {
+      const n = nearestNode(e.clientX, e.clientY);
+      hovered = n;
+      canvas.style.cursor = dragging ? "grabbing" : (n ? "pointer" : "grab");
+      if (!dragging) return;
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      ry += dx * 0.006;
+      rx += dy * 0.006;
+      rx = Math.max(-1.35, Math.min(1.35, rx));
+      lastX = e.clientX;
+      lastY = e.clientY;
+    });
+
+    canvas.addEventListener("pointerup", e => {
+      dragging = false;
+      const n = nearestNode(e.clientX, e.clientY);
+      if (n) showDetails(n);
+    });
+
+    canvas.addEventListener("wheel", e => {
+      e.preventDefault();
+      scale *= e.deltaY > 0 ? 0.92 : 1.08;
+      scale = Math.max(0.55, Math.min(2.4, scale));
+    }, { passive: false });
+
+    window.addEventListener("keydown", e => {
+      if (e.code === "Space") {
+        paused = !paused;
+        e.preventDefault();
+      }
+    });
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        focus = button.dataset.focus;
+        buttons.forEach(b => b.classList.toggle("active", b === button));
+        const n = nodeById.get(focus);
+        if (n) showDetails(n);
+      });
+    });
+
+    window.addEventListener("resize", resize);
+    resize();
+    draw();
+  </script>
+</body>
+</html>
