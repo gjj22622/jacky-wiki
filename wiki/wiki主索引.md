@@ -8,7 +8,7 @@ updated: 2026-04-29
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：69（不含本頁）
+**目前頁面數**：77（不含本頁）
 
 ## 知識域導航（5 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -18,8 +18,8 @@ updated: 2026-04-29
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
-| nchu | 中興大學博士研究——學術 Skill 體系、AI 重組學術根基 | 3 | [進入](nchu/中興博士索引.md) |
-| cross-domain | 跨域素材——共用模板、框架、可複用 | 2 | [進入](cross-domain/跨域索引.md) |
+| nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場 | 6 | [進入](nchu/中興博士索引.md) |
+| cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名 | 5 | [進入](cross-domain/跨域索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -123,11 +123,15 @@ tbsa/  (14 頁)
 ## nchu 域結構
 
 ```
-nchu/  (3 頁)
-├── 中興博士索引.md            # 域首頁（入學時間軸、學術 Skill 概要）
-└── concepts/  (2 頁)
-    ├── 學術Skill體系.md       # 6 個學術 Skill 一覽
-    └── AI重組學術根基.md      # 博士班 × AI 工作的雙線敘事
+nchu/  (6 頁)
+├── 中興博士索引.md            # 域首頁（博二、共指朱彥煒、研究方向、跨域貢獻）
+├── concepts/  (4 頁)
+│   ├── 學術Skill體系.md       # 6 規劃 + 1 已實作（seminar-helper）
+│   ├── AI重組學術根基.md      # 博士班 × AI 工作的雙線敘事
+│   ├── 9階段專討工作流.md     # seminar-helper 萃取，AGENTS 學術版
+│   └── 零幻覺與文獻查證SOP.md # 73% 幻覺事故與雙軌品管
+└── cases/  (1 頁)
+    └── 第三次專討.md          # 森林數位孿生（2026-05-13 上場）
 ```
 
 ---
@@ -136,6 +140,10 @@ nchu/  (3 頁)
 
 - [跨域索引](cross-domain/跨域索引.md)
 - [賣點命名理論](cross-domain/賣點命名理論.md)
+- [入口導覽頁 SOP](cross-domain/入口導覽頁SOP.md)
+- [來源控制與 script_viewer 模式](cross-domain/來源控制與script_viewer模式.md)
+- [Commander+Executor 單人多 Agent 模式](cross-domain/Commander+Executor單人多Agent模式.md)
+- 視覺化實驗 → `cross-domain/visualizations/`（3D 知識圖等）
 
 ---
 
