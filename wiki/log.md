@@ -279,13 +279,62 @@ NCHU 場景貢獻 6 個 v1.0 沒涵蓋的維度（已記錄在新增頁面中，
 5. **零幻覺 + 單一資料來源** → E 階段紀律章節（[零幻覺與文獻查證 SOP](nchu/concepts/零幻覺與文獻查證SOP.md)）
 6. **Brain 層代理人模型**（模擬指導教授）→ N 階段「代理人型 Agent」獨立分類（[學術 Skill 體系](nchu/concepts/學術Skill體系.md)）
 
-### 今日成果統計（晚批合計）
+### 第三批｜AGENTS v1.1 草案產出 + **方法論修正：草案不入 wiki**
 
-| 項目 | 第一批 | 第二批 | 合計 |
-|---|:---:|:---:|:---:|
-| 新增頁面 | 3（cross-domain）| 3（nchu）| **6** |
-| 修訂頁面 | 4 | 2 | 6 |
-| 總頁數 | 69 → 74 | 74 → 77 | **+8** |
+接續第二批 NCHU 升版後，把三實踐場（双云団隊 / Jwood 多模態 / NCHU 單人深度）反推的 12 個新元素整合進 AGENTS 方法論本身。
+
+#### 📌 重要方法論教訓（這次學到）
+
+最初將 `AGENTS知識體系_v1.1草案.md` 直接寫入 `wiki/shuangyun/concepts/`。Jacky 即時更正：
+
+> **wiki 是已確認知識的整理；草案／進行中／未拍板的版本應在 OneDrive 等待，等穩定後才 ingest 進 wiki。**
+
+**修正動作**：
+- v1.1 草案檔案移至 OneDrive：`双云AI轉型教育訓練/11_AGENTS_知識體系/04_AGENTS方法論_v1.1草案.md`
+- 撤回 wiki 中 `双云索引.md` 與 `wiki主索引.md` 對草案的引用（草案不算 wiki 頁面）
+- 此原則寫入 memory `feedback-wiki-stable-only.md`，避免再犯
+
+#### v1.1 草案內容（在 OneDrive，568 行）
+
+**v1.0 → v1.1 12 個新元素整合位置**：
+
+| # | 新元素 | 來源 | 整合位置 |
+|---|---|---|---|
+| 1 | 訪談式拆解（人物 → Brain Skill）| NCHU + 双云 | A 階段補章節 |
+| 2 | 多模態 Agent 設計（圖／音／影 + 設定檔即劇本）| Jwood | G 階段補章節 |
+| 3 | 單一資料來源紀律 | NCHU 73% 幻覺 | G 階段補章節 |
+| 4 | 產出固化原則 | NCHU 導讀 PPTX | G 階段補章節 |
+| 5 | 雙軌品管（事前可追溯性 + 事後殘酷測試）| NCHU 73% 幻覺 | **E 階段重大改動** |
+| 6 | 第 4 協作模式：Brain 共享 + Series 並行 | Jwood Series A/B/C/D | N 階段第 4 模式 |
+| 7 | AI 行銷部四角色組織模型 | 双云 Week 5 v2 | N 階段升格章節 |
+| 8 | 入口導覽頁範式 | 6 實例 | N 階段補章節 |
+| 9 | Brain 層代理人模型 | NCHU + 双云 | N 階段補章節 |
+| 10 | Commander + Executor（單人 CLI）| NCHU 工作方法筆記 | N 階段補單人 CLI 版 |
+| 11 | 倒推時程編排（vs 排程）| NCHU 9 階段 | T 階段補章節 |
+| 12 | 金錢型 KPI（vs 數量型）| Jwood NT$10 萬/月 | T 階段補章節 |
+
+**結構變動**：
+- 三場景 → 四場景（補 Brand Agent 工廠交付）+ 潛在第五場景（學術研究者）
+- 新章節 §7 Skill 治理分層（Brain / OS / Apps / Templates / Customer 五層）
+- 第四個不變原則：「可追溯先於可生成」
+- 名詞速查補 11 個術語
+
+**草案 vs 正式版策略（修正後）**：
+- v1.0 完整保留在 wiki（避免破壞現有連結）
+- v1.1 草案在 **OneDrive** `11_AGENTS_知識體系/04_AGENTS方法論_v1.1草案.md`
+- review 通過後才覆寫 v1.0（屆時 ingest 進 wiki + 更新所有 backlinks）
+- wiki 內只在 `双云索引.md` concepts 段落加 🚧 註記指向 OneDrive 草案
+
+### 第一+二+三批 今日合計
+
+| 項目 | 數量 |
+|---|---|
+| Wiki 新增頁面 | 6（cross-domain 3 + nchu 3）|
+| Wiki 修訂頁面 | 6（含双云索引 🚧 註記、wiki主索引、log）|
+| Wiki 頁面數 | 69 → **77** |
+| OneDrive 新增 | 1 份 v1.1 草案（不算 wiki 頁）|
+| Commits | 第一+二批已 commit（68f25f1, de072d4）；第三批 wiki 修正待 commit |
+| Push | hook 阻擋，等 Jacky 處理 |
 
 ### 今日成果統計（晚批）
 
