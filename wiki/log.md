@@ -343,3 +343,68 @@ NCHU 場景貢獻 6 個 v1.0 沒涵蓋的維度（已記錄在新增頁面中，
 | 新增頁面 | 3 個（cross-domain）|
 | 修訂頁面 | 4 個（中興博士索引 / 學術 Skill 體系 / 跨域索引 / wiki主索引）|
 | 涉及 commit | 待提交 |
+
+## 2026-04-30｜2clouds-agents 專案啟動：双云 AI 行銷部訓練與營運平台
+
+### 背景
+
+Jacky 提出：因應新一批新人即將入職，原本「先教育訓練、再上手服務」的方式過時。新的導入邏輯應改為：
+
+> 平台本身就是新人訓練系統。新人透過操作平台，使用 Jacky 的腦、成員的腦、客戶品牌腦與品管回饋，在可控範圍內成為 60 分以上的數位行銷服務者。
+
+後續補充拍板：方法論仍然必要，但不應只放在課程裡，而是要散布到各個工作節點。當成員不知道如何決策或回應客戶時，Jacky 可以透過 wiki 知識圖譜與思考模型跳出來，引導成員做出最佳決策與反應。
+
+### 專案建立
+
+| 項目 | 內容 |
+|---|---|
+| 專案資料夾 | `/home/jacky/2clouds-agents` |
+| GitHub repo | `https://github.com/gjj22622/2clouds-agents` |
+| 初始 commit | `247bc8e docs: initialize 2clouds agents platform spec` |
+| repo visibility | Public |
+| 預設分支 | `main` |
+
+### 已整理文件
+
+| 檔案 | 用途 |
+|---|---|
+| `README.md` | 專案定位、核心公式、文件入口 |
+| `docs/platform-spec.md` | 平台總規格：新人 cockpit、營運模式、角色、路由 |
+| `docs/onboarding-training-system.md` | 新人導入訓練系統與 60 分數位行銷服務者標準 |
+| `docs/jacky-decision-layer.md` | Jacky 知識圖譜、決策層、方法論節點與 Decision Panel |
+| `docs/modules.md` | 功能模組：腦袋資料庫、品牌工作台、內容工廠、品管、Skill OS 等 |
+| `docs/mvp-roadmap.md` | Phase 1-4 MVP 路線圖 |
+| `docs/source-context.md` | 本 Spec 依據的 jacky-wiki 双云來源頁 |
+
+### 產品定位決策
+
+本專案不是一般 CRM，也不是單純 LMS，而是三合一：
+
+1. 新人導入訓練系統
+2. 双云營運管理平台
+3. AI 行銷服務交付系統
+
+核心公式：
+
+```text
+新人能力
++ Jacky 知識圖譜
++ 成員腦
++ 品牌腦
++ 方法論節點
++ 品管回饋
+= 可交付的 60 分數位行銷服務者
+```
+
+### 方法論嵌入原則
+
+- 方法論不能被拿掉；要從「課程內容」變成「平台判斷引擎」。
+- Jacky 知識體系要散布在客戶導入、品牌工作台、內容工廠、品管中心、新人訓練場、Skill OS 等節點。
+- 成員卡住時可呼叫 `問 Jacky` / `用 Jacky 模型判斷`。
+- Jacky Decision Layer 回應時不只給答案，而要提供：問題重述、對應知識節點、思考模型、建議決策、可直接使用的回應草稿。
+- 新人的訓練重點不是背知識，而是會查腦、會用腦、會被品管修正、會升級問題。
+
+### Wiki 更新判斷
+
+- 本次建立的是外部產品專案 repo，未新增 wiki 知識頁，因此不更新 `wiki/wiki主索引.md` 頁面數。
+- 本次屬於双云域方法論與產品化延伸，先記錄在 `wiki/log.md`；後續若專案規格穩定，可再整理成 `shuangyun/concepts/` 或 `cross-domain/` 的正式頁。
