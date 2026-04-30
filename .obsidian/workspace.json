@@ -11,10 +11,14 @@
             "id": "ebf4bff78fd37d77",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "關聯圖檢視"
+              "type": "markdown",
+              "state": {
+                "file": "wiki/wiki主索引.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "wiki主索引"
             }
           }
         ]
@@ -178,6 +182,14 @@
   },
   "active": "ebf4bff78fd37d77",
   "lastOpenFiles": [
+    "wiki/wiki主索引.md.tmp.35648.1777520708531",
+    "wiki/wiki主索引.md.tmp.35648.1777520704480",
+    "wiki/團隊分享簡報.md",
+    "wiki/團隊分享.md",
+    "wiki/團隊分享.md.tmp.35648.1777520666871",
+    "wiki/log.md.tmp.35648.1777520596012",
+    "wiki/shuangyun/concepts/AGENTS方法論落地.md",
+    "wiki/tbsa/TBSA索引.md",
     "wiki/tbsa/templates/表單5_一頁企劃書.md",
     "wiki/tbsa/templates/表單4_行銷戰術及溝通活動設計.md",
     "wiki/tbsa/templates/表單4_行銷戰術及溝通活動設計.md.tmp.35648.1777518585060",
@@ -198,21 +210,13 @@
     "wiki/jwood/ai-workflow.md",
     "CLAUDE.md.tmp.35648.1777472520781",
     "wiki/jlife/stages/AI與博士_2023-2026.md.tmp.35648.1777472438365",
-    "wiki/jlife/concepts/跨域對應.md.tmp.35648.1777472427389",
-    "wiki/jlife/stages/作品線_2015-2026.md.tmp.35648.1777472401579",
     "wiki/nchu/concepts/AI重組學術根基.md",
     "wiki/nchu/concepts/學術Skill體系.md",
     "wiki/nchu/中興博士索引.md",
     "wiki/tbsa/concepts/与双云的人才循環.md",
     "wiki/tbsa/concepts/三大方法論體系.md",
-    "wiki/tbsa/TBSA索引.md",
-    "wiki/nchu/concepts",
     "wiki/jlife/concepts/跨域對應.md",
     "wiki/shuangyun/skills/index.md",
-    "wiki/shuangyun/index.md",
-    "wiki/jwood/index.md",
-    "wiki/jlife/index.md",
-    "wiki/index.md",
-    "wiki/cross-domain/index.md"
+    "wiki/shuangyun/index.md"
   ]
 }

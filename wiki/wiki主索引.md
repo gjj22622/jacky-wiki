@@ -8,7 +8,7 @@ updated: 2026-04-29
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：67（不含本頁）
+**目前頁面數**：69（不含本頁）
 
 ## 知識域導航（5 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -153,6 +153,11 @@ inbox/  →  整理分類  →  wiki/<domain>/  →  raw/（原始備存）
 | Categorize | 判斷屬於哪個域（concepts / courses / skills / cases / sop / stages） |
 | Cross-link | 建立**雙向連結**（CLAUDE.md §前傳↔現況雙向關聯）|
 | Log | 在 [log.md](log.md) 記錄關鍵決策 |
+
+## 對外分享
+
+→ [團隊分享.md](團隊分享.md)：給双云夥伴／TBSA 學員／合作對象的 wiki 介紹文件
+→ [團隊分享簡報.md](團隊分享簡報.md)：Marp 格式簡報（可 export PPTX/PDF）
 
 ## 操作日誌
 
