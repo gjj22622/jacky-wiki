@@ -1,12 +1,67 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-01
+updated: 2026-05-02
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-02
+
+**主題**：建立 jacky-omnimind Skill——全人統整層，位於 jackybraincommander 之上。
+
+### 決策
+
+新建 Cowork Skill `jacky-omnimind`（.skill 檔案存於 wiki 根目錄），定位為 Jacky AI 生態系的「靈魂層」：
+
+- **層級**：soul layer，高於 jackybraincommander（路由層）
+- **功能**：不只路由，而是能跨域合成洞察、回答「Jacky 是誰」、導覽 wiki 全域結構、處理跨三域以上的複雜問題
+- **觸發條件**：跨域整合視角、jlife 人生敘事、wiki 更新、問 Skill 生態系、問全人觀
+
+### 架構
+
+```
+SKILL.md（主體）
+└── references/
+    ├── knowledge-graph.md   ← 完整域拓樸（92頁、7域、目錄結構、雙向關聯）
+    ├── jacky-identity.md    ← 六個身分階段、六句回望、隱私邊界
+    ├── domain-summaries.md  ← 各域摘要（在做什麼、核心邏輯、域間連結）
+    └── skill-ecosystem.md   ← 完整 Skill 生態系地圖（含路由仲裁規則）
+```
+
+### 判斷理由
+
+- jackybraincommander 只做路由，無法回答「Jacky 的全貌是什麼」這類跨域整合問題
+- wiki 有 92 頁跨 7 個域，需要一個「知道所有域、能合成洞察」的頂層 Skill
+- reference 分四個文件、按需讀取，避免每次全讀 92 頁的 token 浪費
+
+### 當前用法
+
+| 觸發情境 | 典型提示詞 |
+|---|---|
+| 問 Jacky 身分與人生觀 | 「Jacky 是誰」「六個身分階段」「幫我回顧全貌」 |
+| 跨域整合問答 | 「双云跟 TBSA 有什麼關係」「ailab 怎麼跟 jwood 連」 |
+| Wiki 導覽與更新 | 「wiki 裡有什麼」「這個要放哪個域」「幫我更新 wiki」 |
+| Skill 生態系查詢 | 「有哪些 Skill」「某個 Skill 做什麼」「路由邏輯是什麼」 |
+| 全局性決策 | 「我下一步應該怎麼做」（涉及多個身分） |
+
+### 與 jackybraincommander 的邊界
+
+| | jacky-omnimind | jackybraincommander |
+|---|---|---|
+| 定位 | 靈魂層（理解整體） | 路由層（分派任務） |
+| 知識 | 完整 wiki 知識圖譜 | 路由表 + 業務域背景 |
+| 能做 | 跨域洞察、身分整合、wiki 更新 | 模糊需求釐清、單一路由 |
+| 路由 | 任務明確時直接到 Skill | 任務模糊時到自己再分派 |
+
+### 同步
+
+- `jacky-omnimind.skill` 已建立於 wiki 根目錄（17K）
+- ailab/log 同步新增里程碑：`2026-05-02_jacky-omnimind.md`
 
 ---
 
