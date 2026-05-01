@@ -1,20 +1,20 @@
 ---
 title: Jacky Wiki 總覽
 domain: root
-updated: 2026-04-29
+updated: 2026-05-01
 ---
 
 # Jacky Wiki
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：77（不含本頁）
+**目前頁面數**：78（不含本頁）
 
 ## 知識域導航（5 個內容域 + 1 個跨域 + 1 個待建）
 
 | 域 | 說明 | 頁面數 | 連結 |
 |---|---|:---:|---|
-| ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 28 | [進入](shuangyun/双云索引.md) |
+| ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 29 | [進入](shuangyun/双云索引.md) |
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
@@ -45,13 +45,14 @@ updated: 2026-04-29
 ## ⭐ shuangyun 域結構（最大域）
 
 ```
-shuangyun/  (28 頁)
+shuangyun/  (29 頁)
 ├── 双云索引.md                # 域首頁（含起源前傳、TBSA 共生關係）
-├── concepts/  (5 頁)
+├── concepts/  (6 頁)
 │   ├── AGENTS知識體系.md      # 六字訣 / 三級認證 / 三場景部署
 │   ├── AGENTS認證手冊.md      # L1/L2/L3 評分表
 │   ├── AGENTS方法論落地.md    # 双云專案落地狀態
 │   ├── AI行銷部定義.md        # 4 Agent 委員會 / 老闆 1-4 / AI 5-8
+│   ├── 多品牌獨立應用架構.md   # Command Center + isolated Brand Apps
 │   └── AI備課流程.md          # 7 階段人機協作
 ├── courses/   (6 頁)
 │   └── 課程總覽.md, Week1拆.md, Week2建.md, Week3修.md, Week4串.md, Week5通.md

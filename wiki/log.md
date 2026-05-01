@@ -1,7 +1,7 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-04-29
+updated: 2026-05-01
 ---
 
 # Wiki 操作日誌
@@ -9,6 +9,30 @@ updated: 2026-04-29
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
 
 ---
+
+## 2026-05-01
+
+**主題**：双云 AI 行銷部平台架構決策——多品牌獨立應用 + 中控台。
+
+### 決策
+
+新增 `shuangyun/concepts/多品牌獨立應用架構.md`，記錄 Jacky 對 2clouds-agents 平台的上位架構要求：
+
+- 双云 AI 行銷部是 Command Center，不是把所有品牌資料塞在一起的大工作區。
+- 每個甲方品牌都應是可獨立運作的 Brand App。
+- 每個 Brand App 需要獨立品牌腦、任務、review、trace、營收訊號、品牌 skill / prompt context。
+- 每個成員需要自己的獨立工作環境與權限範圍。
+- 品牌間要維持機密隔離，但能透過双云中控進行協作、調度與品管。
+
+### 判斷理由
+
+這個決策延伸自 `AI行銷部定義.md` 的「每個客戶一套 4 Agent 委員會」；平台化後必須進一步明確 `brandId`、member scope、skill / prompt boundary，避免品牌資料互相污染。
+
+### 同步
+
+- 更新 `shuangyun/双云索引.md`，加入新概念頁。
+- 更新 `wiki主索引.md` 的 shuangyun 頁面數與 concepts 頁面數。
+- 專案 `2clouds-agents` 同步新增 `docs/multi-brand-app-architecture.md`，作為工程實作方向。
 
 ## 2026-04-29
 
