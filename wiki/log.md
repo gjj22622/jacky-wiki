@@ -657,3 +657,31 @@ ailab 域與既有規範一致：
 - `wiki/ailab/concepts/實踐捕手協定.md`（v1.0 → v1.1，加 Mode B 段、5 區塊定義、跨 AI Mode B prompt、範例 4）
 - `~/.claude/skills/ailab/SKILL.md`（加 `/ailab session` 子指令、Mode A vs Mode B 選擇表）
 - `wiki/ailab/inbox/2026-05-02-session-建ailab域與實踐捕手協定.md`（新增，首份 Mode B）
+
+---
+
+### 補批｜跨機與跨模型部署擴充
+
+**觸發**：Jacky 接著問「ailab 指令在 G2 mini Claude Code、Codex、Gemini 怎麼用？」——v1.1 只解決了協定多模式，但沒解決「Skill 多機部署」與「Codex / Gemini / Web AI 的具體部署方式」。
+
+**新增**：
+
+| 檔案 | 用途 |
+|---|---|
+| `wiki/ailab/skill/SKILL.md` | ⭐ **canonical 主版**——多機共用源頭，路徑用 `<jacky-wiki>` 變數不寫死 Windows |
+| `wiki/ailab/skill/INSTALL.md` | Windows / Ubuntu / WSL2 / macOS 各平台安裝步驟（symlink vs copy 兩種策略）|
+| `wiki/ailab/concepts/跨機與跨模型部署.md` | ⭐ **5 種環境完整部署矩陣**：Claude Code 多機 + Codex AGENTS.md + Gemini Gem instructions + Web AI prompt + 手機極簡 |
+
+**設計核心**：
+- **Skill 主版只有一處**：`wiki/ailab/skill/SKILL.md`（git 管理），各機 `~/.claude/skills/ailab/SKILL.md` 是 symlink/copy
+- **路徑跨平台**：SKILL.md 用 `<jacky-wiki>` 變數，由 Claude 觸發時依環境變數 `$JACKY_WIKI_HOME` 或 fallback 路徑解析
+- **Codex / Gemini / Web AI 的部署也版控**：放 `wiki/ailab/skill/` 內的 prompt 模板，多機共用
+
+**G2 mini Ubuntu 安裝指令**（已寫進 INSTALL.md）：
+```bash
+mkdir -p ~/.claude/skills/ailab
+ln -sf ~/jacky-wiki/wiki/ailab/skill/SKILL.md ~/.claude/skills/ailab/SKILL.md
+```
+
+**ailab 域頁數**：16 → 19（+ 跨機部署、SKILL 主版、INSTALL）。
+**Wiki 總頁數**：94 → 97。

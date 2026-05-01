@@ -8,7 +8,7 @@ updated: 2026-05-02
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：94（不含本頁）
+**目前頁面數**：97（不含本頁）
 
 ## 知識域導航（6 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -16,7 +16,7 @@ updated: 2026-05-02
 |---|---|:---:|---|
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 29 | [進入](shuangyun/双云索引.md) |
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
-| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）** | **16** | [進入](ailab/AI實踐索引.md) |
+| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）** | **19** | [進入](ailab/AI實踐索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場 | 6 | [進入](nchu/中興博士索引.md) |
@@ -141,17 +141,18 @@ nchu/  (6 頁)
     └── 第三次專討.md          # 森林數位孿生（2026-05-13 上場）
 ```
 
-## ⭐ ailab 域結構（2026-05-02 新建）
+## ⭐ ailab 域結構（2026-05-02 新建 + 跨機部署擴充）
 
 ```
-ailab/  (16 頁 + inbox/)
+ailab/  (19 頁 + inbox/)
 ├── AI實踐索引.md              # 域首頁（含跨域連結、輸入規則、工具棧速查）
-├── concepts/  (5 頁)
+├── concepts/  (6 頁)
 │   ├── 演化元方法.md          # 從實踐反推方法論
 │   ├── AI工具觀.md            # 為什麼選這套工具棧
 │   ├── 學習方法.md            # 學新模型／新工具的 SOP
 │   ├── 三層萃取漏斗.md        # inbox → experiments → patterns/tools
-│   └── 實踐捕手協定.md        # ⭐ 跨模型／跨對話的標準記錄格式
+│   ├── 實踐捕手協定.md        # ⭐ 跨模型／跨對話標準記錄格式（v1.1：Mode A + B）
+│   └── 跨機與跨模型部署.md    # ⭐ Claude Code 多機 + Codex + Gemini Gem + Web AI
 ├── tools/     (6 頁)
 │   ├── 工具棧索引.md
 │   ├── claude-code.md
@@ -167,11 +168,17 @@ ailab/  (16 頁 + inbox/)
 │   └── 2026-04_AGENTS_v1.0→v1.1.md
 ├── reading/   (1 頁)
 │   └── 閱讀索引.md
-└── inbox/                     # 未升格事件暫存（不算頁，由 /ailab capture 寫入）
-    └── README.md
+├── inbox/                     # 未升格事件暫存（不算頁，由 /ailab capture 寫入）
+│   ├── README.md
+│   └── 2026-05-02-session-建ailab域與實踐捕手協定.md  # 第一份 Mode B 範例
+└── skill/     (2 頁)          # ⭐ canonical SKILL 主版（多機共用）
+    ├── SKILL.md               # ailab Skill 跨平台主版
+    └── INSTALL.md             # Windows / Ubuntu / WSL2 / macOS 安裝
 ```
 
-**對應 Skill**：`~/.claude/skills/ailab/SKILL.md` — 觸發 `/ailab capture` / `/ailab promote` / `/ailab sync`
+**對應 Skill**：canonical 主版 `wiki/ailab/skill/SKILL.md`（git 管理）；
+各機執行版 `~/.claude/skills/ailab/SKILL.md`（symlink 或 copy）。
+觸發指令 `/ailab capture` / `/ailab session` / `/ailab promote` / `/ailab sync`。
 
 ---
 

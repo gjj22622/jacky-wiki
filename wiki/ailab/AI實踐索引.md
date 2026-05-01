@@ -37,7 +37,8 @@ ailab/
 │   ├── AI工具觀.md           # 為什麼選這套工具棧
 │   ├── 學習方法.md           # 學新模型／新工具的 SOP
 │   ├── 三層萃取漏斗.md       # 對話 → 嘗試 → 模式 → 結晶 的篩選機制
-│   └── 實踐捕手協定.md       # ⭐ 跨模型／跨對話的標準記錄格式
+│   ├── 實踐捕手協定.md       # ⭐ 跨模型／跨對話的標準記錄格式（v1.1：Mode A + Mode B）
+│   └── 跨機與跨模型部署.md   # ⭐ Claude Code 多機 + Codex + Gemini Gem + Web AI 部署矩陣
 ├── tools/            # 工具觀：當前在用的（隨時間更新）
 │   ├── 工具棧索引.md
 │   ├── claude-code.md
@@ -51,8 +52,11 @@ ailab/
 │   └── 2026-Q2實驗清單.md
 ├── log/              # 重大里程碑（精選，不是日記）
 │   └── 2026-04_AGENTS_v1.0→v1.1.md
-└── reading/          # 教材／文獻／重要影片心得
-    └── 閱讀索引.md
+├── reading/          # 教材／文獻／重要影片心得
+│   └── 閱讀索引.md
+└── skill/            # ⭐ canonical SKILL 主版（多機共用）
+    ├── SKILL.md      # ailab Skill 跨平台主版（symlink/copy 到 ~/.claude/skills/ailab/）
+    └── INSTALL.md    # Windows / Ubuntu / WSL2 / macOS 安裝指南
 ```
 
 ---
@@ -122,6 +126,8 @@ Jwood 的 Series A/B/C/D 並行工作流是 ailab 的多模態實驗成果。
 對應工具：
 - **`/ailab` Claude Code skill**：在 Claude Code 內自動套用協定（`~/.claude/skills/ailab/SKILL.md`）
 - **協定文件本身**：模型無關，可以複製貼到任何 AI 對話讓它輸出標準格式
+- **跨機跨模型部署** → **[跨機與跨模型部署](concepts/跨機與跨模型部署.md)** ⭐ 包含 Claude Code 多機 + Codex CLI + Gemini Gem + Web AI 完整部署矩陣
+- **多機安裝** → [skill/INSTALL.md](skill/INSTALL.md)（Windows / Ubuntu / WSL2 / macOS 一次性安裝步驟）
 
 ---
 
