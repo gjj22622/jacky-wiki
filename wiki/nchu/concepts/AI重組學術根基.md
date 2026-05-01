@@ -105,9 +105,25 @@ AI 工具製作 Skill 的方式 ↔ 學術文獻的引用習慣
 
 ---
 
+## ⭐ 對應 [ailab 域](../../ailab/AI實踐索引.md)（2026-05-02 新增）
+
+> 學術應用是 ailab 工具棧的**主場景之一**——許多重大實踐紀錄反向貢獻給 ailab 的工具觀／方法觀。
+
+| 在 nchu 看到 | 在 ailab 看到 |
+|---|---|
+| 73% 幻覺事故 → 零幻覺 SOP | [實踐捕手協定](../../ailab/concepts/實踐捕手協定.md) 範例 2：失敗事件記錄格式 |
+| seminar-helper 9 階段工作流 | [模式索引](../../ailab/patterns/模式索引.md)：學術應用模式 |
+| nchu-advisor-huang Brain 代理人 | [Auto-memory 系統](../../ailab/tools/auto-memory系統.md) 與 Brain 模型對照 |
+| 博二 + 朱彥煒共指（多 advisor） | [experiments/EXP-04 nchu-advisor-zhu](../../ailab/experiments/2026-Q2實驗清單.md) 候選 |
+
+> **流向**：nchu 場景 → ailab/patterns 註記 → 跨場景累積 → AGENTS v1.1 結晶（8 個新元素）。
+
+---
+
 ## 相關連結
 
 - 域首頁 → [../中興博士索引.md](../中興博士索引.md)
 - 學術 Skill 體系 → [學術Skill體系.md](學術Skill體系.md)
 - 前傳 → [jlife / AI 與博士 卷五](../../jlife/stages/AI與博士_2023-2026.md)
 - AGENTS® 方法論 → [shuangyun/AGENTS知識體系.md](../../shuangyun/concepts/AGENTS知識體系.md)
+- ⭐ ailab 域 → [AI實踐索引](../../ailab/AI實踐索引.md)

@@ -476,3 +476,23 @@ SOSTAC® 是策略層，AGENTS® 是執行層。
 - AI 行銷部模型（4 Agent 委員會 / 老闆 1-4 / AI 5-8） → [AI行銷部定義.md](AI行銷部定義.md)
 - AGENTS® 知識體系架構圖（互動式 HTML） → OneDrive `11_AGENTS_知識體系/AGENTS_知識體系架構圖.html`
 - 內部提案簡報 → OneDrive `11_AGENTS_知識體系/03_AGENTS方法論內部提案簡報.pptx`（14 張）
+
+---
+
+## ⭐ ailab 域：方法論的「活知識」前台（2026-05-02 新增）
+
+> AGENTS® 是「**打出來**」的結晶方法論；
+> [ailab 域](../../ailab/AI實踐索引.md) 是「**正在打、還沒結晶**」的活知識——是 AGENTS 的前台與演化來源。
+
+| 對照 | AGENTS（本頁） | [ailab](../../ailab/AI實踐索引.md) |
+|---|---|---|
+| 性質 | 結晶層、可教學、可認證 | 活知識、個人視角、隨時更新 |
+| 維度 | 方法論的當下版本 | 工具觀 / 方法觀 / 演化觀 |
+| 例 | 六字訣 A-G-E-N-T-S 是什麼 | 為什麼選 Claude Code 做主軸、Codex 何時用 |
+| 演化關係 | v1.0 → v1.1 是結晶結果 | [log/2026-04_AGENTS_v1.0→v1.1](../../ailab/log/2026-04_AGENTS_v1.0→v1.1.md) 記錄演化過程 |
+
+**雙向流動**：
+- ailab 累積實踐 → 跨場景驗證 → 升格 AGENTS（下個版號的新元素）
+- AGENTS 落地 → 遇到新場景 → 回到 ailab 記錄
+
+→ 詳見 [ailab/concepts/演化元方法](../../ailab/concepts/演化元方法.md)。

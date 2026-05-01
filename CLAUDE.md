@@ -11,13 +11,14 @@ SOSTAC + AI First
 ### 知識域（優先順序）
 | 域代碼 | 名稱 | 類型 | 優先級 | 狀態 |
 |---|---|---|---|---|
-| shuangyun | 双云行銷 | 事業（客戶服務） | ⭐ 優先域 | ✅ 已建（28 頁）|
+| shuangyun | 双云行銷 | 事業（客戶服務） | ⭐ 優先域 | ✅ 已建（29 頁）|
 | jwood | Jwood 基的木藝 | 事業（Jacky 自有品牌） | ⭐ 優先域 | ✅ 已建（9 頁）|
+| **ailab** | **AI 實踐**（Jacky 工具觀／方法觀／演化觀）| 方法／工具（新類別）| ⭐ **優先域** | ✅ 已建（16 頁）|
 | jlife | 鐘基啟的人生回憶錄 | 個人成長脈絡 | 次要 | ✅ 已建（9 頁）|
-| tbsa | TBSA 商務企劃協會 | 社會職務 | 次要 | ✅ 已建（3 頁）|
-| nchu | 中興大學博士研究 | 學術 | 次要 | ✅ 已建（3 頁）|
+| tbsa | TBSA 商務企劃協會 | 社會職務 | 次要 | ✅ 已建（14 頁）|
+| nchu | 中興大學博士研究 | 學術 | 次要 | ✅ 已建（6 頁）|
 | yinian | 一念清涼 | 個人修行 | 次要 | 🔲 待建 |
-| cross-domain | 跨域素材 | 共用框架 | — | ✅ 已建（2 頁）|
+| cross-domain | 跨域素材 | 共用框架 | — | ✅ 已建（5 頁）|
 
 ### 域的拓樸（前傳 ↔ 現況雙向關聯）
 
@@ -26,12 +27,17 @@ SOSTAC + AI First
                   │                                          │
                   │ jlife/自己搭場 ←──────→ shuangyun        │
                   │ jlife/AI與博士 ←──────→ shuangyun        │
+                  │ jlife/AI與博士 ←──────→ ailab            │  ← 新增
                   │ jlife/作品線   ←──────→ jwood            │
                   │ jlife/作品線   ←──────→ tbsa             │
                   │ jlife/AI與博士 ←──────→ nchu             │
                   │                                          │
                   │ shuangyun ←──共生人才循環──→ tbsa         │
                   │ shuangyun ←──AI 體系互通──→ nchu         │
+                  │ ailab ←──結晶 ↔ 活知識──→ shuangyun       │  ← 新增
+                  │ ailab ←──工具與工作流──→ jwood            │  ← 新增
+                  │ ailab ←──實踐心得──→ nchu                │  ← 新增
+                  │ ailab ←──模式 ↔ 個人實踐──→ cross-domain  │  ← 新增
                   └──────────────────────────────────────────┘
 ```
 
@@ -73,6 +79,14 @@ wiki/
 │   └── concepts/
 │       ├── 學術Skill體系.md    # 6 個學術 Skill
 │       └── AI重組學術根基.md
+├── ailab/                      # ⭐ AI 實踐（**Jacky 工具觀／方法觀／演化觀**）
+│   ├── AI實踐索引.md
+│   ├── concepts/               # 演化元方法 / 工具觀 / 學習方法 / 三層萃取漏斗 / 實踐捕手協定
+│   ├── tools/                  # 工具棧索引 / claude-code / codex-cli / mcp / 模型選擇 / auto-memory
+│   ├── patterns/               # 模式索引（連結到 cross-domain / nchu / jwood）
+│   ├── experiments/            # 實驗中（依事件升格／關檔，無時間門檻）
+│   ├── log/                    # 重大里程碑（精選，不是日記）
+│   └── reading/                # 教材／文獻／影片心得
 └── yinian/                     # 待建
 
 inbox/                          # 未分類輸入
@@ -92,10 +106,20 @@ raw/                            # 原始素材存檔
 - 兩邊互為前後傳，必須**雙向連結**：
   - `jlife/stages/作品線` ↔ `jwood/木作索引` + `tbsa/TBSA索引`
   - `jlife/stages/自己搭場` ↔ `shuangyun/双云索引`
-  - `jlife/stages/AI與博士` ↔ `shuangyun/AGENTS知識體系` + `nchu/中興博士索引`
+  - `jlife/stages/AI與博士` ↔ `shuangyun/AGENTS知識體系` + `nchu/中興博士索引` + `ailab/AI實踐索引`
 - **同層域之間共生關係**：
   - `shuangyun ↔ tbsa`（人才循環）
   - `shuangyun ↔ nchu`（AI x 學術整合）
+  - `ailab ↔ shuangyun`（活知識 ↔ 結晶方法論）
+  - `ailab ↔ jwood`（工具 ↔ 多模態工作流）
+  - `ailab ↔ nchu`（工具心得 ↔ 學術應用）
+  - `ailab ↔ cross-domain`（個人實踐 ↔ 共用模式）
+
+#### ailab 域寫作原則（**特別**）
+- **無時間門檻、依事件升格**：不機械化用 30 天 / 3 個月閘門，由「事件成熟度」判斷
+- **三條輸入線**：既有專案文件（一次性整合）/ session 對話（有事件就升格）/ 每天嘗試（先進 inbox 不入 wiki）
+- **跨模型統一格式**：所有事件用 [實踐捕手協定](wiki/ailab/concepts/實踐捕手協定.md) 記錄，不管是 Claude Code / Codex / ChatGPT / Gemini
+- **patterns/ 只放連結**：已穩定模式連回 cross-domain / nchu / jwood，不複製內容
 
 #### 去重
 同一方法論只存一份，其他頁面用連結指向（例：6 維度拆解表只在 `shuangyun/concepts/AGENTS知識體系.md` 完整定義；TBSA 三大方法論的圖在 `tbsa/concepts/三大方法論體系.md`，shuangyun 連回去）。
