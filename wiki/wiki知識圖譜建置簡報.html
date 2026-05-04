@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>如何建立個人知識圖譜 Wiki — 以 Jacky Wiki 為例</title>
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --slide-bg: #ffffff;
+    --primary: #1e3a5f;
+    --accent: #2563eb;
+    --accent2: #7c3aed;
+    --amber: #d97706;
+    --teal: #0891b2;
+    --green: #059669;
+    --red: #dc2626;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --tag-bg: #eff6ff;
+    --tag-text: #1d4ed8;
+    --code-bg: #f1f5f9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── 外框 ── */
+  .presentation {
+    width: min(1100px, 96vw);
+    height: min(680px, 92vh);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── 投影片容器 ── */
+  .slides-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    background: var(--slide-bg);
+  }
+
+  .slide {
+    position: absolute; inset: 0;
+    padding: 52px 64px 44px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  /* ── 投影片風格 ── */
+  .slide-cover {
+    background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 55%, #6d28d9 100%);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .slide-cover .badge {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.3);
+    color: #e0e7ff;
+    font-size: 13px; letter-spacing: .08em;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 28px;
+  }
+  .slide-cover h1 { font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+  .slide-cover .sub { font-size: 18px; color: #bfdbfe; margin-bottom: 32px; }
+  .slide-cover .meta { font-size: 14px; color: #93c5fd; }
+
+  /* ── 普通投影片 ── */
+  .slide-body { background: #fff; }
+
+  .step-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+
+  h2 { font-size: 30px; font-weight: 800; color: var(--primary); margin-bottom: 28px; line-height: 1.2; }
+  h3 { font-size: 17px; font-weight: 700; color: var(--primary); margin: 20px 0 10px; }
+  p  { font-size: 15px; color: var(--text); line-height: 1.75; }
+  ul { padding-left: 20px; }
+  li { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 4px; }
+  strong { color: var(--primary); }
+
+  /* ── 引言框 ── */
+  .quote {
+    background: #eff6ff;
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px; color: var(--primary); line-height: 1.7;
+    margin: 16px 0;
+  }
+
+  /* ── 表格 ── */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+  th {
+    background: var(--primary); color: #fff;
+    padding: 9px 14px; text-align: left; font-weight: 600;
+    font-size: 13px;
+  }
+  th:first-child { border-radius: 8px 0 0 0; }
+  th:last-child  { border-radius: 0 8px 0 0; }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f8fafc; }
+
+  /* ── 代碼塊 ── */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #334155;
+    overflow-x: auto;
+    font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+    margin: 10px 0;
+  }
+
+  /* ── 卡片格 ── */
+  .cards { display: grid; gap: 14px; margin: 8px 0; }
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .card .card-icon { font-size: 22px; margin-bottom: 10px; }
+  .card .card-title { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .card .card-body  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .card.accent  { border-color: var(--accent);  background: #eff6ff; }
+  .card.purple  { border-color: var(--accent2); background: #f5f3ff; }
+  .card.amber   { border-color: var(--amber);   background: #fffbeb; }
+  .card.teal    { border-color: var(--teal);    background: #ecfeff; }
+  .card.green   { border-color: var(--green);   background: #f0fdf4; }
+
+  /* ── 標籤 ── */
+  .tag {
+    display: inline-block;
+    background: var(--tag-bg); color: var(--tag-text);
+    font-size: 12px; font-weight: 600; padding: 3px 10px;
+    border-radius: 6px; margin: 2px;
+  }
+  .tag.amber { background: #fffbeb; color: #92400e; }
+  .tag.purple{ background: #f5f3ff; color: #5b21b6; }
+  .tag.green { background: #f0fdf4; color: #065f46; }
+  .tag.red   { background: #fef2f2; color: #991b1b; }
+
+  /* ── 步驟條 ── */
+  .steps { display: flex; gap: 0; margin: 20px 0; }
+  .step-item {
+    flex: 1; text-align: center;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 14px 10px;
+    position: relative;
+  }
+  .step-item:first-child { border-radius: 10px 0 0 10px; }
+  .step-item:last-child  { border-radius: 0 10px 10px 0; }
+  .step-item.active-step { background: var(--accent); border-color: var(--accent); }
+  .step-item.active-step .step-num { color: #fff; }
+  .step-item.active-step .step-label { color: #bfdbfe; }
+  .step-num   { font-size: 18px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+  .step-label { font-size: 12px; color: var(--muted); line-height: 1.3; }
+
+  /* ── 漏斗圖 ── */
+  .funnel { margin: 12px 0; }
+  .funnel-layer {
+    border-radius: 8px;
+    padding: 12px 20px;
+    margin-bottom: 4px;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 14px; font-weight: 600;
+  }
+  .funnel-1 { background: #fef3c7; border: 1px solid #f59e0b; color: #92400e; }
+  .funnel-2 { background: #dbeafe; border: 1px solid #3b82f6; color: #1e3a8a; width: 86%; margin: auto; }
+  .funnel-3 { background: #d1fae5; border: 1px solid #10b981; color: #064e3b; width: 70%; margin: auto; }
+  .funnel-arrow { font-size: 18px; color: var(--muted); text-align: center; line-height: 1; }
+
+  /* ── 圖表行 ── */
+  .flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+  .flow-node {
+    background: var(--primary); color: #fff;
+    padding: 8px 16px; border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+  }
+  .flow-arrow { font-size: 18px; color: var(--muted); }
+  .flow-node.accent { background: var(--accent); }
+  .flow-node.green  { background: var(--green); }
+  .flow-node.amber  { background: var(--amber); }
+
+  /* ── 結語投影片 ── */
+  .slide-end {
+    background: linear-gradient(135deg, #1e3a5f 0%, #6d28d9 100%);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .slide-end h2 { color: #fff; font-size: 36px; }
+  .slide-end p  { color: #bfdbfe; font-size: 18px; }
+
+  /* ── 控制列 ── */
+  .controls {
+    margin-top: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+  }
+  .btn {
+    background: var(--primary); color: #fff;
+    border: none; border-radius: 10px;
+    padding: 10px 24px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: .15s;
+    font-family: inherit;
+  }
+  .btn:hover { background: var(--accent); }
+  .btn:disabled { background: #cbd5e1; cursor: default; }
+  .counter { font-size: 14px; color: var(--muted); font-weight: 600; min-width: 80px; text-align: center; }
+
+  .dots { display: flex; gap: 6px; }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #cbd5e1; cursor: pointer; transition: .15s;
+  }
+  .dot.active { background: var(--accent); transform: scale(1.3); }
+
+  /* ── 雙欄 ── */
+  .cols { display: grid; gap: 24px; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-6-4 { grid-template-columns: 6fr 4fr; }
+  .cols-4-6 { grid-template-columns: 4fr 6fr; }
+
+  /* ── 清單圖標 ── */
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px; font-size: 14px; color: var(--text); line-height: 1.5; }
+  .check-list li::before { content: "✓"; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+  .cross-list li::before { content: "✗"; color: var(--red); }
+
+  /* ── 域卡片 ── */
+  .domain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 10px 0; }
+  .domain-card {
+    background: #f8fafc; border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px; text-align: center;
+  }
+  .domain-card.star { border-color: var(--amber); background: #fffbeb; }
+  .domain-card .dname { font-size: 13px; font-weight: 700; color: var(--primary); }
+  .domain-card .dcnt  { font-size: 22px; font-weight: 800; color: var(--accent); margin: 4px 0; }
+  .domain-card .ddesc { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+  /* 小工具 */
+  .divider { height: 1px; background: var(--border); margin: 18px 0; }
+  .highlight { color: var(--accent); }
+  .muted { color: var(--muted); font-size: 13px; }
+  .icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="presentation">
+  <div class="slides-wrap">
+
+    <!-- ===== SLIDE 1 ── 封面 ===== -->
+    <div class="slide slide-cover active">
+      <div class="badge">內部教育訓練 · 2026-05-04</div>
+      <h1>如何建立<br>個人知識圖譜 Wiki</h1>
+      <div class="sub">以 Jacky Wiki（97 頁 · 7 個知識域）為完整案例</div>
+      <div class="meta">
+        鐘基啟（Jacky）· 双云行銷 · TBSA · Jwood · 中興大學
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 2 ── 痛點 ===== -->
+    <div class="slide slide-body">
+      <h2>你是否有這樣的困境？</h2>
+      <div class="cards cards-3">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <div class="card-title">知識在腦袋裡</div>
+          <div class="card-body">方法論、SOP、案例——全部散在某個人的記憶、Line 群、Google Drive 不同角落</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">不斷重複解釋</div>
+          <div class="card-body">夥伴來問問題，每次都要從頭說一遍。新人要跟三個月師父帶才能獨立</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">💨</div>
+          <div class="card-title">AI 實踐蒸發</div>
+          <div class="card-body">跟 AI 的每次突破、踩坑、繞路——對話窗關掉就消失，下次又從頭摸索</div>
+        </div>
+      </div>
+      <div class="quote" style="margin-top:20px">
+        <strong>這三個痛的共同根源</strong>：知識無法以「可被呼叫的形式」沉澱下來。
+        <br><br>
+        <strong>Wiki 的解方</strong>：不是把東西堆在那裡，是把知識「結構化成可被 AI 和人類直接呼叫的形式」。
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 3 ── 什麼是知識圖譜 ===== -->
+    <div class="slide slide-body">
+      <h2>什麼是知識圖譜 Wiki？</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>三個關鍵字</h3>
+          <div class="cards" style="gap:10px">
+            <div class="card accent">
+              <div class="card-title">結構化</div>
+              <div class="card-body">每頁有固定欄位（域 / 類型 / 日期）、固定位置、命名規範。AI 能直接 ingest。</div>
+            </div>
+            <div class="card purple">
+              <div class="card-title">可導航</div>
+              <div class="card-body">域索引 + 跨域雙向連結——讀者能「走進去」，不是一次性文件。</div>
+            </div>
+            <div class="card green">
+              <div class="card-title">可成長</div>
+              <div class="card-body">三層萃取漏斗——新知識依成熟度沉澱，wiki 隨實踐演化，不是靜態的。</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Wiki vs 一般筆記</h3>
+          <table>
+            <tr><th>維度</th><th>一般筆記</th><th>知識圖譜</th></tr>
+            <tr><td>組織</td><td>線性時間</td><td>域 + 雙向連結</td></tr>
+            <tr><td>搜尋</td><td>全文搜尋</td><td>結構化查詢</td></tr>
+            <tr><td>傳承</td><td>只有自己看懂</td><td>有 schema，可 onboard</td></tr>
+            <tr><td>AI 協作</td><td>無統一格式</td><td>一致格式直接 ingest</td></tr>
+            <tr><td>去重</td><td>重複散落</td><td>單一來源原則</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 4 ── Jacky Wiki 全貌 ===== -->
+    <div class="slide slide-body">
+      <h2>Jacky Wiki 全貌（97 頁 · 7 個域）</h2>
+      <div class="domain-grid">
+        <div class="domain-card star">
+          <div class="dname">⭐ shuangyun</div>
+          <div class="dcnt">29</div>
+          <div class="ddesc">双云行銷<br>AI Agent 體系</div>
+        </div>
+        <div class="domain-card star">
+          <div class="dname">⭐ jwood</div>
+          <div class="dcnt">9</div>
+          <div class="ddesc">基的木藝<br>多模態工作流</div>
+        </div>
+        <div class="domain-card star">
+          <div class="dname">⭐ ailab</div>
+          <div class="dcnt">19</div>
+          <div class="ddesc">AI 實踐<br>工具觀/方法觀</div>
+        </div>
+        <div class="domain-card">
+          <div class="dname">jlife</div>
+          <div class="dcnt">9</div>
+          <div class="ddesc">人生回憶錄<br>成長脈絡</div>
+        </div>
+        <div class="domain-card">
+          <div class="dname">tbsa</div>
+          <div class="dcnt">14</div>
+          <div class="ddesc">商務企劃協會<br>三大方法論</div>
+        </div>
+        <div class="domain-card">
+          <div class="dname">nchu</div>
+          <div class="dcnt">6</div>
+          <div class="ddesc">中興博士<br>學術 × AI</div>
+        </div>
+        <div class="domain-card">
+          <div class="dname">cross-domain</div>
+          <div class="dcnt">5</div>
+          <div class="ddesc">跨域素材<br>共用框架</div>
+        </div>
+        <div class="domain-card" style="opacity:.5">
+          <div class="dname">yinian</div>
+          <div class="dcnt">—</div>
+          <div class="ddesc">一念清涼<br>待建</div>
+        </div>
+      </div>
+      <div class="quote" style="margin-top:14px; font-size:14px">
+        <strong>前傳 ↔ 現況拓樸</strong>：jlife 是所有域的「前傳」；shuangyun / jwood / tbsa / nchu 是「現況」。
+        兩邊必須雙向連結。ailab 是「每天累積的活知識」，成熟後升格進 shuangyun 的 AGENTS 體系。
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 5 ── STEP 1 域設計 ===== -->
+    <div class="slide slide-body">
+      <div class="step-badge">STEP 1</div>
+      <h2>定義你的知識域</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>域不是資料夾</h3>
+          <p style="font-size:14px;margin-bottom:12px">資料夾是容器；域是<strong>有觀點、有邊界、有目的</strong>的知識空間。</p>
+          <h3>三個設計問題</h3>
+          <ul class="check-list">
+            <li>我有幾條主要的工作 / 生活 / 學習線？</li>
+            <li>哪些是「從 0 變成現在」的歷程，哪些是「現在的樣子」？</li>
+            <li>哪些知識在多個域都用到？（候選 cross-domain/）</li>
+          </ul>
+          <div class="divider"></div>
+          <h3>域數量建議</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="tag red">太少 1-2</span>
+            <span class="tag green">剛好 5-8</span>
+            <span class="tag amber">太多 15+</span>
+          </div>
+        </div>
+        <div>
+          <h3>Jacky 的域邊界（以 ailab 為例）</h3>
+          <table>
+            <tr><th>判斷</th><th>內容</th><th>放哪</th></tr>
+            <tr><td><span class="tag green">✓ 負責</span></td><td>個人 AI 工具觀、活知識</td><td>ailab</td></tr>
+            <tr><td><span class="tag red">✗ 不負責</span></td><td>已固化方法論</td><td>shuangyun</td></tr>
+            <tr><td><span class="tag red">✗ 不負責</span></td><td>AI 使用歷程</td><td>jlife</td></tr>
+            <tr><td><span class="tag red">✗ 不負責</span></td><td>可給別人用的 SOP</td><td>cross-domain</td></tr>
+          </table>
+          <div class="quote" style="margin-top:14px; font-size:13px">
+            每個域的「不負責什麼」比「負責什麼」更重要——邊界清楚，才不會重複內容。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 6 ── STEP 2 頁面規範 ===== -->
+    <div class="slide slide-body">
+      <div class="step-badge">STEP 2</div>
+      <h2>設計頁面規範（Page Schema）</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>每頁必備：YAML Frontmatter</h3>
+          <pre>---
+title: AGENTS 知識體系
+domain: shuangyun
+updated: 2026-05-04
+---</pre>
+          <p class="muted" style="margin-top:6px">✦ title — AI 搜尋的主要識別<br>✦ domain — 所屬知識空間<br>✦ updated — 判斷資訊新鮮度</p>
+
+          <h3 style="margin-top:18px">檔名原則：一眼看出內容</h3>
+          <table>
+            <tr><th>好</th><th>不好</th></tr>
+            <tr><td><code>AGENTS知識體系.md</code></td><td><code>agents-system.md</code></td></tr>
+            <tr><td><code>双云索引.md</code></td><td><code>index.md</code></td></tr>
+            <tr><td><code>找賣點SOP.md</code></td><td><code>sop.md</code></td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>單一來源原則（Single Source of Truth）</h3>
+          <div class="card" style="margin-bottom:10px">
+            <div class="card-body">
+              同一方法論<strong>只存一份</strong>，其他頁面用<strong>連結</strong>指向。
+              更新時只改一個地方；讀者知道「原典在哪」。
+            </div>
+          </div>
+          <pre style="font-size:12px">❌ 錯誤
+tbsa/三大方法論.md  ← 複製一份
+nchu/學術體系.md    ← 又複製一份
+
+✅ 正確
+shuangyun/AGENTS知識體系.md ← 原典
+tbsa/ → 連結到 shuangyun
+nchu/ → 連結到 shuangyun</pre>
+          <h3>子目錄類型</h3>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+            <span class="tag">concepts/</span>
+            <span class="tag">tools/</span>
+            <span class="tag">courses/</span>
+            <span class="tag">skills/</span>
+            <span class="tag">cases/</span>
+            <span class="tag">sop/</span>
+            <span class="tag purple">patterns/</span>
+            <span class="tag amber">experiments/</span>
+            <span class="tag green">log/</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 7 ── STEP 3 跨域拓樸 ===== -->
+    <div class="slide slide-body">
+      <div class="step-badge">STEP 3</div>
+      <h2>建立跨域拓樸（前傳 ↔ 現況）</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>為什麼跨域連結比頁面更重要</h3>
+          <div class="quote" style="font-size:14px; margin-bottom:14px">
+            知識圖譜的「圖」就在這裡——頁面是節點，連結是邊。<br>
+            沒有連結 = 一堆 Markdown；有了雙向連結 = 真正的知識圖譜。
+          </div>
+          <h3>前傳 ↔ 現況（強制雙向）</h3>
+          <pre style="font-size:12px">jlife/自己搭場_2014-2020.md:
+  → 現況：shuangyun/双云索引.md
+
+shuangyun/双云索引.md:
+  → 前傳：jlife/stages/自己搭場.md</pre>
+          <p class="muted" style="margin-top:8px">每條線都要兩邊都加連結，缺任何一邊算不完整。</p>
+        </div>
+        <div>
+          <h3>Jacky Wiki 完整拓樸</h3>
+          <pre style="font-size:12px; line-height:1.8">jlife/自己搭場 ←──→ shuangyun
+jlife/AI與博士 ←──→ shuangyun
+jlife/AI與博士 ←──→ ailab
+jlife/作品線   ←──→ jwood
+jlife/作品線   ←──→ tbsa
+jlife/AI與博士 ←──→ nchu
+
+shuangyun ←─人才循環─→ tbsa
+shuangyun ←─AI 體系 ─→ nchu
+ailab  ←─結晶↔活知識─→ shuangyun
+ailab  ←─工具↔工作流─→ jwood
+ailab  ←─個人↔共用  ─→ cross-domain</pre>
+          <h3>新增頁面 Checklist</h3>
+          <ul style="font-size:13px; padding-left:18px; margin-top:8px">
+            <li>有沒有「前傳」在 jlife？</li>
+            <li>其他域會用到嗎？對方的索引要加連結？</li>
+            <li>跟 cross-domain 有沒有重疊？</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 8 ── STEP 4 三層萃取漏斗 ===== -->
+    <div class="slide slide-body">
+      <div class="step-badge">STEP 4</div>
+      <h2>三層萃取漏斗（事件 → 結晶）</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>為什麼不能直接倒進 wiki</h3>
+          <p style="font-size:14px; margin-bottom:16px">不成熟的想法入 wiki 會造成「表面上有 200 頁，實際上找不到有用的東西」——訊噪比崩潰。</p>
+          <div class="funnel">
+            <div class="funnel-layer funnel-1">
+              <span>Layer 1：inbox</span>
+              <span style="font-size:12px">任何值得記的都進來 · 低門檻</span>
+            </div>
+            <div class="funnel-arrow">↓ 依事件成熟度</div>
+            <div class="funnel-layer funnel-2">
+              <span>Layer 2：experiments / log</span>
+              <span style="font-size:12px">驗證中 或 重大里程碑</span>
+            </div>
+            <div class="funnel-arrow">↓ 重複出現 + 穩定</div>
+            <div class="funnel-layer funnel-3">
+              <span>Layer 3：concepts / tools / patterns</span>
+              <span style="font-size:12px">結晶層 · wiki 主體</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>升格四問</h3>
+          <table>
+            <tr><th>問題</th><th>Yes → 候選</th></tr>
+            <tr><td>這事件可重現嗎？</td><td>patterns/ 候選</td></tr>
+            <tr><td>跨場景嗎？（≥2）</td><td>patterns/ 或 cross-domain</td></tr>
+            <tr><td>改變了我的選擇嗎？</td><td>tools/ 或 concepts/</td></tr>
+            <tr><td>未來會回頭看嗎？</td><td>log/</td></tr>
+          </table>
+          <div class="divider"></div>
+          <h3>核心原則</h3>
+          <div class="quote" style="font-size:14px">
+            <strong>有事件就記，有重複就升，有大事就 log。</strong><br><br>
+            依事件成熟度判斷，不依時間——沒有「30 天強制關檔」這種機械化門檻。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 9 ── STEP 5 AI 工作流 ===== -->
+    <div class="slide slide-body">
+      <div class="step-badge">STEP 5</div>
+      <h2>AI 輔助工作流（Claude Code + Skills）</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>呼叫 wiki 的最強方式</h3>
+          <pre style="font-size:13px">你：「用 SOSTAC 分析這個客戶」
+AI：自動讀 tbsa/SOSTAC方法論.md
+    + tbsa/templates/
+
+你：「找這個客戶的賣點」
+AI：自動讀 找賣點SOP.md
+    + 賣點命名理論.md
+
+你：「/ailab capture 今天 Codex 比 Claude 更快」
+AI：用實踐捕手協定寫進 inbox/</pre>
+          <h3 style="margin-top:16px">Auto-Memory 系統</h3>
+          <p style="font-size:14px">Claude Code 會把跨對話重要資訊存在 <code>.claude/projects/.../memory/</code>——每次對話都「記得」你是誰、你的偏好、專案進度，不需要每次重新解釋。</p>
+        </div>
+        <div>
+          <h3>工具組合</h3>
+          <div class="cards" style="gap:10px">
+            <div class="card accent">
+              <div class="card-title">Claude Code（最強）</div>
+              <div class="card-body">AI 輔助建 wiki + 呼叫 Skills + Auto-Memory。對話中直接引用 wiki 頁面。</div>
+            </div>
+            <div class="card purple">
+              <div class="card-title">Obsidian（探索）</div>
+              <div class="card-body">雙向連結圖譜視覺化。適合年度回顧、找關聯、看跨域網絡。</div>
+            </div>
+            <div class="card">
+              <div class="card-title">GitHub（手機查閱）</div>
+              <div class="card-body">出門開會前快查。Markdown 預覽，不需要任何工具。</div>
+            </div>
+          </div>
+          <h3 style="margin-top:14px">最低配置（免費）</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <span class="tag">VS Code（編輯）</span>
+            <span class="tag">Git + GitHub（版控）</span>
+            <span class="tag">Obsidian（圖譜）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 10 ── STEP 6 實踐捕手協定 ===== -->
+    <div class="slide slide-body">
+      <div class="step-badge">STEP 6</div>
+      <h2>實踐捕手協定（任何 AI，同一格式）</h2>
+      <div class="cols cols-2" style="flex:1">
+        <div>
+          <h3>Mode A — 單一事件（9 欄位）</h3>
+          <pre style="font-size:11.5px; line-height:1.6">---
+event:    Codex CLI 比 Claude 更會跨檔重構
+date:     2026-04-25
+model:    gpt-5.4, claude-sonnet-4.6
+context:  Jwood Brand System 重構
+type:     模型對比
+maturity: 已驗證
+tags:     codex, refactor, model-comparison
+---
+
+## 發生了什麼
+## 為什麼重要
+## 怎麼做的
+## 對比與替代
+## 升格目標（建議落點）</pre>
+        </div>
+        <div>
+          <h3>Mode B — Session 總結（對話結尾用）</h3>
+          <pre style="font-size:11.5px; line-height:1.6">---
+session_date:  2026-05-04
+session_topic: 建 ailab 域與實踐捕手協定
+model:         claude-opus-4.7
+type:          session-summary
+---
+
+## 最終做法（What Worked）
+## 繞路紀錄（Detours）  ← 最珍貴
+## 錯誤與失敗（What Failed）
+## 升格候選
+## 待延伸（Next）</pre>
+          <div class="quote" style="font-size:13px; margin-top:12px">
+            <strong>Mode B 最珍貴的是「繞路紀錄」</strong>——哪些路走錯了、為什麼走錯。
+            這是一般筆記不記、但未來最值錢的內容。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 11 ── 行動路徑 ===== -->
+    <div class="slide slide-body">
+      <h2>從零到一的行動路徑（30 天）</h2>
+      <div class="cards cards-3">
+        <div class="card accent">
+          <div class="card-icon">📐</div>
+          <div class="card-title">Week 1 — 打地基（4 小時）</div>
+          <div class="card-body">
+            <ul class="check-list" style="font-size:13px">
+              <li>建 git repo + GitHub private</li>
+              <li>寫 CLAUDE.md（Schema 主規格）</li>
+              <li>定義 5-8 個域，每域一句話定位</li>
+              <li>建目錄骨架 + 中文索引頁</li>
+              <li>建 wiki主索引.md</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card purple">
+          <div class="card-icon">📝</div>
+          <div class="card-title">Week 2 — 填第一批內容</div>
+          <div class="card-body">
+            <ul class="check-list" style="font-size:13px">
+              <li>每域至少 3-5 頁（優先域先填）</li>
+              <li>全部加 YAML frontmatter</li>
+              <li>建第一批雙向連結</li>
+              <li>每新增一頁就更新主索引頁數</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card amber">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Week 3-4 — 穩定節奏</div>
+          <div class="card-body">
+            <ul class="check-list" style="font-size:13px">
+              <li>建 inbox/ 暫存區</li>
+              <li>用實踐捕手協定記第一個事件</li>
+              <li>跑升格四問</li>
+              <li>有事件就記，有重複就升</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="quote" style="margin-top:16px">
+        <strong>Jacky Wiki 的建設速度</strong>：從 2026-04-29 起建，7 天完成主骨架（97 頁）。
+        關鍵是「先建 CLAUDE.md 規範，再讓 AI 批次協助建頁」——不是一頁一頁手動寫。
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 12 ── 常見陷阱 ===== -->
+    <div class="slide slide-body">
+      <h2>常見陷阱與規避</h2>
+      <div class="cards cards-2">
+        <div class="card">
+          <div class="card-title">❌ 陷阱 1：「先把所有東西都入 wiki」</div>
+          <div class="card-body" style="margin-top:8px">
+            <strong>症狀</strong>：幾百頁但找不到東西，訊噪比崩潰。<br>
+            <strong>規避</strong>：三層漏斗——草稿、進行中、未拍板的版本不入 wiki。先進 inbox。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">❌ 陷阱 2：「域越多越好」</div>
+          <div class="card-body" style="margin-top:8px">
+            <strong>症狀</strong>：15+ 個域，每域 1-2 頁，維護成本高。<br>
+            <strong>規避</strong>：先建 3-5 個域，6 個月後再拆。寧可一個域大，也不要域太碎。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">❌ 陷阱 3：「只有自己看得懂的命名」</div>
+          <div class="card-body" style="margin-top:8px">
+            <strong>症狀</strong>：<code>page1.md</code>、<code>temp.md</code>、<code>final_v3_FINAL.md</code><br>
+            <strong>規避</strong>：檔名 = 一眼看出內容。命名規範寫進 CLAUDE.md，AI 遵守。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">❌ 陷阱 4：「wiki 跟 AI 工作流分開」</div>
+          <div class="card-body" style="margin-top:8px">
+            <strong>症狀</strong>：AI 對話的突破全散在 Chat History，永遠不入 wiki。<br>
+            <strong>規避</strong>：實踐捕手協定——每次有價值的 AI 事件都低摩擦進 inbox。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SLIDE 13 ── 結語 ===== -->
+    <div class="slide slide-end">
+      <h2>Wiki 的本質</h2>
+      <p style="font-size:18px; margin: 28px 0 16px; max-width:600px; line-height:1.8">
+        不是文件系統——是<strong style="color:#fbbf24">「可被呼叫的知識形式」</strong>。<br><br>
+        當你能對 AI 說「查一下 SOSTAC 的三個分析工具」，<br>
+        AI 直接從你的 wiki 找到正確頁面——<br>
+        <em>這才叫知識圖譜真正發揮作用。</em>
+      </p>
+      <div style="height:1px;background:rgba(255,255,255,.2);width:320px;margin:24px 0"></div>
+      <p style="font-size:15px; color:#bfdbfe">
+        它不是你寫給自己的——是你留給未來的人的。
+      </p>
+      <p style="font-size:13px; color:#93c5fd; margin-top:32px">
+        完整手冊 → wiki/wiki知識圖譜建置手冊.md<br>
+        實踐捕手協定 → wiki/ailab/concepts/實踐捕手協定.md
+      </p>
+    </div>
+
+  </div><!-- /.slides-wrap -->
+
+  <!-- 控制列 -->
+  <div class="controls">
+    <button class="btn" id="prevBtn" onclick="changeSlide(-1)" disabled>← 上一頁</button>
+    <div class="dots" id="dots"></div>
+    <span class="counter" id="counter">1 / 13</span>
+    <button class="btn" id="nextBtn" onclick="changeSlide(1)">下一頁 →</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+
+  const dotsEl = document.getElementById('dots');
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  }
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsEl.children[current].classList.remove('active');
+    current = Math.max(0, Math.min(n, total - 1));
+    slides[current].classList.add('active');
+    dotsEl.children[current].classList.add('active');
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+    document.getElementById('prevBtn').disabled = current === 0;
+    document.getElementById('nextBtn').disabled = current === total - 1;
+  }
+
+  function changeSlide(dir) { goTo(current + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+  });
+</script>
+</body>
+</html>
