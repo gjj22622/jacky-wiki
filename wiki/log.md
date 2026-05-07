@@ -1,12 +1,52 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-05
+updated: 2026-05-07
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-07
+
+**主題**：木酢寵物達人 v2.0 平台上線 + Tool Use 升級紀錄
+
+### 新增頁面
+
+| 頁面 | 路徑 | 說明 |
+|---|---|---|
+| 數據儀表板平台建置指南 | `cross-domain/數據儀表板平台建置指南.md` | 7 大架構決策 + 5 個採坑 + 可複用結構，適用任何客戶後續做類似平台 |
+| 平台建置與 Tool Use 升級 | `ailab/log/2026-05-07_平台建置與Tool_Use升級.md` | Jacky 工具觀的兩個突破：Tool Use 取代 Context Injection、「生成指令」翻轉產品定位 |
+
+### 更新頁面
+
+| 頁面 | 變動 |
+|---|---|
+| `shuangyun/cases/木酢寵物達人.md` | 加 v2.0 平台章節（網址、五個入口、技術棧、AI Agent 架構）；frontmatter tags 補 `平台/AI-agent/GA4/Meta-Ads` |
+| `cross-domain/跨域索引.md` | 加數據儀表板平台建置指南到清單 |
+| `wiki/wiki主索引.md` | ailab 19→20、cross-domain 5→6、總頁數 100→102 |
+
+### 為什麼這樣分
+
+- **shuangyun/cases/木酢寵物達人.md**：客戶專屬內容（這個品牌的數字、UI、團隊）
+- **cross-domain/數據儀表板平台建置指南.md**：去個人化 SOP，下次幫別的客戶做平台直接複用
+- **ailab/log/2026-05-07**：Jacky 工具觀的活知識（Tool Use 升級的決策過程、產品定位翻轉的洞察）
+
+> **三層分流**符合 wiki schema：客戶（shuangyun）= 專屬、跨域（cross-domain）= 去個人化、ailab = 個人實踐視角。
+
+### 同步產出（在 muzopet-dashboard 專案內，非 wiki）
+
+- `muzopet-dashboard/USAGE.md`：團隊使用簡要說明（給非技術團隊成員）
+- `muzopet-dashboard/CLAUDE.md`：補上 v2.0 上線狀態 + Zeabur 部署資訊
+
+### 不入 wiki
+
+- 程式碼細節（已在 GitHub repo）
+- README.md（已在 muzopet-dashboard 內，重複了）
+- 環境變數值（敏感）
 
 ---
 
