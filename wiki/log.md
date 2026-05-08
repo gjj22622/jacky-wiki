@@ -1,12 +1,51 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-07
+updated: 2026-05-08
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-08
+
+**主題**：新增 education 域骨架（內部教育訓練分享）+ 對應 internal-training skill
+
+### 新增頁面
+
+| 頁面 | 路徑 | 說明 |
+|---|---|---|
+| 教育訓練索引 | `education/教育訓練索引.md` | 域首頁。明確跟 ailab 分工：原始事件→ailab、對外成品→education |
+| education README | `education/README.md` | 內部結構（concepts/workshops/playbooks/pitfalls）+ frontmatter 範本 |
+
+### 更新頁面
+
+| 頁面 | 變動 |
+|---|---|
+| `wiki/wiki主索引.md` | 加 education 域（102→104 頁、6 內容域→7 內容域）+ education 域結構小節 |
+
+### 為什麼這樣分
+
+新增第三條輸入線：把對話／實踐**教給別人**的對外成品。
+
+- **ailab**：個人 AI 實踐的活知識（捕事件、可未成熟、私）→ inbox 漏斗
+- **education**：對外成品（學員視角、step-by-step、可分享、要 push）→ 沒有 inbox
+- **shuangyun**：方法論結晶（已穩定，商務應用）
+
+> 三者分工原則：捕原始事件走 ailab；做對外教材走 education；商業方法論在 shuangyun。
+
+### 同步產出（在 ~/.claude/skills 內，非 wiki）
+
+| 檔案 | 用途 |
+|---|---|
+| `~/.claude/skills/internal-training/SKILL.md` | 觸發機制（「整理成教材／SOP／採坑點／內訓」）+ 寫教材流程 + git pull --rebase / push |
+| `~/.claude/skills/wrap-up/SKILL.md` | 收工儀式（cwd 寫 todolist.md） |
+| `~/.claude/skills/kickoff/SKILL.md` | 開工儀式（讀 todolist.md brief） |
+
+三 skill 鐵三角：wrap-up（個人收工）/ kickoff（個人開工）/ internal-training（對外分享）。後續可考慮整理一份 workshops/<日期>-claude-code-三skill鐵三角/ 教材作為 education 域的首篇實證。
 
 ---
 

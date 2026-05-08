@@ -1,16 +1,16 @@
 ---
 title: Jacky Wiki 總覽
 domain: root
-updated: 2026-05-07
+updated: 2026-05-08
 ---
 
 # Jacky Wiki
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：102（不含本頁）
+**目前頁面數**：104（不含本頁）
 
-## 知識域導航（6 個內容域 + 1 個跨域 + 1 個待建）
+## 知識域導航（7 個內容域 + 1 個跨域 + 1 個待建）
 
 | 域 | 說明 | 頁面數 | 連結 |
 |---|---|:---:|---|
@@ -21,6 +21,7 @@ updated: 2026-05-07
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場 | 6 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
+| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）** | 2 | [進入](education/教育訓練索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -179,6 +180,24 @@ ailab/  (19 頁 + inbox/)
 **對應 Skill**：canonical 主版 `wiki/ailab/skill/SKILL.md`（git 管理）；
 各機執行版 `~/.claude/skills/ailab/SKILL.md`（symlink 或 copy）。
 觸發指令 `/ailab capture` / `/ailab session` / `/ailab promote` / `/ailab sync`。
+
+---
+
+## education 域結構（2026-05-08 新建）
+
+```
+education/  (2 頁，骨架建立中)
+├── 教育訓練索引.md          # 域首頁（含跟 ailab 的分工、三層素材來源）
+├── README.md                 # 內部結構與寫作範本
+├── concepts/                 # 教學哲學、原則
+├── workshops/                # 完整教學單元（資料夾，含 README + slides-outline）
+├── playbooks/                # SOP / 操作手冊
+└── pitfalls/                 # 採坑點集合
+```
+
+**對應 Skill**：執行版 `~/.claude/skills/internal-training/SKILL.md`。
+觸發指令 `/internal-training` 或自然語言「整理成教材／SOP／採坑點／內訓」。
+**沒有 inbox**——原始事件走 ailab，education 只接成品。
 
 ---
 
