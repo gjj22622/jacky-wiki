@@ -8,7 +8,7 @@ updated: 2026-05-08
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：104（不含本頁）
+**目前頁面數**：106（不含本頁）
 
 ## 知識域導航（7 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -21,7 +21,7 @@ updated: 2026-05-08
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場 | 6 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
-| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）** | 2 | [進入](education/教育訓練索引.md) |
+| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）** | 4 | [進入](education/教育訓練索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -186,11 +186,14 @@ ailab/  (19 頁 + inbox/)
 ## education 域結構（2026-05-08 新建）
 
 ```
-education/  (2 頁，骨架建立中)
+education/  (4 頁)
 ├── 教育訓練索引.md          # 域首頁（含跟 ailab 的分工、三層素材來源）
 ├── README.md                 # 內部結構與寫作範本
 ├── concepts/                 # 教學哲學、原則
-├── workshops/                # 完整教學單元（資料夾，含 README + slides-outline）
+├── workshops/                # 完整教學單元
+│   └── 2026-05-08-claude-code-三skill鐵三角/
+│       ├── README.md          # 主教材（內部團隊向，15 分鐘）
+│       └── slides-outline.md  # 簡報大綱（15 張 slide）
 ├── playbooks/                # SOP / 操作手冊
 └── pitfalls/                 # 採坑點集合
 ```

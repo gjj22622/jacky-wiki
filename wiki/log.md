@@ -10,6 +10,40 @@ updated: 2026-05-08
 
 ---
 
+## 2026-05-08（下午）
+
+**主題**：education 域首篇教材 — Claude Code 三 skill 鐵三角設計
+
+### 新增頁面
+
+| 頁面 | 路徑 | 說明 |
+|---|---|---|
+| 三 skill 鐵三角教材 | `education/workshops/2026-05-08-claude-code-三skill鐵三角/README.md` | 內部團隊向，15 分鐘讀完，含 7 章節 + 6 個採坑點 + 自己設計 skill 的 5 大要點 |
+| 三 skill 鐵三角簡報大綱 | `education/workshops/2026-05-08-claude-code-三skill鐵三角/slides-outline.md` | 15 張 slide 純文字大綱，後續可餵 huashu-design 做 .pptx |
+
+### 更新頁面
+
+| 頁面 | 變動 |
+|---|---|
+| `education/教育訓練索引.md` | Workshops 區塊加首篇教材連結 |
+| `wiki/wiki主索引.md` | education 2→4 頁、總頁數 104→106、域結構小節補完整路徑 |
+
+### 為什麼這樣分
+
+這是 internal-training skill 的**首次自我驗證**——把今天上午設計三 skill 的對話本身整理成教材，proof of concept。
+
+- 寫到 `workshops/`（完整教學單元，非 SOP 也非單一採坑點）
+- 對象「內部團隊」（同事都看得懂的 Claude Code 使用者）
+- 引用 ailab 4 個既有檔（連結而非複製，遵守去重原則）
+
+### 採坑點（首次跑 internal-training）
+
+教材結構自然落到：學習目標 → 先備知識 → 7 章節 → 採坑點 → 延伸閱讀 → 快速回顧。整理採坑點時最珍貴：6 個採坑包含設計分歧（為何 education 不要 inbox）、技術陷阱（git add -A）、跨機協作（pull --rebase）。
+
+> 驗證 SKILL.md 的「拒寫機制」也運作正常：對話內容已經是「設計完成 + 驗證 push」的成熟階段，不是實驗中，可入 education。
+
+---
+
 ## 2026-05-08
 
 **主題**：新增 education 域骨架（內部教育訓練分享）+ 對應 internal-training skill
