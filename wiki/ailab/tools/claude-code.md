@@ -1,7 +1,7 @@
 ---
 title: Claude Code（主對話 IDE）
 domain: ailab
-updated: 2026-05-02
+updated: 2026-05-09
 ---
 
 # Claude Code
@@ -37,6 +37,14 @@ updated: 2026-05-02
 - frontmatter 的 `description` 是 trigger 判斷依據——寫得越精準，Claude 越能正確觸發
 - Skill 是 markdown，可以放 prompt、指令、SOP、規則
 - Skill 之間可以互相引用（`jacky-wiki` 可以呼叫 `graphify`）
+
+**Skill 跨機同步**（2026-05-09 補）：
+整個 `~/.claude/skills/` 用 GitHub repo `gjj22622/jacky-claude-skills` 管：
+- 新機：`git clone https://github.com/gjj22622/jacky-claude-skills.git ~/.claude/skills`（一行裝完）
+- 同步：開工 `git pull`、收工 `git push`
+- 不再用「手動複製 SKILL.md 到各機」或「逐機 symlink」
+- ailab skill 是雙生例外：canonical 在 `<jacky-wiki>/wiki/ailab/skill/`，執行版同步進 skills repo
+- 詳見 [跨機與跨模型部署](../concepts/跨機與跨模型部署.md#skill-棧同步策略兩條路線並存--2026-05-09-補)
 
 → 詳細寫 Skill 流程候選獨立成 page，先放這裡
 
