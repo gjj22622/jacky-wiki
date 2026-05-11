@@ -1,7 +1,7 @@
 ---
 title: MCP Servers（外部工具整合）
 domain: ailab
-updated: 2026-05-02
+updated: 2026-05-11
 ---
 
 # MCP Servers
@@ -95,6 +95,102 @@ updated: 2026-05-02
 | Gamma | AI 簡報生成 | 待跑 1 個真實簡報驗證 |
 
 → 升格條件：跑 ≥ 2 個 Jwood 或双云實際案子，比手動 Canva/Gamma 順 → 寫進 [模型選擇心法](模型選擇心法.md)。
+
+---
+
+## Twinkle Hub MCP
+
+> **台灣工具箱 + 政府開放資料**：不需 OAuth，開啟 Claude Code 即可用。
+> 工具以 **deferred tools** 形式存在（system-reminder 有名稱但 schema 未預載）——**必須先 ToolSearch 才能呼叫**。
+
+### 接入流程（4 步驟）
+
+#### Step 1：ToolSearch 載入 schema（每次對話必做）
+
+```
+ToolSearch(
+  query="select:mcp__twinkle-hub__opendata-search_datasets,mcp__twinkle-hub__opendata-list_domains,mcp__twinkle-hub__opendata-get_dataset,mcp__twinkle-hub__opendata-query_rows",
+  max_results=4
+)
+```
+
+- 多個工具用逗號串在同一個 `select:` 內，一次載完
+- twtools 系列視需要另外 `select:`
+
+#### Step 2：search_datasets 找資料集
+
+```python
+search_datasets(
+  query="PM2.5",        # 1-2 個短關鍵詞最佳
+  domain="environment", # 用 list_domains 確認 19 個域 key
+  agency="環境部",       # 機關子字串過濾（ILIKE）
+  limit=10
+)
+```
+
+回傳含：`dataset_id`、`quality_tier`（白金>金>銀>銅）、`update_freq`、`is_normalised`
+
+#### Step 3：get_dataset 看 schema 和樣本
+
+```python
+get_dataset(dataset_id="91090", sample_rows=3)
+```
+
+確認 `schema.columns`（欄位名含特殊字元）與 `sample.rows`（資料格式）再下查詢。
+
+#### Step 4：query_rows 撈資料（DuckDB SQL）
+
+```python
+query_rows(
+  dataset_id="91090",
+  where="county = '臺北市' AND monitordate >= '2026-04-11'",
+  columns=["sitename", "monitordate", "concentration"],
+  limit=200
+)
+```
+
+---
+
+### opendata 工具（台灣政府開放資料 data.gov.tw）
+
+| 工具 | 用途 |
+|------|------|
+| `opendata-list_domains` | 列 19 個領域 key（決定 domain 參數）|
+| `opendata-search_datasets` | 依 keyword/domain/agency/quality 搜資料集 |
+| `opendata-get_dataset` | 完整 metadata + 樣本列 |
+| `opendata-materialize_dataset` | 強制正規化尚未 normalise 的資料集 |
+| `opendata-query_rows` | SQL 查詢（主力）|
+
+### twtools 工具（台灣工具箱）
+
+| 類別 | 代表工具 |
+|------|---------|
+| 地址 | `normalize_taiwan_address`、`address_to_postal_code`、`address_zh_to_en` |
+| 行政區 | `lookup_administrative_district`、`list_districts_in_county` |
+| 農曆/節氣 | `solar_to_lunar`、`lunar_to_solar`、`lookup_24_solar_terms` |
+| 假日 | `is_taiwan_business_day`、`lookup_holidays` |
+| 身分驗證 | `validate_taiwan_id_number`、`validate_tax_id_number`、`validate_phone` |
+| 公司/銀行 | `lookup_company_by_tax_id`、`lookup_bank_code` |
+| 字串轉換 | `simplified_to_traditional`、`format_chinese_numerals` |
+| PDF | `extract_pdf_text`、`extract_pdf_pages` |
+| URL | `fetch_url_as_markdown` |
+
+### 雷區與注意
+
+| 雷 | 解法 |
+|----|------|
+| 忘記 ToolSearch 直接呼叫 | InputValidationError → 先跑 ToolSearch |
+| `columns` 含 `[公頃]`、`/` 特殊字元 | 改 SELECT *，人工過濾欄位 |
+| WHERE 台/臺字元 | 用資料內實際值（`'臺北市'` 非 `'台北市'`），search 自動展開但 WHERE 不行 |
+| 資料集 API 限 1000 筆 | 加 WHERE 縮範圍，無法分頁拿全量 |
+| `is_normalised=false` 的資料集 | query_rows 前先 materialize，或直接 `normalised_only=True` 過濾 |
+| 縣市分欄資料 | data.gov.tw 並非每個主題都有縣市分欄統計，找不到時需查個別縣市資料集或官方 PDF 年報 |
+
+### 心得（2026-05-11 首次使用）
+
+- 白金級資料集 `cost_usd = 0`，cache 命中率高，速度快
+- 適合：政策研究、環境監測、人口統計、地理行政區查詢等台灣本地數據分析
+- 不適合：需要即時資料（部分資料集有延遲）、需要全量大資料（API 限 1000 筆）
 
 ---
 
