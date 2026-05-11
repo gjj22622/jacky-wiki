@@ -1,12 +1,43 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-08
+updated: 2026-05-11
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-11
+
+**主題**：education 域首份 Playbook — 多平台數據匯流 Dashboard Pipeline SOP
+
+### 新增頁面
+
+| 頁面 | 路徑 | 說明 |
+|---|---|---|
+| 多平台數據匯流 Dashboard Pipeline SOP | `education/playbooks/多平台數據匯流到dashboard-pipeline.md` | 內部團隊向，20 分鐘讀完。GA4 API / Meta Ads API / 蝦皮 Excel / WACA Excel 四路數據匯流到 Google Sheet + JSON → Dashboard 的完整 SOP，含5個採坑點 + 驗收 checklist |
+
+### 更新頁面
+
+| 頁面 | 變動 |
+|---|---|
+| `education/教育訓練索引.md` | Playbooks 區塊加首篇連結；pages 4 → 5；updated 2026-05-11 |
+| `wiki/wiki主索引.md` | education 4 → 5 頁；總頁數 106 → 107 |
+
+### 為什麼這樣分
+
+- 走 **Playbook 模式**（Mode B）：「接入流程/步驟/思維」是 SOP 型知識，可重複套用，適合 playbook 結構
+- 有 API 的平台（GA4 / Meta）自動拉，沒有 API 的（蝦皮 / 官網 WACA）人工月底下載 Excel 上傳 Drive → GitHub Actions 統一讀取——這個「雙軌策略」是核心思維
+- 中央 Google Sheet（ID: 1KfT4uBgBaNuhucEg5cyP3P6zis9DLT2au4xqmlMcHb8）是人工複查層，JSON 是機器讀取層，兩者角色不同
+- 5 個採坑點萃取自 muzopet dashboard 實際踩過的坑（data-seed 忘更新 / 蝦皮週切片重複計算 / SA 未授權 / Meta token 過期 / server.js method 未定義 502）
+
+### 採坑點（首次寫 playbook 型教材）
+
+- 技術細節太多，決定「流程清楚 + 採坑點獨立區塊」，不分拆成多個 playbook（太碎片化反而難用）
+- data-seed 陷阱是本系統最不直觀的地方，特別用警示框強調
 
 ---
 
