@@ -1,0 +1,11 @@
+# Obsidian 自動產出的本機狀態（UI / graph view / plugin 環境）
+.obsidian/workspace.json
+.obsidian/graph.json
+.obsidian/community-plugins.json
+.obsidian/plugins/
+
+# Claude Code 本地設定
+.claude/settings.local.json
+
+# 工作進度看板（personal 本機檔，不入 wiki 公版）
+todolist.md
