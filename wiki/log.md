@@ -1,12 +1,82 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-11
+updated: 2026-05-12
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-12（晚間）
+
+**主題**：education 域新增 Edge TTS 台灣中文配音工作流教材（內部團隊向）
+
+### 新增頁面
+
+| 路徑 | 用途 |
+|---|---|
+| `wiki/education/workshops/2026-05-12-edge-tts-台灣中文配音/README.md` | 主檔（15 分鐘看完、30-60 分鐘照做完）— 三層輸出策略 + 5 個採坑點 |
+| `wiki/education/workshops/2026-05-12-edge-tts-台灣中文配音/slides-outline.md` | 19 張簡報大綱（可餵 huashu-design 產 .pptx）|
+
+### 索引同步
+
+- `wiki/education/教育訓練索引.md` 頁數 5 → 7
+- `wiki/wiki主索引.md` 總頁數 107 → 109、education 域 5 → 7
+
+### 為什麼放 education 而非 ailab
+
+- **對象明確是「別人」**（內部團隊分享用）— 符合 education 域定位
+- **內容已穩定**：edge-tts 工作流走過完整實戰、5 個採坑點都已歸納
+- **去個人脈絡**：原始事件來自演講配音場景，但教材抽離成「.md 講稿 → 台灣中文 mp3」的通用工作流，無特定領域綁定
+
+### 採坑點摘要（教材精華）
+
+1. Windows cp950 編碼 → stdout 強制 utf-8
+2. NoAudioReceived 隨機罷工 → Semaphore(3) + 指數退避 + return_exceptions
+3. 半寫檔污染 → tmp 寫檔 + 50KB 大小門檻 + rename
+4. 檔案鎖（mp3 被播放器開著）→ atomic write
+5. 補生成判斷不能用 `exists()` → 加大小門檻
+
+---
+
+## 2026-05-12
+
+**主題**：TBSA 域衍生工作產物 — 大專 + 技職教育市場滲透策略（在 wiki 外）
+
+### 衍生工作產物（不在 wiki 內，引用 wiki 為基底）
+
+| 檔案位置 | 說明 |
+|---|---|
+| `C:\Users\gjj22\Documents\taiwan-education-data\TBSA認證商務拓展策略_v1.md` | 用 SOSTAC 框架擬定 5 年 TBSA 認證滲透計畫；含 Top 30 大專 + Top 30 高職目標清單、三方法論×科系對應矩陣、90 天試點行動方案、KPI Dashboard |
+
+### 引用的 wiki 頁面（用連結，不複製）
+
+- `wiki/tbsa/TBSA索引.md`（核心定位、三大方法論概覽）
+- `wiki/tbsa/concepts/三大方法論體系.md`（SOSTAC × SPEAKS × AGENTS 整合）
+- `wiki/tbsa/concepts/与双云的人才循環.md`（4 階段循環為策略 Layer 3 入口）
+- `wiki/tbsa/concepts/初階知識體系_找方向找對象找方法.md`（L0 入門設計依據）
+
+### 為什麼放 wiki 外
+
+- 是「應用層產物」（針對特定外部資料集做策略文件），不是方法論本身
+- 引用 wiki 為知識底層，但不適合進 wiki（避免 wiki 變成具體 case 倉庫）
+- 遵守 wiki 鐵律：方法論只存一份，wiki 外文件用連結回指
+
+### 資料基礎
+
+- 高職：Dataset 9617 → 114 學年 22 縣市 428 筆科系記錄（商管 295 / 外語 91 / 設計多媒體 42）
+- 大專：教育部 `students.csv`（19,281 筆 / 含進修部）+ `113_graduates.csv`（911 KB）直下載聚合
+- 規模：大專商管+外語+視傳 **174K 在學 / 47.7K 畢業/年**
+
+### 留下的決策
+
+1. **TBSA 5 年雙倍增長**可行：每年潛在新會員池 5 萬+，滲透 1-2% 即達標
+2. **三方法論 × 科系分工**：SOSTAC（4131/4143/4141）/ SPEAKS（2311）/ AGENTS（2112）
+3. **三大旗艦校**：文藻外語大學（SPEAKS）/ 嶺東科技大學（AGENTS）/ 致理科技大學（綜合）
+4. **第一波試點 5 校**：Top 5 大專 + Top 5 高職共 10 校簽 MOU 為 90 天 KPI
 
 ---
 
