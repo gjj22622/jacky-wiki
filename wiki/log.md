@@ -1,12 +1,49 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-12
+updated: 2026-05-14
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-14（上午）
+
+**主題**：education 域新增 **TBSA 五張表單工作坊備課流程**（內訓 + SOP + AI 餵食檔）
+
+### 新增頁面（4 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `wiki/education/workshops/2026-05-14-五張表單工作坊備課流程/README.md` | 主教材（5 大產出 × 5 階段 × 7 關鍵決策 × 5 採坑點）|
+| `wiki/education/workshops/2026-05-14-五張表單工作坊備課流程/slides-outline.md` | 內訓簡報大綱 20 張（可餵 huashu-design 變 .pptx）|
+| `wiki/education/workshops/2026-05-14-五張表單工作坊備課流程/AI餵食檔-備課助手.md` | 給團隊 AI（ChatGPT/Gemini/Claude）的設定檔，讓 AI 也能扮演備課助手 |
+| `wiki/education/playbooks/五張表單工作坊備課SOP.md` | A→B→C→D→E 五階段詳細 SOP，含驗收 checklist + 5 種異常情況分支 |
+
+### 索引同步
+
+- `wiki/education/教育訓練索引.md`（pages 7 → 11，workshops 區 +1 條、playbooks 區 +1 條）
+- `wiki/wiki主索引.md`（總頁數 115 → 119、education 域 7 → 11）
+
+### 為什麼整理這份教材
+
+來源：2026-05-04 ~ 2026-05-14 台中科大 5/17 工作坊備課對話（Claude Opus 4.7）。整輪做完後 Jacky 認為這套備課流程值得固化給團隊：
+
+1. **產出散落痛點**：每場備課 5 大產出（規劃／主辦文件／簡報／AI 設定／範例）分散，下次找不到對應檔
+2. **品質不穩痛點**：第一場想得細的設計（如 SMART 原則、Persona 具體化、SOSTAC 對應），第二場想不起來
+3. **教學模式漂移**：「三選一」「全雲端」「四段式」「Checkpoint = Demo 預演」這些核心 framing 沒寫下來就會自己改
+
+→ 把這套流程固化成 education 域 4 個檔，下次新案進來直接照 SOP 跑、貼 AI 餵食檔給團隊 AI，第二場備課時間能砍掉一半。
+
+### 設計重點
+
+- **教材分三層**：主教材（教思維）／簡報大綱（教給更多人）／SOP（教操作）／AI 餵食檔（教 AI）— 對應 4 種閱讀情境
+- **AI 餵食檔是新型 artifact**：之前的 workshops 都只給人看；本次首次產出「給 AI 看的」設定檔
+- **與 ailab 分工守住**：個人事件（如台中科大現場踩到的坑）走 ailab；對外可分享教材（本次 4 檔）走 education
+- **去重原則**：簡報品牌規範引用 `07-TBSA_品牌視覺系統/BRAND_BRIEF.md`（不複製）；ailab/concepts 用相對路徑連結
 
 ---
 
