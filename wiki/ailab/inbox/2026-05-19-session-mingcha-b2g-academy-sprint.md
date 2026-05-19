@@ -66,8 +66,11 @@ tags: parallel-agents, b2g-memo, academy-modules, tw-opendata-mcp, sprint, sitem
 
 ## 待延伸（Next）
 
-- Module 4 agent 完成後：補 sitemap.xml（module-4 + tech-b2g）、site-monitor（module-4）
-- Module 5 設計與建置（capstone：建立你自己的 AI 工作流程 + J董評閱）
-- 科技業完整版付費報告（/reports/2026-05-tech-industry）
-- outreach drafts 020-022 搬進 jdong-wiki/marketing/outreach/ 做版本控制
-- 確認 agentflowjdong@gmail.com 是否可以恢復 → Google Drive 上傳解鎖
+- ~~Module 4 agent 完成後：補 sitemap.xml（module-4 + tech-b2g）、site-monitor（module-4）~~ ✅ 完成
+- ~~Module 5 設計與建置（capstone：建立你自己的 AI 工作流程 + J董評閱）~~ ✅ 2061行，PR#3 開啟待 Jacky merge
+- ~~科技業完整版付費報告（/reports/2026-05-tech-industry）~~ ✅ subagent 執行中（IT NT$466億/793筆數據）
+- ~~outreach drafts 020-022 搬進 jdong-wiki/marketing/outreach/ 做版本控制~~ ✅ 完成
+- 確認 agentflowjdong@gmail.com 是否可以恢復 → Google Drive 上傳解鎖（待 Jacky）
+- Sprint 10 實價登錄 PR#8 待 Jacky review/merge（tw-opendata-mcp）
+- mingcha PR#3（Module 5 sitemap+training-school）待 Jacky merge
+- reports/index.html + sitemap + site-monitor 補 tech-industry 三件套（W110完成後）
