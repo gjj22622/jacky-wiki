@@ -1,12 +1,44 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-17
+updated: 2026-05-19
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-19（J董 Labor APP 案 1 日從規格到客戶簽認 MVP）
+
+**主題**：education 域新增 **客製 APP 接案的雙層 playbook**——技術 SOP + 商業方法論
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/playbooks/APP原型快速產出SOP.md` | 技術執行 SOP：7 階段、HTML 模擬手機 APP 不寫 RN、三路平行 agent、會議回填表單、MVP 互動原型、客戶交付包打包，7 個採坑點 |
+| `education/playbooks/客製APP接案服務化方法論.md` | 商業/服務化方法論：7 階段顧問流程、7 大關鍵設計決策、跟双云/AGENTS/TBSA/AI 諮詢的整合切點、cross-sell 推演、兩階段商模（自家→SaaS） |
+
+### 為什麼這樣分
+
+- **雙層拆解**：J董明確要求兩份——一份「APP 原型開發流程」（技術 SOP），一份「服務化方法論」（給其他客戶複製或整合進現有服務）。兩份互相引用、語氣分明（前者給技術執行者、後者給服務團隊與決策層）。
+- **走 playbooks 不走 workshops**：兩份都是步驟導向、可重複套用，沒有教學單元的「學習目標 / 快速回顧」結構需求。
+- **引用既有 wiki**：`Commander+Executor 單人多 Agent 模式`（三路平行 agent 理論）、`入口導覽頁 SOP`、`AGENTS 知識體系`（双云整合切點）、`TBSA 索引`——不複製內容只連結。
+- **預算金額由 J董處理**：本次新教材明文規範 AI 出範圍/時程/工時但不出金額——這是 J董本案明確下的指示，沉澱成方法論層級的規範。
+
+### 同步更新
+
+- `教育訓練索引.md` — Playbooks 區塊加 2 條、pages 12→14、updated 2026-05-17→2026-05-19
+- `wiki主索引.md` — education 頁數 12→14、🆕 描述更新為 APP 原型 SOP + 服務化方法論、總頁數 120→122
+
+### 源頭對話脈絡
+
+- 工作目錄：`C:\Users\gjj22\Jdongcompany\projects\Labor`
+- 客戶：台灣人力仲介公司（移工管理，主力家庭看護工）
+- 從紙本基礎規格 .txt 進駐 → 三路平行 agent → 寫導覽頁+回填表單 → 客戶會議拍板 → MVP 原型 → 拍照開案 OCR → 真實案例建檔 → 主體歸屬規則校正 → 教育訓練+交付清單 → 客戶簽認 ✓
+- auto memory 寫於 `C:\Users\gjj22\.claude\projects\C--Users-gjj22-Jdongcompany-projects-Labor\memory\`
 
 ---
 
