@@ -1,12 +1,47 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-19
+updated: 2026-05-20
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-20（J博Team TJFS 投稿衝刺一日工作流）
+
+**主題**：把 J博Team TJFS Review Paper 一日投稿衝刺對話沉澱成兩份對外教材 + 一份個人 capture
+
+### 新增頁面（3 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `ailab/inbox/2026-05-20-tjfs投稿前scope與前例查證.md` | Mode A 個人事件 capture：三層搜尋找到 2 篇 TJFS 前例逆轉 desk reject 風險評估，maturity=已驗證，待第 2 個學術投稿驗證後升 patterns |
+| `education/workshops/2026-05-20-tjfs投稿衝刺-多agent並行工作流/README.md` | 25 分鐘 workshop：5 Phase 流程地圖 + 8 個採坑點 + Jacky 4 個關鍵拍板對應 AI 4 個盲點 |
+| `education/workshops/2026-05-20-tjfs投稿衝刺-多agent並行工作流/slides-outline.md` | 25 張投影片大綱 |
+| `education/playbooks/多agent並行學術精修SOP.md` | 可獨立復用的 SOP：7 步驟 + Agent brief 模板 + 5 種異常分支 + 6 項驗收標準 |
+
+### 為什麼這樣分
+
+- **ailab inbox**：個人原始事件（三層 scope 查證模式），未來第 2 個學術投稿驗證後升 ailab/patterns/
+- **workshop README**：對外完整故事（含 Jacky 拍板的具體形態），給內部團隊與 AI 學術投稿學習者
+- **playbook**：技術 SOP 抽離出來獨立，不限學術論文——可用於任何 8K+ 字長文壓縮（whitepaper、技術報告、書稿章節）
+
+### 關鍵設計決策
+
+1. **workshop + playbook 雙檔**：workshop 講故事+示範+採坑點、playbook 講可復用步驟，分檔以利不同對象切入
+2. **Agent brief 模板**：寫進 playbook 章 5.3 含「學術嚴謹優先於壓縮幅度」紅線——這是本案例 5 個 Agent 全部保住錨點的關鍵設計
+3. **三層 scope 查證流程**：寫進 workshop 章 7.3 含具體 query 模板（Google Scholar / 期刊官網 / 學科資料庫 site:filter）
+4. **跨對話資產化清單**：workshop 章 10 列出本工作流產出的 6 個可跨期刊復用資產
+
+### 連結到既有結晶
+
+- ailab/concepts/實踐捕手協定.md（Mode A 9 欄位）
+- ailab/concepts/AI工具觀.md（整合鏈完整 > 單點最強）
+- ailab/concepts/三層萃取漏斗.md（升格機制）
+- nchu/concepts/零幻覺與文獻查證SOP.md（零幻覺 protocol）
 
 ---
 
