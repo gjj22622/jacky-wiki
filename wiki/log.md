@@ -1,12 +1,49 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-21
+updated: 2026-05-22
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-22（LLM Wiki + Obsidian 關聯圖實戰 workshop）
+
+**主題**：把 wiki 知識圖譜建置手冊 + Obsidian graph 整理成可分享內訓 workshop，給內部團隊（同事、夥伴、AI 新手皆可）走完帶著「跑得動的 wiki 骨架 + Obsidian graph 畫面」回家
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/workshops/2026-05-22-llm-wiki-obsidian-graph/README.md` | 60 分鐘 workshop 主教材：8 步驟 step-by-step（為什麼是 wiki → 定義 5-8 域 → 建 repo → CLAUDE.md → 第 1 頁 → 裝 Obsidian → 連結密度 → graph 配色） + 5 採坑點 + 講師備課 checklist |
+| `education/workshops/2026-05-22-llm-wiki-obsidian-graph/slides-outline.md` | 15 張投影片大綱：60 分鐘節奏 = 概念 15 分（Slide 1-5）+ 動手 30 分（Slide 6-10）+ 採坑/延伸/QA/收尾 15 分（Slide 11-15） |
+
+### 引用既有結晶（連結而非複製）
+
+- `ailab/concepts/實踐捕手協定.md`（跨對話/跨模型事件收進來的標準格式）
+- `ailab/concepts/三層萃取漏斗.md`（inbox → experiments → patterns/tools 的升格機制）
+- `ailab/concepts/AI工具觀.md`（為什麼選 Markdown + git 這套而不選 Notion）
+- `ailab/concepts/跨機與跨模型部署.md`（多機/多模型怎麼同步 wiki）
+- `wiki知識圖譜建置手冊.md` §1-2 §STEP 1-6（整套 schema 完整版）
+- `wiki知識圖譜建置簡報.md`（給管理層/客戶看的版本）
+- `cross-domain/visualizations/jackywiki-3d-knowledge-graph.html`（3D 圖譜可視化，wow factor demo）
+
+### 關鍵設計決策
+
+1. **aha moment 集中在 Step 6**：學員裝完 Obsidian 開 graph view 看到第一張圖譜亮起 — 整個 workshop 的價值點在這 30 秒
+2. **白紙手寫 Step 2**：講師備課 checklist 強制印白紙給學員，防止過早 over-engineer（直接打字會跳過「想清楚」這步）
+3. **採坑 #5「不要每天 review」**：明確寫進採坑點，避免別人誤以為要設 calendar reminder — 知識管理最大殺手是儀式感過重
+4. **3D 圖譜當對比 demo**：講師示範「成熟版本長什麼樣」用 Jacky Wiki 自己的 3D 可視化，wow factor 收尾
+5. **QA 預備兩個高頻問題**：「Notion 不就好了嗎？」「VS Code 也可以嗎？」直接寫進 Slide 14，講師不用現場想
+
+### 為什麼這樣分
+
+- **workshop 而非 playbook**：8 步驟有講師現場示範價值（特別是 Obsidian graph 亮起那一刻），不只是步驟手冊
+- **README + slides 雙檔**：README 給講師完整備課、slides-outline 給講師現場節奏控制
+- **沒寫進 ailab**：這是對外成品（教別人），不是個人事件 capture — 符合 education vs ailab 分工
 
 ---
 
