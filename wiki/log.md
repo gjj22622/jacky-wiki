@@ -10,6 +10,25 @@ updated: 2026-05-22
 
 ---
 
+## 2026-05-22（品牌短網址 + UTM 系統 workshop）
+
+**主題**：把今日實作的 airun-site 短網址系統整理成內部訓練教材，讓團隊能夠幫自己的品牌複製一套（Node.js + links.json + CRUD API + Admin UI，不加 npm 依賴）
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/workshops/2026-05-22-品牌短網址UTM系統/README.md` | 30 分鐘 workshop 主教材：6 步驟（links.json 設計 → 重新導向路由 → CRUD API → Admin UI → Zeabur 部署 → 發行第一批短網址） + 5 採坑點 |
+| `education/workshops/2026-05-22-品牌短網址UTM系統/slides-outline.md` | 17 張投影片大綱：含架構圖、UTM 五參數、code 範例、完整驗收清單 |
+
+### 關鍵設計決策
+
+- links.json 作為資料庫（無新 npm 依賴）vs SQLite → 選 JSON，因為 CLAUDE.md 規定「不加新 npm 依賴」且低流量足夠安全
+- slug 不換只換 URL → 這是 Lihi.io 最核心的設計，社群上已發連結永遠有效
+- 301 + Cache-Control: no-cache → 允許換目標網址同時避免瀏覽器永久快取
+
+---
+
 ## 2026-05-22（LLM Wiki + Obsidian 關聯圖實戰 workshop）
 
 **主題**：把 wiki 知識圖譜建置手冊 + Obsidian graph 整理成可分享內訓 workshop，給內部團隊（同事、夥伴、AI 新手皆可）走完帶著「跑得動的 wiki 骨架 + Obsidian graph 畫面」回家
