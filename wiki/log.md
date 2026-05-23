@@ -1,12 +1,37 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-21
+updated: 2026-05-23
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-05-23（AI 撰寫嚴謹科學論文 — 三層查核與 J博 skill）
+
+**主題**：把 2026-05-22~23 跨日 TJFS 投稿衝刺「反幻覺」實戰沉澱成 workshop（接 5/20 篇延伸）
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/workshops/2026-05-23-ai撰寫嚴謹科學論文-三層查核與J博skill/README.md` | 30 分鐘 workshop：4 階段 SOP（三層查核並行 → 整合修補單一 → 輕量驗收 → 重生交付）+ 5 大典型幻覺（N 篇高估／Sasaki 級檔名擴散／Qiu 級數字搬家／整串作者錯／Initial 錯）+ `/jbo` skill 4 mode + 8 採坑點 |
+| `education/workshops/2026-05-23-ai撰寫嚴謹科學論文-三層查核與J博skill/slides-outline.md` | 25 張投影片大綱 |
+
+### 為什麼這樣分
+
+- **延伸 5/20 篇而非取代**：5/20 講「多 Agent 並行**寫**」，5/23 講「多 Agent 並行**查核**」。兩篇配對 — 寫完了用 5/23 篇查、查完發現問題用 5/20 篇 SOP 修。
+- **沒有獨立 playbook**：J博 skill (`~/.claude/skills/j-bo/`) 內部已含完整 references（三層查核工作流 / 五大典型幻覺 / 紅線清單）—— 在 wiki 寫 playbook 會重複。Workshop README 連結到 skill references 即可。
+- **沒有 pitfall 獨立檔**：8 個採坑點直接寫進 workshop README，不另開 pitfall 檔——因為這些坑都跟「AI 學術寫作」綁定，獨立檔反而失去脈絡。
+
+### 留下的決策
+
+- **未來「AI 寫學術論文」相關採坑** → 持續加進這份 workshop 而非另開檔
+- **J博 skill 是真相之源**：workshop README 連結而非複製 skill 內容
+- **配對 ailab 升格**：5 大典型幻覺 + 三層查核工作流可未來升 `ailab/patterns/`（驗證 2-3 個學術投稿後）
 
 ---
 
@@ -22,7 +47,7 @@ updated: 2026-05-21
 
 ### 關鍵決策
 
-1. **Series A 永遠不加 product 場景**：EP40（30s 純教學）→ EP41（40s）是明確斷點，12s product 場景在第 23 秒讓完播率斷崖，停止推送連帶壓制後續影片。
+1. **Series A 永遠不加 product 場景**：EP40（30s 純教學）→ EP41(40s）是明確斷點，12s product 場景在第 23 秒讓完播率斷崖，停止推送連帶壓制後續影片。
 2. **教材格式選 playbook**：目標讀者是排程 AI 實例，需要可執行步驟而非投影片大綱。
 3. **65+ 男性語言規則成文**：「老花眼」「頸椎退化」比「疲勞」「痠痛」對這個受眾的 hook 效果更強，本次正式寫進 SOP。
 
