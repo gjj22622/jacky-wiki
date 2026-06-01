@@ -8,7 +8,7 @@ updated: 2026-05-23
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：128（不含本頁）
+**目前頁面數**：130（不含本頁）
 
 ## 知識域導航（7 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -21,7 +21,7 @@ updated: 2026-05-23
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽 🆕** | 12 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
-| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 AI 撰寫嚴謹科學論文 workshop（J博 skill / 5 大典型幻覺 / 4 階段反幻覺 SOP）＋ Jwood Shorts 數據驅動製作決策 SOP（EP41 完播率斷點診斷）** | 20 | [進入](education/教育訓練索引.md) |
+| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 文獻知識庫公開內容產品 workshop（plan+goal 近全自動／多 Agent 全文入庫根除作者幻覺／確定性零幻覺每日新聞管線）＋ AI 撰寫嚴謹科學論文 workshop（J博 skill / 5 大典型幻覺）** | 22 | [進入](education/教育訓練索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）

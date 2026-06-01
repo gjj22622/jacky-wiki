@@ -1,12 +1,35 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-05-23
+updated: 2026-06-01
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-06-01（用 Claude Code 把文獻知識庫變成會自我更新的公開內容產品）
+
+**主題**：把「一段對話內升級森林數位孿生文獻庫為公開內容產品」整段沉澱成 workshop
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/workshops/2026-06-01-文獻知識庫公開內容產品/README.md` | 25 分鐘 workshop：plan+`/goal` 近全自動、多 Agent 並行全文入庫（書目逐字抓 PDF 首頁根除作者幻覺）、全文規則當資料體檢、**即時新聞用確定性 Python（Crossref/arXiv/OpenAlex/Google News RSS/data.gov.tw）+ _seen 去重 + GitHub Actions 雲端 cron 全程不經 LLM 才零幻覺**、工程慣例 + 10 採坑點 |
+| `education/workshops/2026-06-01-文獻知識庫公開內容產品/slides-outline.md` | 22 張投影片大綱 |
+
+### 為什麼這樣分
+
+- **核心教學差異化**：本篇最大價值不是「做網站」，而是兩個觀念——① 大專案用「plan 鎖方向 → goal 放手」兩段式；② **即時／新聞類內容必須用確定性程式抓取、不經 LLM 才零幻覺**（過去叫 AI「整理今天新聞」是幻覺溫床）。
+- **連結既有結晶不複製**：多 Agent 並行連到 ailab/patterns 與 cross-domain/Commander+Executor；`/goal` 連到 ailab/inbox 2026-05-31 事件；反幻覺連到 5/23 篇 workshop。
+- **與 5/20、5/23 篇配對**：那兩篇是「多 Agent 寫／查學術論文」；本篇是「多 Agent 建內容產品 + 確定性自動化管線」，互補不重疊。
+
+### 留下的決策
+- 本案資產頁在 `nchu/cases/文獻知識庫網站.md`（網站定位與架構）；education 這篇講「怎麼做出來的方法」，兩者分工。
+- 採坑點直接寫進 workshop README（10 點皆與本案綁定），不另開 pitfall 檔。
 
 ---
 
