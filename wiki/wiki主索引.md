@@ -16,7 +16,7 @@ updated: 2026-05-23
 |---|---|:---:|---|
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 30 | [進入](shuangyun/双云索引.md) |
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
-| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）** | **20** | [進入](ailab/AI實踐索引.md) |
+| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）｜🆕 黃仁勳 Computex 2026 AI Agent 兩層架構（6/13 演講開場定義錨）** | **21** | [進入](ailab/AI實踐索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽 🆕** | 12 | [進入](nchu/中興博士索引.md) |
@@ -145,7 +145,7 @@ nchu/  (6 頁)
 ## ⭐ ailab 域結構（2026-05-02 新建 + 跨機部署擴充）
 
 ```
-ailab/  (19 頁 + inbox/)
+ailab/  (20 頁 + inbox/)
 ├── AI實踐索引.md              # 域首頁（含跨域連結、輸入規則、工具棧速查）
 ├── concepts/  (6 頁)
 │   ├── 演化元方法.md          # 從實踐反推方法論
@@ -167,8 +167,9 @@ ailab/  (19 頁 + inbox/)
 │   └── 2026-Q2實驗清單.md
 ├── log/       (1 頁)
 │   └── 2026-04_AGENTS_v1.0→v1.1.md
-├── reading/   (1 頁)
-│   └── 閱讀索引.md
+├── reading/   (2 頁)
+│   ├── 閱讀索引.md
+│   └── 2026-06-01-黃仁勳computex2026-aiagent定義與架構.md  # 🆕 6/13 演講開場定義錨
 ├── inbox/                     # 未升格事件暫存（不算頁，由 /ailab capture 寫入）
 │   ├── README.md
 │   └── 2026-05-02-session-建ailab域與實踐捕手協定.md  # 第一份 Mode B 範例
