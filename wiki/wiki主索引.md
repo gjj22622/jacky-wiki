@@ -1,14 +1,14 @@
 ---
 title: Jacky Wiki 總覽
 domain: root
-updated: 2026-05-22
+updated: 2026-06-15
 ---
 
 # Jacky Wiki
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：133（不含本頁）
+**目前頁面數**：136（不含本頁）
 
 ## 知識域導航（7 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -16,12 +16,12 @@ updated: 2026-05-22
 |---|---|:---:|---|
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 30 | [進入](shuangyun/双云索引.md) |
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
-| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）** | **20** | [進入](ailab/AI實踐索引.md) |
+| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）｜🆕 黃仁勳 Computex 2026 AI Agent 兩層架構（6/13 演講開場定義錨）** | **21** | [進入](ailab/AI實踐索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽 🆕** | 12 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
-| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 從演講到業務開發全鏈 workshop（25 分鐘）+ 跟進信寄送 SOP + Gmail 量寄採坑點** | 26 | [進入](education/教育訓練索引.md) |
+| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 從演講到業務開發全鏈 workshop（25 分鐘）+ 跟進信寄送 SOP + Gmail 量寄採坑點；文獻知識庫公開內容產品 workshop（plan+goal 近全自動／多 Agent 全文入庫根除作者幻覺／確定性零幻覺每日新聞管線）＋ AI 撰寫嚴謹科學論文 workshop（J博 skill / 5 大典型幻覺）** | 28 | [進入](education/教育訓練索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -145,7 +145,7 @@ nchu/  (6 頁)
 ## ⭐ ailab 域結構（2026-05-02 新建 + 跨機部署擴充）
 
 ```
-ailab/  (19 頁 + inbox/)
+ailab/  (20 頁 + inbox/)
 ├── AI實踐索引.md              # 域首頁（含跨域連結、輸入規則、工具棧速查）
 ├── concepts/  (6 頁)
 │   ├── 演化元方法.md          # 從實踐反推方法論
@@ -167,8 +167,9 @@ ailab/  (19 頁 + inbox/)
 │   └── 2026-Q2實驗清單.md
 ├── log/       (1 頁)
 │   └── 2026-04_AGENTS_v1.0→v1.1.md
-├── reading/   (1 頁)
-│   └── 閱讀索引.md
+├── reading/   (2 頁)
+│   ├── 閱讀索引.md
+│   └── 2026-06-01-黃仁勳computex2026-aiagent定義與架構.md  # 🆕 6/13 演講開場定義錨
 ├── inbox/                     # 未升格事件暫存（不算頁，由 /ailab capture 寫入）
 │   ├── README.md
 │   └── 2026-05-02-session-建ailab域與實踐捕手協定.md  # 第一份 Mode B 範例

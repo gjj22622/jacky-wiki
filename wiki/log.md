@@ -28,6 +28,73 @@ updated: 2026-06-15
 
 ---
 
+
+## 2026-06-03（黃仁勳 Computex 2026 AI Agent 架構入庫，供 6/13 彰師大演講開場）
+
+**主題**：6/13 演講要框死「AI Agent 是什麼」（現況各自解讀很混亂），上網抓黃仁勳 2026-06-01 Computex keynote 的兩層架構入 reading。
+
+### 新增頁面（1 個）
+| 路徑 | 角色 |
+|---|---|
+| `ailab/reading/2026-06-01-黃仁勳computex2026-aiagent定義與架構.md` | 兩層架構（大腦 LLM＋作業系統編排引擎）、「操作主體從人變成 AI」、AI 搶工作論打臉、商模論述（賣成果不賣座位）。標好哪段給演講承幕①、哪段給收幕 |
+
+### 關鍵決策
+- **wiki 原本沒這筆**：使用者以為有，實查 jacky-wiki + jdong-wiki 皆無「架構定義」；jdong-wiki 只有黃仁勳的**商模角度**（`products/airun-new-business-models-2026-06.md`，賣成果/100:1）。架構定義是上網抓的（aiposthub 全紀錄）。
+- **為何上網**：Computex 2026（6/1）在知識截止後，不可憑記憶重建——查證附來源，避免幻覺（呼應演講風險治理段主題）。
+- **守線**：只取黃仁勳公開論述；jdong-wiki 商模 doc 的內部紅線（cron/cache/twinkle-hub/corpus/客戶名）不入演講、不外流。
+- 同步更新 `ailab/reading/閱讀索引.md`「AI 工具觀／模型認知」欄。
+
+---
+
+## 2026-06-01（用 Claude Code 把文獻知識庫變成會自我更新的公開內容產品）
+
+**主題**：把「一段對話內升級森林數位孿生文獻庫為公開內容產品」整段沉澱成 workshop
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/workshops/2026-06-01-文獻知識庫公開內容產品/README.md` | 25 分鐘 workshop：plan+`/goal` 近全自動、多 Agent 並行全文入庫（書目逐字抓 PDF 首頁根除作者幻覺）、全文規則當資料體檢、**即時新聞用確定性 Python（Crossref/arXiv/OpenAlex/Google News RSS/data.gov.tw）+ _seen 去重 + GitHub Actions 雲端 cron 全程不經 LLM 才零幻覺**、工程慣例 + 10 採坑點 |
+| `education/workshops/2026-06-01-文獻知識庫公開內容產品/slides-outline.md` | 22 張投影片大綱 |
+
+### 為什麼這樣分
+
+- **核心教學差異化**：本篇最大價值不是「做網站」，而是兩個觀念——① 大專案用「plan 鎖方向 → goal 放手」兩段式；② **即時／新聞類內容必須用確定性程式抓取、不經 LLM 才零幻覺**（過去叫 AI「整理今天新聞」是幻覺溫床）。
+- **連結既有結晶不複製**：多 Agent 並行連到 ailab/patterns 與 cross-domain/Commander+Executor；`/goal` 連到 ailab/inbox 2026-05-31 事件；反幻覺連到 5/23 篇 workshop。
+- **與 5/20、5/23 篇配對**：那兩篇是「多 Agent 寫／查學術論文」；本篇是「多 Agent 建內容產品 + 確定性自動化管線」，互補不重疊。
+
+### 留下的決策
+- 本案資產頁在 `nchu/cases/文獻知識庫網站.md`（網站定位與架構）；education 這篇講「怎麼做出來的方法」，兩者分工。
+- 採坑點直接寫進 workshop README（10 點皆與本案綁定），不另開 pitfall 檔。
+
+---
+
+## 2026-05-23（AI 撰寫嚴謹科學論文 — 三層查核與 J博 skill）
+
+**主題**：把 2026-05-22~23 跨日 TJFS 投稿衝刺「反幻覺」實戰沉澱成 workshop（接 5/20 篇延伸）
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `education/workshops/2026-05-23-ai撰寫嚴謹科學論文-三層查核與J博skill/README.md` | 30 分鐘 workshop：4 階段 SOP（三層查核並行 → 整合修補單一 → 輕量驗收 → 重生交付）+ 5 大典型幻覺（N 篇高估／Sasaki 級檔名擴散／Qiu 級數字搬家／整串作者錯／Initial 錯）+ `/jbo` skill 4 mode + 8 採坑點 |
+| `education/workshops/2026-05-23-ai撰寫嚴謹科學論文-三層查核與J博skill/slides-outline.md` | 25 張投影片大綱 |
+
+### 為什麼這樣分
+
+- **延伸 5/20 篇而非取代**：5/20 講「多 Agent 並行**寫**」，5/23 講「多 Agent 並行**查核**」。兩篇配對 — 寫完了用 5/23 篇查、查完發現問題用 5/20 篇 SOP 修。
+- **沒有獨立 playbook**：J博 skill (`~/.claude/skills/j-bo/`) 內部已含完整 references（三層查核工作流 / 五大典型幻覺 / 紅線清單）—— 在 wiki 寫 playbook 會重複。Workshop README 連結到 skill references 即可。
+- **沒有 pitfall 獨立檔**：8 個採坑點直接寫進 workshop README，不另開 pitfall 檔——因為這些坑都跟「AI 學術寫作」綁定，獨立檔反而失去脈絡。
+
+### 留下的決策
+
+- **未來「AI 寫學術論文」相關採坑** → 持續加進這份 workshop 而非另開檔
+- **J博 skill 是真相之源**：workshop README 連結而非複製 skill 內容
+- **配對 ailab 升格**：5 大典型幻覺 + 三層查核工作流可未來升 `ailab/patterns/`（驗證 2-3 個學術投稿後）
+
+---
+
+
 ## 2026-05-22（品牌短網址 + UTM 系統 workshop）
 
 **主題**：把今日實作的 airun-site 短網址系統整理成內部訓練教材，讓團隊能夠幫自己的品牌複製一套（Node.js + links.json + CRUD API + Admin UI，不加 npm 依賴）
