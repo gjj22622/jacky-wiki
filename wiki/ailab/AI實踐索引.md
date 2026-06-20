@@ -49,7 +49,9 @@ ailab/
 │   └── auto-memory系統.md
 ├── patterns/         # 模式：已驗證、已穩定（連結為主，不複製內容）
 │   ├── 模式索引.md
-│   └── AI團隊三線並行開發模式.md  # ⭐ J董 CEO 帶隊多商業模式同步推進的 SOP
+│   ├── AI團隊三線並行開發模式.md  # ⭐ J董 CEO 帶隊多商業模式同步推進的 SOP
+│   ├── subagent並行fan-out設計法.md
+│   └── admin-token-backend-規格書.md  # ⭐ Jacky 標準 admin 後台設計法（配對 /admin後台 skill）
 ├── experiments/      # 實驗中（依事件升格／關檔，無時間門檻）
 │   └── 2026-Q2實驗清單.md
 ├── log/              # 重大里程碑（精選，不是日記）
