@@ -1,6 +1,8 @@
 ---
 title: 品牌短網址 + UTM 系統從零到上線 — 簡報大綱
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-22
 audience: 內部團隊
 duration: 30 分鐘（含 Q&A）

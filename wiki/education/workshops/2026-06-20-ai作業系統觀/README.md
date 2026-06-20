@@ -1,6 +1,8 @@
 ---
 title: AI 是新作業系統——用 OS 邏輯重看你怎麼用 AI、怎麼帶新人
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-06-20
 audience: 双云團隊 / 帶新人的人 / AI 工作者
 prerequisite: 用過至少一個 AI 工具（ChatGPT / Claude / Gemini），知道終端機長什麼樣

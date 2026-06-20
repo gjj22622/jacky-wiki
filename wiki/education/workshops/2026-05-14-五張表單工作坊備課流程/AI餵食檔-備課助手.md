@@ -1,6 +1,8 @@
 ---
 title: AI 餵食檔 — TBSA 五張表單工作坊備課助手
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-14
 audience: 內部團隊的 AI 助手（ChatGPT / Gemini / Claude / Copilot）
 prerequisite: 無（直接貼進 AI 對話視窗）

@@ -1,6 +1,8 @@
 ---
 title: 用 Claude Code 把文獻知識庫變成會自我更新的公開內容產品
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-06-01
 audience: 內部團隊（含 AI 實踐新手）
 prerequisite: 會用 Claude Code 基本操作、知道 git/GitHub、看得懂一點 Python 與 Node

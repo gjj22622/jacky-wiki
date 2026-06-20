@@ -1,6 +1,8 @@
 ---
 title: Week 2｜建 — 從工作流程到 Agent 設定檔
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

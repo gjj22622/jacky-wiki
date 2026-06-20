@@ -1,6 +1,8 @@
 ---
 title: AGENTS® 認證考核手冊
 domain: shuangyun
+visibility: team
+min_tier: L3
 updated: 2026-04-29
 ---
 

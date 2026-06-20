@@ -1,6 +1,8 @@
 ---
 title: AGENTS 方法論 — 双云 AI 轉型總覽
 domain: shuangyun
+visibility: team
+min_tier: L3
 updated: 2026-04-29
 ---
 

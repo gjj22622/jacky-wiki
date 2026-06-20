@@ -1,6 +1,8 @@
 ---
 title: Subagent 並行 fan-out 交付 SOP（含 HTML→PDF 管線）
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-06-18
 audience: 內部團隊 / AI 實踐者
 prerequisite: 會用 Claude Code 的 Agent（subagent）工具、基本 bash

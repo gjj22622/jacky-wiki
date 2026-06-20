@@ -1,6 +1,8 @@
 ---
 title: shuangyun-scoring-agent｜流程分群與完整度評分
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

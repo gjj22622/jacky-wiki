@@ -1,6 +1,8 @@
 ---
 title: 簡報大綱 — 用 Claude Code 把文獻知識庫變成會自我更新的公開內容產品
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-06-01
 audience: 內部團隊（含 AI 實踐新手）
 duration: 25 分鐘

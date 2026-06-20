@@ -1,6 +1,8 @@
 ---
 title: 從一場演講到業務開發——AIRUN 端到端獲客全鏈
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-06-15
 audience: 內部團隊 / 想複製這套打法的夥伴
 prerequisite: 知道 AIRUN 三品牌（明察/明腦/學院）大致定位即可

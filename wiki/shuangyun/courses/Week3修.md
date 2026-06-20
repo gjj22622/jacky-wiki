@@ -1,6 +1,8 @@
 ---
 title: Week 3｜修 — 殘酷測試
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

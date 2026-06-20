@@ -1,6 +1,8 @@
 ---
 title: 投影片大綱 — 如何製作自己的 LLM Wiki
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-22
 audience: 內部團隊
 duration: 60 分鐘（30 分概念 + 30 分動手）

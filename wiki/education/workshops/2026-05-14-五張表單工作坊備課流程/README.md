@@ -1,6 +1,8 @@
 ---
 title: TBSA 五張表單工作坊備課流程（內訓版）
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-14
 audience: 內部團隊（双云 + TBSA 行政協助）
 prerequisite: 知道 TBSA 五張表單是什麼、會操作 Google Doc、看過 Claude Code 三 skill 鐵三角教材更佳

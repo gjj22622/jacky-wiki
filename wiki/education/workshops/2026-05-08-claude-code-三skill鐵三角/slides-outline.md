@@ -1,6 +1,8 @@
 ---
 title: 三 skill 鐵三角簡報大綱
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-08
 audience: 內部團隊
 duration: 約 15 張投影片，10-12 分鐘講完

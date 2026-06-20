@@ -1,6 +1,8 @@
 ---
 title: AI 撰寫嚴謹科學論文 — 三層查核與 J博 skill
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-23
 audience: 內部團隊 / 學術 AI 使用者 / 研究生
 prerequisite: Claude Code 基本操作、學術投稿認識（基礎）、知道什麼是 reference list / DOI / 同儕審查

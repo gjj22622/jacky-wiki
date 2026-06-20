@@ -1,6 +1,8 @@
 ---
 title: Edge TTS 台灣中文配音工作流 — 把 .md 講稿變成可循環播放的 mp3
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-12
 audience: 內部團隊
 prerequisite: Python 3.10+、pip 基礎、會用 terminal

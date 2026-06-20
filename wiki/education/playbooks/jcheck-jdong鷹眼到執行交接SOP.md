@@ -1,6 +1,8 @@
 ---
 title: Jcheck × Jdong 鷹眼到執行交接 SOP
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-06-20
 audience: 內部團隊 / AI 工作流設計者 / 客戶端可理解版本
 prerequisite: 知道 Jcheck 是監察角色、Jdong 是營運執行角色

@@ -1,6 +1,8 @@
 ---
 title: TBSA 五張表單工作坊備課 SOP
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-14
 audience: 內部團隊（双云 + TBSA 行政協助）
 prerequisite: 看過 [備課流程內訓教材](../workshops/2026-05-14-五張表單工作坊備課流程/README.md)

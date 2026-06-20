@@ -1,6 +1,8 @@
 ---
 title: shuangyun-jacky-agent｜双云營運決策分身
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

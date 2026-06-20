@@ -1,6 +1,8 @@
 ---
 title: TJFS 投稿衝刺一日工作流 — 5 Agent 並行 + 查核-撰寫-Scope 三重閘門
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-20
 audience: 內部團隊（J博Team 同事 + 學術投稿 AI 工作流學習者）
 prerequisite: 用過 Claude Code、知道 cwd 與 Agent tool、看過 ailab/concepts 任一份

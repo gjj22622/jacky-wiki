@@ -1,6 +1,8 @@
 ---
 title: Week 4｜串 — Agent 工廠
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

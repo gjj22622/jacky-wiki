@@ -1,6 +1,8 @@
 ---
 title: 双云 Skill OS（8 顆核心 Skill 子系統）
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

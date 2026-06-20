@@ -1,6 +1,8 @@
 ---
 title: AI 撰寫嚴謹科學論文 — 三層查核與 J博 skill（簡報大綱 25 張）
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-23
 parent: README.md
 ---

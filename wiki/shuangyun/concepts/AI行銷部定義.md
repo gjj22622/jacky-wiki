@@ -1,6 +1,8 @@
 ---
 title: 双云 AI 行銷部 — 定義與操作指南
 domain: shuangyun
+visibility: team
+min_tier: L1
 updated: 2026-04-29
 ---
 

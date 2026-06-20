@@ -1,6 +1,8 @@
 ---
 title: Jwood Shorts 數據驅動製作決策 SOP
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-21
 audience: 排程 AI / 接手的 Claude 實例
 prerequisite: 能讀 JSON、能執行 bash、已知 Jwood 專案結構

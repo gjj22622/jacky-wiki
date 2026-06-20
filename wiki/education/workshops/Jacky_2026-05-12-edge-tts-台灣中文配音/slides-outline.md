@@ -1,6 +1,8 @@
 ---
 title: Edge TTS 台灣中文配音工作流 — 簡報大綱
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-12
 audience: 內部團隊
 duration: 15-20 分鐘簡報

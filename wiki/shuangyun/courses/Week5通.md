@@ -1,6 +1,8 @@
 ---
 title: Week 5｜通 — 腦跟手「串」起來，打造你的 AI 行銷部
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

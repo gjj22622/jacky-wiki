@@ -1,6 +1,8 @@
 ---
 title: Subagent 並行與交付 — 採坑點
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-06-18
 audience: 內部團隊 / AI 實踐者
 prerequisite: 用過 Claude Code subagent、headless chrome 出 PDF

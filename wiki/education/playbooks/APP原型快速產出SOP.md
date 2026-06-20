@@ -1,6 +1,8 @@
 ---
 title: APP 原型快速產出 SOP（1 週從規格到客戶簽認）
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-19
 audience: 內部團隊（接客製 APP 案的技術執行者）
 prerequisite: 看過 [Claude Code 三 skill 鐵三角](../workshops/2026-05-08-claude-code-三skill鐵三角/README.md)、[Commander+Executor 模式](../../cross-domain/Commander+Executor單人多Agent模式.md)、[入口導覽頁 SOP](../../cross-domain/入口導覽頁SOP.md)

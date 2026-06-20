@@ -1,6 +1,8 @@
 ---
 title: 找賣點 SOP
 domain: shuangyun
+visibility: team
+min_tier: L2
 tags: [sop, 賣點發現, 隱性知識]
 updated: 2026-04-28
 cases: 2

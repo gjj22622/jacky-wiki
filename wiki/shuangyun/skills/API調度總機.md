@@ -1,6 +1,8 @@
 ---
 title: shuangyun-api-gateway｜API 調度總機
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

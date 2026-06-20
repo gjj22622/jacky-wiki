@@ -1,6 +1,8 @@
 ---
 title: Week 1｜拆 — 用 Agent 思維重新設計你的工作
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

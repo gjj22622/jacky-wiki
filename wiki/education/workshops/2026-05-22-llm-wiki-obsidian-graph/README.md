@@ -1,6 +1,8 @@
 ---
 title: 如何製作自己的 LLM Wiki — Obsidian 關聯圖實戰
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-22
 audience: 內部團隊（同事、夥伴、AI 新手皆可）
 prerequisite: 會用 git push、會裝桌面軟體；不需任何 LLM 經驗

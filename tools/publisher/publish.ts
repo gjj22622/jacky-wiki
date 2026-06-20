@@ -18,7 +18,8 @@ const REPO_ROOT = resolve(HERE, "..", "..");               // repo 根
 const WIKI_ROOT = join(REPO_ROOT, "wiki");
 
 // 路徑硬排除（相對 wiki/）：否決一切 frontmatter
-const WIKI_HARD_EXCLUDE = ["jlife/", "ailab/inbox/", "ailab/experiments/"];
+// shuangyun/cases/ = 客戶真實案例，永不入庫（物理防線，凌駕去敏 backstop）
+const WIKI_HARD_EXCLUDE = ["jlife/", "ailab/inbox/", "ailab/experiments/", "shuangyun/cases/"];
 // repo 層硬排除（相對 repo 根）
 const REPO_HARD_EXCLUDE = ["inbox/", "raw/"];
 
@@ -98,7 +99,12 @@ function selectPages(cfg: Config, report: string[]): Page[] {
       report.push(`⚠ 硬排除否決（誤標 visibility）：${sourceId}`);
       continue;
     }
-    const minTier = TIER_ORDER.includes(fm["min_tier"] ?? "") ? fm["min_tier"] : "L3"; // 預設最深
+    let minTier = TIER_ORDER.includes(fm["min_tier"] ?? "") ? fm["min_tier"] : "L3"; // 預設最深
+    // AGENTS® IP 安全網：含此標記的頁一律鎖 L3（凌駕 frontmatter，核心方法論只進最深師傅級）
+    if (body.includes("AGENTS®") && minTier !== "L3") {
+      report.push(`🔒 AGENTS® 安全網：${sourceId} min_tier ${minTier}→L3`);
+      minTier = "L3";
+    }
     pages.push({
       abs,
       sourceId,
@@ -164,7 +170,7 @@ function sanitize(text: string, denylist: string[]): string[] {
   const hits: string[] = [];
   if (/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/.test(text)) hits.push("疑似 email");
   for (const name of denylist) if (text.includes(name)) hits.push(`denylist:${name}`);
-  if (text.includes("AGENTS®")) hits.push("AGENTS® 機密標記");
+  // AGENTS® 不再整頁擋（內部大腦核心 IP）；改由 selectPages 鎖 min_tier=L3 控管
   return hits;
 }
 

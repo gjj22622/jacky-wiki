@@ -1,6 +1,8 @@
 ---
 title: AI 是新作業系統 — 簡報大綱（16 張）
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-06-20
 audience: 双云團隊 / 帶新人的人
 duration: 25 分鐘

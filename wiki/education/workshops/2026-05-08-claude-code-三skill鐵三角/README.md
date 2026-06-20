@@ -1,6 +1,8 @@
 ---
 title: Claude Code 三 skill 鐵三角設計（wrap-up / kickoff / internal-training）
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-08
 audience: 內部團隊
 prerequisite: 用過 Claude Code、知道 cwd 概念、git 基礎

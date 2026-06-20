@@ -1,6 +1,8 @@
 ---
 title: AGENTS® 方法論 — 知識體系全書
 domain: shuangyun
+visibility: team
+min_tier: L3
 updated: 2026-04-29
 ---
 

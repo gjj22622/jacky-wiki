@@ -1,6 +1,8 @@
 ---
 title: TJFS 投稿衝刺一日工作流 — 簡報大綱（25 張）
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-20
 parent: README.md
 ---

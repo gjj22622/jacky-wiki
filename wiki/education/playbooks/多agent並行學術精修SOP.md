@@ -1,6 +1,8 @@
 ---
 title: 多 Agent 並行學術精修 SOP — Claude Code Sub-agent 拆分長文壓縮的標準操作手冊
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-20
 audience: 內部團隊 / 學術投稿者
 prerequisite: 用過 Claude Code Agent tool、會 PowerShell 字串操作

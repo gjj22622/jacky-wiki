@@ -1,6 +1,8 @@
 ---
 title: 品牌短網址 + UTM 系統從零到上線
 domain: education
+visibility: team
+min_tier: L1
 updated: 2026-05-22
 audience: 內部團隊（有基本 Node.js / Zeabur 操作能力）
 prerequisite: 知道 server.js 是什麼、用過 Zeabur 部署、知道 GA4 是什麼

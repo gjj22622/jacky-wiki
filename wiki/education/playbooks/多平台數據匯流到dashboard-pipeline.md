@@ -1,6 +1,8 @@
 ---
 title: 多平台數據匯流 Dashboard Pipeline SOP
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-11
 audience: 內部團隊（木酢寵物達人 + 双云行銷）
 prerequisite: 基本 Google 帳號操作、知道什麼是 GitHub Actions

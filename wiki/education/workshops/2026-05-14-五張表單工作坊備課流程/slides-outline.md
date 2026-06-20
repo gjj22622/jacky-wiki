@@ -1,6 +1,8 @@
 ---
 title: TBSA 五張表單工作坊備課流程 — 簡報大綱
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-14
 audience: 內部團隊
 duration: 約 20 張投影片，12-15 分鐘講完

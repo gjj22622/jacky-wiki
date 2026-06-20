@@ -1,6 +1,8 @@
 ---
 title: Jacky 的 AI 備課流程（7 階段人機協作）
 domain: shuangyun
+visibility: team
+min_tier: L2
 updated: 2026-04-29
 ---
 

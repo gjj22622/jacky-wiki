@@ -1,6 +1,8 @@
 ---
 title: 客製 APP 接案服務化方法論（讓接案變產品線）
 domain: education
+visibility: team
+min_tier: L2
 updated: 2026-05-19
 audience: J董 + 服務團隊（双云 / TBSA / AI 諮詢的客戶經理）
 prerequisite: 看過 [APP 原型快速產出 SOP](APP原型快速產出SOP.md)（技術執行面）、了解 [AGENTS 知識體系](../../shuangyun/concepts/AGENTS知識體系.md)
