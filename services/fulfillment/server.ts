@@ -53,9 +53,11 @@ async function askWorkspace(slug: string, question: string): Promise<string | nu
     });
     if (!r.ok) return null;                      // workspace 不存在/錯誤 → 視為 0 命中
     const j: any = await r.json();
-    const text = (j?.textResponse ?? "").trim();
-    // query 模式無命中時 AnythingLLM 多半回空或「no relevant」；統一過濾
+    let text = (j?.textResponse ?? "").trim();
+    text = text.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();  // 剝除模型推理塊
     if (!text) return null;
+    // 模型依指令在內容不足時回「倉庫中無此資訊」；統一視為 0 命中（負向測試乾淨）
+    if (/無此資訊|沒有相關(資訊|內容)|no relevant information/i.test(text)) return null;
     return text;                                 // 只取合成答案，丟棄 j.sources（不外露原文）
   } catch {
     return null;                                 // 倉庫連不上 → 0 命中，不崩潰

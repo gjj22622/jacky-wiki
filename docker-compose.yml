@@ -8,6 +8,11 @@ services:
       - "3001:3001"
     environment:
       - STORAGE_DIR=/app/server/storage
+      # LLM/Embedding provider 設定走環境變數，跨容器重建持久（/app/server/.env 不在 volume 上）
+      - LLM_PROVIDER=openrouter
+      - OPEN_ROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPEN_ROUTER_MODEL_PREF=openai/gpt-4o-mini
+      - EMBEDDING_ENGINE=native
     env_file:
       - .env
     volumes:
