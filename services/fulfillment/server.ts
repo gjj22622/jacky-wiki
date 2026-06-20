@@ -22,6 +22,20 @@ const ORDERS_LOG = join(HERE, "orders.log");
 
 const TIER_RANK: Record<string, number> = { L1: 1, L2: 2, L3: 3 };
 
+// ── per-key 速率限制（滑動視窗，零依賴）──────────────────────
+// 防單一成員大量下單把倉庫掃出來。預設每把 key 每分鐘 30 張訂單。
+const RATE_LIMIT_PER_MIN = Number(process.env.RATE_LIMIT_PER_MIN ?? 30);
+const RATE_WINDOW_MS = 60_000;
+const rateHits = new Map<string, number[]>();   // api_key → 近一分鐘的請求時間戳(ms)
+function rateLimited(key: string): boolean {
+  const now = Date.now();
+  const cutoff = now - RATE_WINDOW_MS;
+  const arr = (rateHits.get(key) ?? []).filter((t) => t > cutoff);
+  arr.push(now);
+  rateHits.set(key, arr);
+  return arr.length > RATE_LIMIT_PER_MIN;
+}
+
 type Member = { id: string; name?: string; tier: string; topics: string[]; api_key: string };
 function loadMembers(): Member[] {
   const p = join(HERE, "members.json");
@@ -87,6 +101,13 @@ const server = createServer(async (req, res) => {
 
   const member = authMember(req.headers["x-api-key"] as string | undefined);
   if (!member) return send(res, 401, { error: "unauthorized" });
+
+  // 速率限制：超量直接擋，並審計（防大量訂單掃庫）
+  if (rateLimited(member.api_key)) {
+    audit({ member: member.id, tier: member.tier, rate_limited: true });
+    res.setHeader("Retry-After", "60");
+    return send(res, 429, { error: "rate_limited", message: `每分鐘最多 ${RATE_LIMIT_PER_MIN} 張訂單，請稍後再試。` });
+  }
 
   let payload: any;
   try { payload = JSON.parse(await readBody(req) || "{}"); } catch { return send(res, 400, { error: "bad_json" }); }

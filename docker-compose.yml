@@ -12,7 +12,13 @@ services:
       - LLM_PROVIDER=openrouter
       - OPEN_ROUTER_API_KEY=${OPENROUTER_API_KEY}
       - OPEN_ROUTER_MODEL_PREF=openai/gpt-4o-mini
-      - EMBEDDING_ENGINE=native
+      # Embedding 也走 OpenRouter（同一把付費 key，免開新帳號）；text-embedding-3-large 中文召回強
+      - EMBEDDING_ENGINE=generic-openai
+      - EMBEDDING_BASE_PATH=https://openrouter.ai/api/v1
+      - EMBEDDING_MODEL_PREF=openai/text-embedding-3-large
+      - EMBEDDING_MODEL_MAX_CHUNK_LENGTH=8000
+      - GENERIC_OPEN_AI_EMBEDDING_API_KEY=${OPENROUTER_API_KEY}
+      - GENERIC_OPEN_AI_EMBEDDING_MAX_CONCURRENT_CHUNKS=128
     env_file:
       - .env
     volumes:
@@ -28,6 +34,8 @@ services:
       - ANYTHINGLLM_BASE_URL=http://anythingllm:3001
       - ANYTHINGLLM_API_KEY=${ANYTHINGLLM_API_KEY}
       - PORT=8080
+      # 每把成員 key 每分鐘最多幾張訂單（防掃庫）
+      - RATE_LIMIT_PER_MIN=30
     volumes:
       # members.json 為機密，執行期掛入，不進 image
       - ./services/fulfillment/members.json:/app/members.json:ro
