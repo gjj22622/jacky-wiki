@@ -1304,3 +1304,20 @@ ln -sf ~/jacky-wiki/wiki/ailab/skill/SKILL.md ~/.claude/skills/ailab/SKILL.md
 
 **ailab 域頁數**：16 → 19（+ 跨機部署、SKILL 主版、INSTALL）。
 **Wiki 總頁數**：94 → 97。
+
+---
+
+## 2026-06-20 — AI 作業系統觀入庫（ailab concept + education workshop）
+
+**做了什麼**：把 Jacky 原創洞察「AI 是新世代的工作作業系統」入庫兩處：
+- `ailab/concepts/AI作業系統觀.md`（原始論述，定位為 [AI工具觀] 的上位：工具觀=選工具、作業系統觀=把工具組成個人 OS）。
+- `education/workshops/2026-06-20-ai作業系統觀/`（README + slides-outline 16 張，對外內訓，重點「用 OS 邏輯帶新人」）。
+
+**為什麼**：團隊與新人帶領需要一個可遷移的心智模型——逐個教工具會過時，OS 邏輯不會。配合双云 AI School 線上平台新增「AI 作業系統」概念頁。
+
+**留下決策**：
+- 用網路研究佐證（Karpathy Software 3.0 / Copilot OS / Cursor CLI 四介面 / AIOS Agent=行程 / MCP=syscall），支持度約 8.5/10。
+- 不固定品牌名；對外用「視角／作業系統邏輯」框架。
+- ailab 概念頁不自動 push（個人水庫慣例）；education 教材自動 push。
+
+**頁數**：ailab concepts +1；education 28 → 30（README + slides）。
