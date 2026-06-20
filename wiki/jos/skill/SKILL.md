@@ -29,9 +29,10 @@ trigger: /移機
 
 ```
 /移機                  # 顯示 jos 域索引、近況、可用子指令
-/移機 capture          # 🔄 掃描本機現況，更新 wiki 清單（CLI 版本 / skill 快照 / manifest）
+/移機 capture          # 🔄 掃描本機現況，更新 wiki 清單（偵測 OS，只寫本機 manifest 區段）
 /移機 restore          # 🚀 新機還原：照 換電腦SOP 逐步帶做，能自動的先跑
 /移機 sync             # 🔁 只同步 skill：~/.claude/skills/ ↔ wiki/jos/skills/個人skills/
+/移機 diff             # 🔍 比對多機環境（Windows ↔ Linux ↔ WSL2），列出差異與補齊動作
 ```
 
 ---
@@ -53,12 +54,25 @@ trigger: /移機
 
 對應使用者偏好「先做 runbook（3），再進化腳本（1）」——現階段以「維護清單」為主。
 
-1. **掃 CLI 版本**：跑這些（跨平台擇一）取得版本，更新 [manifest](migration/manifest.md) 與 [CLI工具清單](environment/CLI工具清單.md) 的「本機版本」欄：
+0. **先偵測作業系統**（Windows / Ubuntu / macOS / WSL2）→ 決定要更新 [manifest](migration/manifest.md) 的**哪一個機器區段**。
+   ⚠️ **多機鐵則**：只更新本機對應的 `##` 區段，**絕不覆蓋別台機器的區段**。本機沒有的區段（如在 Linux 跑時的「Windows 主機」段）原封不動。
+1. **掃 CLI 版本**：跑這些取得版本，更新本機 manifest 區段；Windows 機同時更新 [CLI工具清單](environment/CLI工具清單.md) 的「本機版本」欄（該頁以 Windows 為基準）：
    - `claude --version` / `git --version` / `node -v` / `npm -v` / `docker --version` / `gh --version` / `python --version`（Win）或 `python3 --version`
-2. **同步 skill 快照**：把 `~/.claude/skills/<每支>/SKILL.md` 複製成 `<jacky-wiki>/wiki/jos/skills/個人skills/<名稱>.md`（見下方 sync 指令的指令片段）。發現新 skill → 也加進 [skill總索引](skills/skill總索引.md) 的表。
-3. **盤點 plugin / MCP**：若有新增，更新 [plugin與市集](skills/plugin與市集.md) / [MCP伺服器清單](environment/MCP伺服器清單.md)。
-4. 更新各被改檔的 `updated:` 日期與 manifest 的「快照時間」。
-5. **不要自動 commit**——列出改了哪些檔，提示 Jacky 一句 commit（`feat(wiki): jos - 更新環境快照`）。
+2. **同步 skill 快照**：把 `~/.claude/skills/<每支>/SKILL.md` 複製成 `<jacky-wiki>/wiki/jos/skills/個人skills/<名稱>.md`（見下方 sync 指令片段）。發現新 skill → 也加進 [skill總索引](skills/skill總索引.md)。
+3. **盤點 plugin / MCP**：若有新增，更新本機 manifest 區段 + [plugin與市集](skills/plugin與市集.md) / [MCP伺服器清單](environment/MCP伺服器清單.md)。
+4. 更新本機 manifest 區段的「快照時間」與被改檔的 `updated:`。
+5. **比另一台**：若 manifest 另一台機器已有資料，順手更新 [環境一致性](migration/環境一致性.md) 比對表，標出差異。
+6. **不要自動 commit**——列出改了哪些檔，提示 Jacky commit（`feat(wiki): jos - 更新<OS>環境快照`）+ push（多機要 push 才看得到彼此）。
+
+#### `/移機 diff`（多機環境比對）
+
+1. `git pull --rebase` 先收齊各機 capture（沒收齊就提醒先在另一台跑 capture+push）。
+2. 讀 [manifest](migration/manifest.md) 各機器區段，逐項比對：CLI 版本、skill 清單、plugin、自建程式。
+3. 把差異整理進 [環境一致性](migration/環境一致性.md) 的「比對表」與「已知差異與補齊計畫」：
+   - 哪台缺哪支 skill → 補齊動作（`git pull` + [skill總索引](skills/skill總索引.md) 一鍵還原）
+   - CLI 大版號不同 → 標注是否需對齊（小版號差異通常無害）
+   - plugin 缺 → `/plugin` 重裝
+4. 輸出「兩邊差異摘要 + 建議補齊清單」給 Jacky。不自動補、不自動 commit。
 
 #### `/移機 restore`（新機還原，逐步帶做）
 

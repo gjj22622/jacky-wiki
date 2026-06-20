@@ -10,6 +10,20 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-21（歸檔 jwood + jos 多機升級）
+
+**背景**：Jacky 要把 jwood 歸檔；並提出多機需求——確認 Windows ↔ Linux(G2 mini) 環境是否一致、把 Linux 的工具/設定/skill/作品也同步上 github。
+
+**決策**：
+- **jwood 作品頁**：第三方平台官網（jwood.tw 自有網域）、無自有程式碼（平台運營）。頁面記公開座標+社群，平台後台帳密進金庫（佔位待補）。
+- **jos 升級為多機架構**（關鍵）：`manifest.md` 改為**分機器區段**（Windows 主機 / G2 mini 各一段），`/移機 capture` 偵測 OS **只寫本機段、不覆蓋別台**——否則 Linux capture 會清掉 Windows 快照。
+- **新增 `migration/環境一致性.md`** + `/移機 diff` 子指令：各機 capture+push → 任一台 pull + diff → 列差異與補齊動作。
+- Linux 同步走「各機自己跑 capture」模式（這台 Windows 無法遠端抓 Linux 狀態）；Linux 端需先 `git pull` + 裝今天新建的 /移機 /作品 skill。
+
+**新增頁面**：portfolio/projects/jwood.md（+1→6）；jos/migration/環境一致性.md（+1→15）。manifest 重寫為多機。總頁數 210→212。
+
+---
+
 ## 2026-06-21（新建 jos 作業系統域 + portfolio 作品域 + /移機 /作品 雙 skill）
 
 **背景**：Jacky 在双云 AI School 提出「AI 使用應像新世代作業系統」。三個痛點：① 換電腦得從零重裝靠回憶；② 16 支個人 skill 只有 ailab 在 wiki 有主版，其餘換機就丟；③ 作品部署資訊散落，每次示範要回想網址/token。
