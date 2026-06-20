@@ -37,9 +37,15 @@ function rateLimited(key: string): boolean {
 }
 
 type Member = { id: string; name?: string; tier: string; topics: string[]; api_key: string };
+// 成員表來源：環境變數 MEMBERS_JSON 優先（雲端免掛檔案），否則讀 members.json（本機）
 function loadMembers(): Member[] {
+  const inline = process.env.MEMBERS_JSON;
+  if (inline) {
+    try { return (JSON.parse(inline).members ?? []) as Member[]; }
+    catch { console.error("✗ MEMBERS_JSON 不是合法 JSON"); process.exit(1); }
+  }
   const p = join(HERE, "members.json");
-  if (!existsSync(p)) { console.error("✗ 找不到 members.json"); process.exit(1); }
+  if (!existsSync(p)) { console.error("✗ 找不到 members.json（也未設 MEMBERS_JSON）"); process.exit(1); }
   return (JSON.parse(readFileSync(p, "utf8")).members ?? []) as Member[];
 }
 const MEMBERS = loadMembers();
