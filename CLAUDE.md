@@ -17,6 +17,8 @@ SOSTAC + AI First
 | jlife | 鐘基啟的人生回憶錄 | 個人成長脈絡 | 次要 | ✅ 已建（9 頁）|
 | tbsa | TBSA 商務企劃協會 | 社會職務 | 次要 | ✅ 已建（14 頁）|
 | nchu | 中興大學博士研究 | 學術 | 次要 | ✅ 已建（6 頁）|
+| **jos** | **AI 作業系統**（環境/工具/Skill 機械化清單，換電腦無痛轉移）| 工具傳承（新類別）| ⭐ **優先域** | ✅ 已建（14 頁）|
+| **portfolio** | **作品域**（已部署專案速查，token 走 gitignored 金庫）| 成果管理（新類別）| 次要 | ✅ 已建（5 頁）|
 | yinian | 一念清涼 | 個人修行 | 次要 | 🔲 待建 |
 | cross-domain | 跨域素材 | 共用框架 | — | ✅ 已建（5 頁）|
 
@@ -38,6 +40,8 @@ SOSTAC + AI First
                   │ ailab ←──工具與工作流──→ jwood            │  ← 新增
                   │ ailab ←──實踐心得──→ nchu                │  ← 新增
                   │ ailab ←──模式 ↔ 個人實踐──→ cross-domain  │  ← 新增
+                  │ jos ←──工具觀 ↔ 機械清單──→ ailab          │  ← 新增
+                  │ portfolio ←──作品 ↔ 部署環境──→ jos        │  ← 新增
                   └──────────────────────────────────────────┘
 ```
 
@@ -87,6 +91,18 @@ wiki/
 │   ├── experiments/            # 實驗中（依事件升格／關檔，無時間門檻）
 │   ├── log/                    # 重大里程碑（精選，不是日記）
 │   └── reading/                # 教材／文獻／影片心得
+├── jos/                        # ⭐ AI 作業系統（換電腦無痛轉移）
+│   ├── 作業系統索引.md
+│   ├── environment/            # 硬體/軟體/CLI/MCP/環境變數/自建程式清單
+│   ├── skills/                 # skill 總索引 + plugin + 個人skills/ 還原快照
+│   ├── migration/              # 換電腦SOP（新手友善）+ 還原檢查清單 + manifest
+│   └── skill/                  # /移機 canonical 主版 + INSTALL
+├── portfolio/                  # 作品域（已部署專案速查）
+│   ├── 作品索引.md             # 主表
+│   ├── README.md               # 金庫機制 + 隱私紅線
+│   ├── projects/               # 每專案一頁（非機密）
+│   ├── .vault/                 # 🔒 gitignored 金庫（token/密碼）
+│   └── skill/                  # /作品 canonical 主版 + INSTALL
 └── yinian/                     # 待建
 
 inbox/                          # 未分類輸入

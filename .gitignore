@@ -20,3 +20,6 @@ services/fulfillment/members.json
 services/fulfillment/orders.log
 **/.env
 **/node_modules/
+
+# 作品域金庫 — token/密碼/登入機密絕不進 git（紅線）
+wiki/portfolio/.vault/

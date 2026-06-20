@@ -10,6 +10,22 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-21（新建 jos 作業系統域 + portfolio 作品域 + /移機 /作品 雙 skill）
+
+**背景**：Jacky 在双云 AI School 提出「AI 使用應像新世代作業系統」。三個痛點：① 換電腦得從零重裝靠回憶；② 16 支個人 skill 只有 ailab 在 wiki 有主版，其餘換機就丟；③ 作品部署資訊散落，每次示範要回想網址/token。
+
+**決策**：
+- **環境域 + skill 域合併成 1 個 `jos`（AI 作業系統）域**（使用者拍板），底下 environment/ + skills/ + migration/。與 `ailab/tools/` 明確分工：ailab = 工具觀（為什麼），jos = 機械清單（怎麼裝回來），互連不重複。
+- **作品 token 走分離金庫**（使用者拍板）：`wiki/portfolio/.vault/` 進 `.gitignore`，頁面只記非機密，守住「token 不進 wiki」紅線。已用 `git check-ignore` 驗證金庫不被 commit。
+- **轉移先做純 runbook 後進化腳本**（使用者拍板）：`migration/換電腦SOP.md` 寫到電腦/AI 新手能逐行複製貼上（0→10 步、三平台並列），腳本化列為日後升級。
+- skill 還原快照：用實檔 `cp` 把 `~/.claude/skills/` 18 支 SKILL.md 複製進 `jos/skills/個人skills/`（即 `/移機 sync` 的動作），避免重打、避免漂移（快照非編輯主版）。
+
+**新增頁面**：jos 14 頁 + 18 還原快照；portfolio 5 頁 + gitignored 金庫。兩支 canonical skill 主版（`/移機`、`/作品`）+ 各機執行版已裝 `~/.claude/skills/`。
+
+**索引更新**：總頁數 191→210；wiki主索引 + CLAUDE.md 域表/拓樸/目錄樹；ailab/tools/工具棧索引頂部加 jos 連結；~/.claude/CLAUDE.md 加 /移機 /作品 觸發。
+
+---
+
 ## 2026-06-20（多機分歧救援：補回本機未推送的 4 頁）
 
 **背景**：本機工作樹卡了一批未提交變更，但其中索引檔（AI實踐索引、wiki主索引）是 6/15、136 頁的**舊快照**，而 GitHub 已被別台機器推到 187 頁。直接 pull 會衝突。
