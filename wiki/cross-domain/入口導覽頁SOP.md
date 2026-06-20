@@ -1,6 +1,8 @@
 ---
 title: 入口導覽頁 SOP
 domain: cross-domain
+visibility: team
+min_tier: L1
 updated: 2026-04-30
 ---
 

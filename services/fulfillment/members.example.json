@@ -1,0 +1,12 @@
+{
+  "_comment": "複製成 members.json（git-ignored）。api_key 是成員發訂單用的金鑰，非 AnythingLLM 金鑰。tier=L1/L2/L3；topics=可下訂單的主題白名單。",
+  "members": [
+    {
+      "id": "test-l1",
+      "name": "Phase 0 測試成員",
+      "tier": "L1",
+      "topics": ["cross-domain"],
+      "api_key": "REPLACE_WITH_RANDOM_SECRET"
+    }
+  ]
+}

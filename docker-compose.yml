@@ -1,0 +1,34 @@
+# AI 大腦 Phase 0 本機端到端：倉庫(AnythingLLM) + 訂單履約 API
+# 用法：cp .env.example .env 填值 → docker compose up -d --build
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: jacky-brain-warehouse
+    ports:
+      - "3001:3001"
+    environment:
+      - STORAGE_DIR=/app/server/storage
+    env_file:
+      - .env
+    volumes:
+      - anythingllm_storage:/app/server/storage
+    restart: unless-stopped
+
+  fulfillment:
+    build: ./services/fulfillment
+    container_name: jacky-brain-fulfillment
+    ports:
+      - "8080:8080"
+    environment:
+      - ANYTHINGLLM_BASE_URL=http://anythingllm:3001
+      - ANYTHINGLLM_API_KEY=${ANYTHINGLLM_API_KEY}
+      - PORT=8080
+    volumes:
+      # members.json 為機密，執行期掛入，不進 image
+      - ./services/fulfillment/members.json:/app/members.json:ro
+    depends_on:
+      - anythingllm
+    restart: unless-stopped
+
+volumes:
+  anythingllm_storage:

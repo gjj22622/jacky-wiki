@@ -1,6 +1,8 @@
 ---
 title: 雙姊妹品牌視覺差異化 SOP
 domain: cross-domain
+visibility: team
+min_tier: L1
 updated: 2026-05-16
 ---
 

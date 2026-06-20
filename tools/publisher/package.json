@@ -1,0 +1,11 @@
+{
+  "name": "jacky-brain-publisher",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "入庫扇出：把 jacky-wiki 的可發布頁（visibility+min_tier 閘門）清洗後上傳到 AnythingLLM 倉庫的 主題×層級 workspace 矩陣。零 npm 依賴，Node 24 原生跑 TS。",
+  "scripts": {
+    "publish": "node publish.ts",
+    "dry-run": "node publish.ts --dry-run"
+  }
+}

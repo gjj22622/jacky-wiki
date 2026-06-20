@@ -1,6 +1,8 @@
 ---
 title: Commander + Executor 單人多 Agent 模式
 domain: cross-domain
+visibility: team
+min_tier: L1
 updated: 2026-04-30
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: 來源控制與 script_viewer 模式
 domain: cross-domain
+visibility: team
+min_tier: L1
 updated: 2026-04-30
 ---
 

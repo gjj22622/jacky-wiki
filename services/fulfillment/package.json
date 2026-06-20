@@ -1,0 +1,10 @@
+{
+  "name": "jacky-brain-fulfillment",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "訂單履約 API：受保護 AI 大腦唯一對外面。POST /order → 認證 → 層級+主題雙閘選 workspace → AnythingLLM answer-only → 回「知識+判斷邏輯」包裹 → 訂單審計。零 npm 依賴。",
+  "scripts": {
+    "start": "node server.ts"
+  }
+}

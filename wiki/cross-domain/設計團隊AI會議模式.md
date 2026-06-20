@@ -1,6 +1,8 @@
 ---
 title: 設計團隊 AI 會議模式
 domain: cross-domain
+visibility: team
+min_tier: L1
 updated: 2026-05-16
 ---
 

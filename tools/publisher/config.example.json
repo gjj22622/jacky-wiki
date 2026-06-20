@@ -1,0 +1,11 @@
+{
+  "_comment": "複製成 config.json（git-ignored）並填實際值。API key 從環境變數 ANYTHINGLLM_API_KEY 讀，不寫在這裡。",
+  "anythingLLM": {
+    "baseUrl": "http://localhost:3001",
+    "apiKeyEnv": "ANYTHINGLLM_API_KEY"
+  },
+  "visibilityWhitelist": ["team"],
+  "tiers": ["L1", "L2", "L3"],
+  "activeTiers": ["L1"],
+  "topics": ["cross-domain"]
+}

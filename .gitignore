@@ -9,3 +9,14 @@
 
 # 工作進度看板（personal 本機檔，不入 wiki 公版）
 todolist.md
+
+# AI 大腦 — 金鑰紅線：機密設定／成員表／中間產物絕不進 public repo
+build/publish/
+tools/publisher/manifest.json
+tools/publisher/config.json
+tools/publisher/denylist.txt
+tools/publisher/report.md
+services/fulfillment/members.json
+services/fulfillment/orders.log
+**/.env
+**/node_modules/
