@@ -23,3 +23,4 @@ services/fulfillment/orders.log
 
 # 作品域金庫 — token/密碼/登入機密絕不進 git（紅線）
 wiki/portfolio/.vault/
+tools/members/members-audit.log
