@@ -37,8 +37,14 @@ function rateLimited(key: string): boolean {
 }
 
 type Member = { id: string; name?: string; tier: string; topics: string[]; api_key: string };
-// 成員表來源：環境變數 MEMBERS_JSON 優先（雲端免掛檔案），否則讀 members.json（本機）
+// 成員表來源：MEMBERS_JSON_B64（base64，雲端設環境變數最穩，免引號/逗號轉義）
+//   → MEMBERS_JSON（純 JSON 字串）→ members.json（本機檔案）
 function loadMembers(): Member[] {
+  const b64 = process.env.MEMBERS_JSON_B64;
+  if (b64) {
+    try { return (JSON.parse(Buffer.from(b64, "base64").toString("utf8")).members ?? []) as Member[]; }
+    catch { console.error("✗ MEMBERS_JSON_B64 解碼或解析失敗"); process.exit(1); }
+  }
   const inline = process.env.MEMBERS_JSON;
   if (inline) {
     try { return (JSON.parse(inline).members ?? []) as Member[]; }
