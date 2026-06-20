@@ -1,7 +1,7 @@
 ---
 title: AI 實踐 — Jacky 的工具觀／方法觀／演化觀
 domain: ailab
-updated: 2026-05-07
+updated: 2026-06-20
 ---
 
 # AI 實踐（ailab）
@@ -160,6 +160,7 @@ Jwood 的 Series A/B/C/D 並行工作流是 ailab 的多模態實驗成果。
 | 2026-04 | AGENTS v1.0 → v1.1（NCHU + Jwood + 双云三場景反推 12 元素） | [log](log/2026-04_AGENTS_v1.0→v1.1.md) |
 | 2026-05-02 | jacky-omnimind 建立（wiki 跨對話/跨機器同步機制） | [log](log/2026-05-02_jacky-omnimind.md) |
 | 2026-05-07 | 木酢平台 3 天上線 + AI Agent 升級 Tool Use（產品定位翻轉：「生成指令」） | [log](log/2026-05-07_平台建置與Tool_Use升級.md) |
+| 2026-06-20 | Jcheck 鷹眼監控 × Jdong 執行交接工作流成形（WO → plan → RR → QR） | [session](inbox/2026-06-20-session-jcheck-jdong-handoff-workflow.md) |
 
 ---
 

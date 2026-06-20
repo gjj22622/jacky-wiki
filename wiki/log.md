@@ -1,12 +1,60 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-06-15
+updated: 2026-06-20
 ---
 
 # Wiki 操作日誌
 
 > 記錄 wiki 整理過程的關鍵操作。**只記下「做了什麼、為什麼這樣做、留下什麼決策」**——不重複頁面內容本身。
+
+---
+
+## 2026-06-20（Jcheck × Jdong 鷹眼到執行交接 SOP）
+
+**主題**：把 AIRUN 的 Jcheck 監察機制，延伸成一條可交接、可驗收、可分享的 AI 營運治理工作流。核心分工是：Jcheck 只動眼監控與驗收，Jdong 讀工作書並協調執行，Work AI 或團隊實際處理，最後由 Jcheck 產生品質報告給 Jacky。
+
+### 新增頁面（2 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `ailab/inbox/2026-06-20-session-jcheck-jdong-handoff-workflow.md` | Mode B session 封存：記錄從 AIRUN 監察、Telegram 通知、local-only 試跑，到 Jcheck/Jdong 檔案交接與 skill 入口的決策脈絡 |
+| `education/playbooks/jcheck-jdong鷹眼到執行交接SOP.md` | 可分享 SOP：給內部團隊、AI 工作流設計者與客戶端理解 WO → plan → RR → QR 的治理流程 |
+
+### 留下的決策
+
+- Jcheck 是鷹眼：可監控、產工作書、驗收與回報；不修 code、不排程、不指派團隊。
+- Jdong 是營運協調者：讀工作書、拆任務、排程、整合成果；不改 Jcheck 工作書，不在缺證據時宣稱完成。
+- skill 是入口，檔案契約才是真相來源：`WO-*`、`*-plan.md`、`RR-*`、`QR-*` 保留完整審計鏈。
+- 因 `jacky-wiki` 已有既有 dirty worktree，本次只新增文件與補索引，未執行 pull / commit / push。
+
+---
+
+## 2026-06-19（AIRUN 營運風險監察 + 團隊/客戶分享素材）
+
+**主題**：把 AIRUN 的營運風險監察從想法落成 Jcheck 工具與可對內、對外說明的教材。核心不是只看 uptime，而是把服務健康、資源效率、程式碼風險、資安基線、異常流量、LLM 模型依賴與通知分級一起納入低成本監察報告。
+
+### 新增頁面（4 個）
+
+| 路徑 | 角色 |
+|---|---|
+| `ailab/inbox/2026-06-19-airun-risk-watch.md` | 原始實踐捕手紀錄：AIRUN 低成本營運風險監察機制 |
+| `education/workshops/2026-06-19-airun營運風險監察/README.md` | 主教材：20 分鐘 workshop，給內部團隊與客戶端/非工程師 |
+| `education/workshops/2026-06-19-airun營運風險監察/slides-outline.md` | 14 張簡報大綱 |
+| `education/workshops/2026-06-19-airun營運風險監察/團隊與客戶分享文案.md` | 可直接複製給團隊與客戶的分享文案 |
+
+### 為什麼這樣分
+
+- `ailab/inbox` 保留原始事件與決策脈絡：從 Jacky 提出營運風險監察需求，到實作 `airun-risk-watch`、email + Telegram 通知與 LLM 依賴治理。
+- `education/workshops` 產出對外可分享版本：把技術細節轉成「AI 服務如何被治理」的說法，方便給團隊、客戶理解。
+- 簡報大綱與分享文案分開放，後續可直接丟給 Canva / huashu 做 deck，或貼進群組、客戶提案。
+
+### 留下的決策
+
+- 第一版監控用 deterministic checks，不用 LLM 直接判斷警報。
+- Jcheck 作為 AIRUN 的本地營運監察區；若要團隊共同維護，再決定是否移入正式 repo 或獨立 repo。
+- 通知分 Green / Yellow / Red / Black，Red 以上 email + Telegram，避免 notification spam。
+- 因 `jacky-wiki` 已有既有 dirty worktree，本次只新增與索引補記，未執行 pull / commit / push。
 
 ---
 
