@@ -8,7 +8,7 @@ updated: 2026-06-20
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：187（不含本頁）
+**目前頁面數**：191（不含本頁）
 
 ## 知識域導航（7 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -16,10 +16,10 @@ updated: 2026-06-20
 |---|---|:---:|---|
 | ⭐ shuangyun | 双云行銷——品牌、行銷策略、客戶專案、AI Agent 體系 | 30 | [進入](shuangyun/双云索引.md) |
 | ⭐ jwood | 基的木藝——綠檀穴道按摩棒、YouTube 內容自動化 | 9 | [進入](jwood/木作索引.md) |
-| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）｜🆕 黃仁勳 Computex 2026 AI Agent 兩層架構（6/13 演講開場定義錨）** | **21** | [進入](ailab/AI實踐索引.md) |
+| ⭐ **ailab** | **AI 實踐——Jacky 工具觀／方法觀／演化觀（活知識結晶層）｜🆕 AI 作業系統觀（工具觀的上位）；黃仁勳 Computex 2026 AI Agent 兩層架構（6/13 演講開場定義錨）** | **24** | [進入](ailab/AI實踐索引.md) |
 | jlife | 鐘基啟的人生回憶錄——成長脈絡、六個身分階段、跨域對應 | 9 | [進入](jlife/人生索引.md) |
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
-| nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽 🆕** | 12 | [進入](nchu/中興博士索引.md) |
+| nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽**、**工具評估 ForestForTrees 🆕** | 13 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
 | **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop（低成本 Jcheck 報告／email + Telegram 通知／LLM 依賴治理）；從演講到業務開發全鏈 workshop + 跟進信寄送 SOP + Gmail 量寄採坑點；文獻知識庫公開內容產品 workshop（確定性零幻覺每日新聞管線）** | 37 | [進入](education/教育訓練索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
