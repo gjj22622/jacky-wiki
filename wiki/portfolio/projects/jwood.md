@@ -16,7 +16,7 @@ deployed: 上線中
 
 | 項目 | 值 |
 |---|---|
-| 資料夾 | 無自有程式碼（平台運營）｜AI 內容工作流檔案主要在 Linux 機 |
+| 資料夾 | `C:\Users\gjj22\OneDrive\Jwood`（TS agents + Python 影片生成器，⚠️ **唯一源、無 git 備份**）|
 | GitHub | 無 repo |
 | 官網 | https://jwood.tw |
 | 官網平台 | 第三方平台（待確認：Shopline / Wix / WordPress…）|
