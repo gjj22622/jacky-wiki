@@ -2,6 +2,7 @@
 title: Skill 總索引（單一真相）
 domain: jos
 updated: 2026-06-21
+snapshot: 24 份快照（utm-shortlink 已修復目錄結構）@ 2026-06-21 G2 mini
 ---
 
 # Skill 總索引
@@ -12,7 +13,7 @@ updated: 2026-06-21
 
 ---
 
-## 個人 Skill（16 支，放 `~/.claude/skills/<名稱>/SKILL.md`）
+## 個人 Skill（24 支聯集，放 `~/.claude/skills/<名稱>/SKILL.md`）
 
 | # | Skill | 觸發 | 用途 | 還原快照 |
 |:--:|---|---|---|---|
@@ -34,8 +35,16 @@ updated: 2026-06-21
 | 16 | **journal-chinese-forestry** | `/TJFS` `/林業科學` | 林業科學期刊投稿審核 | [→](個人skills/journal-chinese-forestry.md) |
 | 17 | **journal-ecological-informatics** | `/EI` `/生態資訊` | Ecological Informatics 投稿審核 | [→](個人skills/journal-ecological-informatics.md) |
 | 18 | **huashu-design** | （自然語言觸發）| 花叔 Design — HTML 高保真原型/設計 | [→](個人skills/huashu-design.md) |
+| 19 | **daemon-status** | `/daemon-status` | personal-agent daemon 健康狀態速報 | [→](個人skills/daemon-status.md) |
+| 20 | **gen-image** | （生圖／畫一張）| Codex CLI 呼叫 gpt-image-2 生圖 | [→](個人skills/gen-image.md) |
+| 21 | **invest-advisor** | `/invest` | 投資顧問（讀真實持倉/報價/法人）| [→](個人skills/invest-advisor.md) |
+| 22 | **jdong-wiki** | `/jdong-wiki` | J董 Wiki（AgentFlow CEO 知識庫）| [→](個人skills/jdong-wiki.md) |
+| 23 | **jwood-analytics** | （自然語言觸發）| Jwood YouTube 數字與策略速讀 | [→](個人skills/jwood-analytics.md) |
+| 24 | **utm-shortlink** | `/utm-shortlink` | UTM 製造 + airun.tw 短網址發行 | [→](個人skills/utm-shortlink.md) |
 
 > 第 2/3/4 支（ailab/移機/作品）有更完整的 **canonical 編輯主版**在 wiki 對應域；`個人skills/` 的快照只用於緊急一鍵還原。**要改 skill 改編輯主版，不要改快照。**
+>
+> **跨機分布**：1–18 多在 Windows 主機；19–24 為 G2 mini (Ubuntu) 獨有（多為 daemon/Linux 專用）。各機實際安裝清單見 [manifest](../migration/manifest.md)，差異與補齊見 [環境一致性](../migration/環境一致性.md)。
 
 ---
 
