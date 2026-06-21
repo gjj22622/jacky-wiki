@@ -8,7 +8,7 @@ updated: 2026-06-20
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：212（不含本頁）
+**目前頁面數**：216（不含本頁）
 
 ## 知識域導航（9 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -23,7 +23,7 @@ updated: 2026-06-20
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
 | **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop（低成本 Jcheck 報告／email + Telegram 通知／LLM 依賴治理）；從演講到業務開發全鏈 workshop + 跟進信寄送 SOP + Gmail 量寄採坑點；文獻知識庫公開內容產品 workshop（確定性零幻覺每日新聞管線）** | 37 | [進入](education/教育訓練索引.md) |
 | ⭐ **jos** | **AI 作業系統——Jacky 的 AI 工作環境機械化清單，🆕 換電腦無痛轉移（environment 環境/工具/CLI/MCP/環境變數 + skills 全 18 支 skill 單一真相 + migration 新手友善換電腦 SOP + 多機一致性比對）；對應 `/移機`（capture/restore/sync/diff）；與 ailab/tools 分工：那邊工具觀、這邊怎麼裝回來** | 15 | [進入](jos/作業系統索引.md) |
-| **portfolio** | **作品域——已部署專案速查（資料夾／GitHub／前端／admin／DNS／部署日），token 走 gitignored 金庫不進 wiki；一句 `/作品 <名稱>` 給齊示範資訊（AI大腦／Jwood）** | 6 | [進入](portfolio/作品索引.md) |
+| **portfolio** | **作品域——已部署專案速查（資料夾／GitHub／前端／admin／DNS），token 走 gitignored 金庫不進 wiki；一句 `/作品 <名稱>` 給齊示範資訊。已歸檔 AgentFlow(airun.tw)／muzopet 看板／一念清涼／回憶錄／AI大腦／Jwood + 6 開發中** | 10 | [進入](portfolio/作品索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -244,9 +244,13 @@ canonical `wiki/jos/skill/SKILL.md`；執行版 `~/.claude/skills/移機/SKILL.m
 portfolio/  (5 頁 + gitignored 金庫)
 ├── 作品索引.md               # ⭐ 主表：專案/狀態/資料夾/repo/前端/admin/DNS/部署日
 ├── README.md                 # 金庫機制、頁面規範、隱私紅線
-├── projects/  (2 頁)
-│   ├── ai大腦.md             # 履約問答系統（本機 beta）
-│   └── jwood.md             # 基的木藝（平台運營，jwood.tw）
+├── projects/  (6 頁)
+│   ├── agentflow-airun.md   # AgentFlow airun.tw（線上主站，金流已開）🟢
+│   ├── muzopet-dashboard.md # 木酢寵物達人數據看板（Zeabur）🟢
+│   ├── 一念清涼-每日佛學故事.md # A-day-A-Story（GitHub Pages+Firebase）🟢
+│   ├── 回憶錄系統.md         # jacky-memoir（Zeabur 佈建中）🟡
+│   ├── ai大腦.md             # 履約問答系統（本機 beta）🟡
+│   └── jwood.md             # 基的木藝（平台運營，jwood.tw）🟢
 ├── .vault/                   # 🔒 gitignored 金庫（token/密碼，絕不進 git）
 │   └── 作品金鑰.local.json
 └── skill/  (2 頁)            # canonical 主版

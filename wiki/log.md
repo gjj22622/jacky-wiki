@@ -10,6 +10,30 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-21（作品域大掃描 — agent team 盤點 C:\Users\gjj22 全部專案）
+
+**背景**：Jacky 嫌 /作品 內容匱乏，授權掃描 C:\Users\gjj22 所有專案資料夾，把所有「作品（專案成果 / 部署後網址；Jwood 類為實體木藝）」歸檔。
+
+**做法**：派 4 個 Explore agent 並行調查 ~19 個資料夾（read-only，寫入集中由主控做以守金鑰紅線）。每 agent 回報結構化座標（定位/remote/網址/admin/平台/狀態/憑證檔存在性，不貼值）。
+
+**新增作品頁（4，已部署/營運）**：
+| 頁 | 作品 | 平台/網址 |
+|---|---|---|
+| agentflow-airun | AgentFlow Solutions | airun.tw（自有網域，藍新金流已開）🟢 |
+| muzopet-dashboard | 木酢寵物達人數據看板 | muzopet-dashboard.zeabur.app 🟢 |
+| 一念清涼-每日佛學故事 | A-day-A-Story | github.io/A-day-A-Story（Firebase+Actions）🟢 |
+| 回憶錄系統 | jacky-memoir | jacky-memoir.zeabur.app（佈建中）🟡 |
+
+**索引次表（開發中/未部署）**：tw-opendata-mcp / mingnow / mingcha / 墨流網站 / 節稅專案 / Rewood。
+
+**金庫**：agentflow/muzopet/a-day-a-story/回憶錄 四筆，憑證採**指標式**（記憑證檔路徑+admin網址，值待 Jacky 補；絕不貼 token）。
+
+**排除（非作品）**：TBSA 治理文件、双云_TBSA 合作、AgentcrewAcademy 教材、母親節/伴手禮草稿、Projects meta、文字轉音訊/_deckprev 暫存、2026暑假_越南（隱私）、TBSA 兩空夾。
+
+**索引更新**：portfolio 6→10 頁；總頁數 212→216；wiki主索引 + CLAUDE.md。
+
+---
+
 ## 2026-06-21（歸檔 jwood + jos 多機升級）
 
 **背景**：Jacky 要把 jwood 歸檔；並提出多機需求——確認 Windows ↔ Linux(G2 mini) 環境是否一致、把 Linux 的工具/設定/skill/作品也同步上 github。
