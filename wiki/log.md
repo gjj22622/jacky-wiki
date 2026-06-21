@@ -10,6 +10,33 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-21（深掘鐵則 + 三大專案家族 — 挖出 4 個漏掉的已部署產品）
+
+**背景**：Jacky 指出我只掃表層。**新鐵則**：資料夾越豐富越值得記；**>5 子夾 或 >3 層 → 派專屬 agent 深掘**。TBSA*、双云AI轉型教育訓練 內容極豐富。
+
+**做法**：量測後 3 個夾達標，各派專屬 agent + 1 綜合 agent 深掘：
+- 双云AI轉型教育訓練（16 子夾/8 層/18975 檔）→ 11 子作品
+- TBSA開課流程自動化（11 子夾/10 層/2941 檔）→ 7 子作品
+- 建立TBSA口說知識體系 SPEAKS（14 子夾/14 層/67604 檔）→ 10 子作品
+
+**重大發現（之前漏掉的已部署線上產品）**：
+| 產品 | 網址 |
+|---|---|
+| SPEAKS Coach App（生產 SaaS）| speaks-coach.zeabur.app + backend |
+| TBSA AI 教學樞紐（自有網域）| agents.tbsa.tw（4 子 agent）|
+| 双云 Agent 平台（腦+手）| shuangyun-agent-platform.zeabur.app |
+| 18 週課程產生器 | tbsa-18week.zeabur.app |
+
+**新增完整頁（3）**：speaks-coach、tbsa-ai-教學樞紐、双云agent平台。已部署作品 6→9。
+
+**作品索引**：新增「🏛 三大專案家族」section，把各家族多個子作品（KOL/Claude教學平台/V2/双云AI School/AGENTS架構圖/五張表單工作坊/助教後台/SPEAKS skills/導覽頁/簡報…）+ TBSA財務儀表板 全納入。
+
+**金庫**：+speaks-coach/tbsa-agents/shuangyun-agent 憑證指標。
+
+**索引更新**：portfolio 14→17 頁；總頁 220→223。鐵則已存記憶 [[feedback-portfolio-definition]]。
+
+---
+
 ## 2026-06-21（作品域 OneDrive 掃描 + 定義放寬 + 分類目錄重構）
 
 **背景**：Jacky 指出 OneDrive 還有一堆專案，且**放寬作品定義**：AI 生成簡報/素材、有導覽頁、有 HTML 檔，都算作品（不限已部署）。

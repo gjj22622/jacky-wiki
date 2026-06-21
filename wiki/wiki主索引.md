@@ -8,7 +8,7 @@ updated: 2026-06-20
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：220（不含本頁）
+**目前頁面數**：223（不含本頁）
 
 ## 知識域導航（9 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -23,7 +23,7 @@ updated: 2026-06-20
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
 | **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop（低成本 Jcheck 報告／email + Telegram 通知／LLM 依賴治理）；從演講到業務開發全鏈 workshop + 跟進信寄送 SOP + Gmail 量寄採坑點；文獻知識庫公開內容產品 workshop（確定性零幻覺每日新聞管線）** | 37 | [進入](education/教育訓練索引.md) |
 | ⭐ **jos** | **AI 作業系統——Jacky 的 AI 工作環境機械化清單，🆕 換電腦無痛轉移（environment 環境/工具/CLI/MCP/環境變數 + skills 全 18 支 skill 單一真相 + migration 新手友善換電腦 SOP + 多機一致性比對）；對應 `/移機`（capture/restore/sync/diff）；與 ailab/tools 分工：那邊工具觀、這邊怎麼裝回來** | 15 | [進入](jos/作業系統索引.md) |
-| **portfolio** | **作品域——分類目錄（A 線上產品／B 互動成品／C 客戶交付／D 課程方法論／E 工具），含本機+OneDrive 兩輪掃描全部作品；token 走 gitignored 金庫不進 wiki；`/作品 <名稱>` 給齊示範。作品定義放寬：已部署 OR AI 生成簡報素材 OR 有導覽頁/HTML** | 14 | [進入](portfolio/作品索引.md) |
+| **portfolio** | **作品域——分類目錄（A 線上產品／B 互動成品／C 客戶交付／D 課程方法論／E 工具 + 三大專案家族深掘）；含本機+OneDrive 全掃。已部署 9 個：airun.tw/muzopet/一念清涼/回憶錄/AI大腦/jwood/**speaks-coach/agents.tbsa.tw/双云Agent平台**；token 走 gitignored 金庫。定義：已部署 OR AI 簡報素材 OR 導覽頁/HTML** | 17 | [進入](portfolio/作品索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -254,8 +254,11 @@ portfolio/  (5 頁 + gitignored 金庫)
 │   ├── 前導生物-AI小說.md    # AI 科幻小說 + HTML 閱讀器 + Docker 🟢
 │   ├── 餐廳經營遊戲.md       # HTML5 模擬遊戲 v1+v2 ⚪dev
 │   ├── 鍾氏族譜.md          # 族譜網站（git, 全端）⚪dev
-│   └── skill-meeting.md     # 多角色 AI 圓桌（Next.js, Zeabur-ready）⚪dev
-│   # B-E 類其餘作品為作品索引內單行條目（OneDrive 簡報/課程/客戶交付/工具）
+│   ├── skill-meeting.md     # 多角色 AI 圓桌（Next.js, Zeabur-ready）⚪dev
+│   ├── speaks-coach.md      # SPEAKS 口說評分 SaaS（speaks-coach.zeabur.app）🟢
+│   ├── tbsa-ai-教學樞紐.md  # agents.tbsa.tw（自有網域，4 子 agent）🟢
+│   └── 双云agent平台.md     # shuangyun-agent-platform（腦+手，20 品牌）🟢
+│   # 三大專案家族(双云AI轉型/TBSA開課/SPEAKS)子作品 + B-E 類為作品索引條目
 ├── .vault/                   # 🔒 gitignored 金庫（token/密碼，絕不進 git）
 │   └── 作品金鑰.local.json
 └── skill/  (2 頁)            # canonical 主版
