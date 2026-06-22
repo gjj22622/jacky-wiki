@@ -10,6 +10,19 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-22（內訓教材 — Zeabur 部署採坑點 + 通用方法論）
+
+**背景**：AI 大腦 8 位成員上線那晚卡在部署、連環踩 3 個雷（從錯目錄 deploy→404、改 env 後 restart 不生效、上傳逾時），釐清後沉澱成可教資產。
+
+**做法**：三層分工——
+- `docs/ai-brain-部署操作手冊.md`：AI 大腦專案具體操作（含實際 service/env ID）
+- `wiki/ailab/patterns/zeabur自動部署方法.md`：抽象成**通用方法論**（任何 Zeabur 專案適用，三黃金鐵則）
+- `wiki/education/pitfalls/zeabur部署採坑點.md`：**對外教材**（/internal-training，5 個採坑 症狀/誤區/真實原因/解法/預防），引用 ailab pattern 不複製
+
+**新增頁面**：education/pitfalls/zeabur部署採坑點.md（主索引 education 37→38、總頁 223→224）。
+
+---
+
 ## 2026-06-21（深掘鐵則 + 三大專案家族 — 挖出 4 個漏掉的已部署產品）
 
 **背景**：Jacky 指出我只掃表層。**新鐵則**：資料夾越豐富越值得記；**>5 子夾 或 >3 層 → 派專屬 agent 深掘**。TBSA*、双云AI轉型教育訓練 內容極豐富。
