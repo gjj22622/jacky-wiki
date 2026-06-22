@@ -10,6 +10,20 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-22（內訓 playbook — 一念清涼每日 FB 自動發文 SOP）
+
+**背景**：把「一念清涼每天更新到 FB 的方法、步驟」整理成教育訓練文件，供同事 / 接手維運的 AI 照做，並可複製到其他粉專。
+
+**做法**：源頭取自專案 `C:\Users\gjj22\佛學寓意故事創新`（CLAUDE.md / WORKFLOW_MONITOR.md / DAILY_OPS_LOG.md），萃取出「內容月曆 + GitHub Actions cron 自動發 FB」的維運 SOP。判為 **playbook**（步驟導向、可重複套用、系統已運行 3 個月驗證成熟）。
+
+**新增**：`education/playbooks/一念清涼每日FB自動發文SOP.md`——5 步驟（準備內容/設定發文/每日自動執行/監控驗收）+ 7 種異常分支 + 6 項驗收 + 5 採坑點 + 複製到其他粉專的通用管線。
+
+**隱私守線**：Dashboard 帳密、FB token、GitHub PAT 一律「見金庫 / GitHub Secrets」，**值不入 wiki**；FB Page ID 為公開資訊故保留。配對連結 [多平台數據匯流 SOP]（GitHub Actions 姊妹管線）+ [AI 作業系統觀] + [portfolio 一念清涼作品頁]，不複製內容。
+
+**索引**：education 42→43 內部計；主索引 education 40→41、總頁 226→227。
+
+---
+
 ## 2026-06-22（部署上線 workshop — 含互動 deck，Linux 環境驗證通過）
 
 **背景**：deck 看過、Linux 機照「plugin 取機制 + pattern 學雷區」也成功會部署了。把整套正式收進 education 域成完整 workshop。
