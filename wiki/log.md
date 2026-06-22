@@ -10,6 +10,16 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-22（部署上線 workshop — 含互動 deck，Linux 環境驗證通過）
+
+**背景**：deck 看過、Linux 機照「plugin 取機制 + pattern 學雷區」也成功會部署了。把整套正式收進 education 域成完整 workshop。
+
+**新增**：`education/workshops/2026-06-22-zeabur部署上線/`（README 教材 + slides-outline 8 張 + index.html 互動 deck）。連回 pitfalls/採坑點、ailab/通用方法論、docs/操作手冊（三層不複製）。huashu-design 產 deck（工程深色、紅錯綠對、monospace；未裝 playwright 故未自動截圖，使用者目視通過）。
+
+**索引**：education 40→42 內部計；主索引 education 38→40、總頁 224→226。
+
+---
+
 ## 2026-06-22（內訓教材 — Zeabur 部署採坑點 + 通用方法論）
 
 **背景**：AI 大腦 8 位成員上線那晚卡在部署、連環踩 3 個雷（從錯目錄 deploy→404、改 env 後 restart 不生效、上傳逾時），釐清後沉澱成可教資產。
