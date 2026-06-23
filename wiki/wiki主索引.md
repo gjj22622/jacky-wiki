@@ -8,9 +8,9 @@ updated: 2026-06-20
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：229（不含本頁）
+**目前頁面數**：241（不含本頁）
 
-## 知識域導航（9 個內容域 + 1 個跨域 + 1 個待建）
+## 知識域導航（10 個內容域 + 1 個跨域 + 1 個待建）
 
 | 域 | 說明 | 頁面數 | 連結 |
 |---|---|:---:|---|
@@ -24,6 +24,7 @@ updated: 2026-06-20
 | **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop（低成本 Jcheck 報告／email + Telegram 通知／LLM 依賴治理）；從演講到業務開發全鏈 workshop + 跟進信寄送 SOP + Gmail 量寄採坑點；文獻知識庫公開內容產品 workshop（確定性零幻覺每日新聞管線）｜🆕 Zeabur CLI 部署採坑點（3 鐵則）+ 部署上線 workshop（含互動 deck，教會 Linux Claude 部署）；🆕 一念清涼每日 FB 自動發文 SOP（GitHub Actions cron 排程社群發文管線）；🆕 L6 Agent 迴圈設計 workshop（SOSTAC 迴圈＋影片語音/換頁對齊根因坑）** | 42 | [進入](education/教育訓練索引.md) |
 | ⭐ **jos** | **AI 作業系統——Jacky 的 AI 工作環境機械化清單，🆕 換電腦無痛轉移（environment 環境/工具/CLI/MCP/環境變數 + skills 全 18 支 skill 單一真相 + migration 新手友善換電腦 SOP + 多機一致性比對）；對應 `/移機`（capture/restore/sync/diff）；與 ailab/tools 分工：那邊工具觀、這邊怎麼裝回來** | 15 | [進入](jos/作業系統索引.md) |
 | **portfolio** | **作品域——分類目錄（A 線上產品／B 互動成品／C 客戶交付／D 課程方法論／E 工具 + 三大專案家族深掘）；含本機+OneDrive 全掃。已部署 9 個：airun.tw/muzopet/一念清涼/回憶錄/AI大腦/jwood/**speaks-coach/agents.tbsa.tw/双云Agent平台**；token 走 gitignored 金庫。定義：已部署 OR AI 簡報素材 OR 導覽頁/HTML** | 17 | [進入](portfolio/作品索引.md) |
+| **aischool** | **双云 AI Agent School 線上平台——L0-L6 全 42 課章節全文（拆/建/修/串通/迴圈）＋平台架構（5 權限分區/token後台/影片管線/部署/監察）＋課程↔Skill 連動＋三工具軌(Claude/Codex/Antigravity)；內容方法論連回 shuangyun 不複製** | 12 | [進入](aischool/AI School索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
 
 ## 域的拓樸（前傳 ↔ 現況雙向關聯）
@@ -46,6 +47,8 @@ updated: 2026-06-20
             │  ailab ←─個人 ↔ 共用模式─→ cross-domain │
             │  jos ←─工具觀 ↔ 機械清單─→ ailab  │  ← 2026-06-21
             │  portfolio ←─作品 ↔ 部署環境─→ jos │  ← 2026-06-21
+            │  aischool ←─課程 ↔ 方法論母源─→ shuangyun │ ← 2026-06-23
+            │  aischool ←─線上平台 ↔ 部署速查─→ portfolio │ ← 2026-06-23
             └────────────────────────────────┘
 ```
 
@@ -268,6 +271,30 @@ portfolio/  (5 頁 + gitignored 金庫)
 
 **對應 Skill**：`/作品`（add 歸檔 / `<名稱>` 查示範 / list 總表）。
 **金鑰紅線**：非機密進 wiki 頁；token/密碼進 `.vault/`（gitignore，不 push）。
+
+## ⭐ aischool 域結構（2026-06-23 新建 — 双云 AI Agent School 線上平台）
+
+```
+aischool/  (12 頁)
+├── AI School索引.md              # 域首頁：課程一覽 + 跨域分工
+├── curriculum/  (8 頁)
+│   ├── 課程地圖.md               # L0-L6 全 42 課總表 + Level↔Week 對應
+│   ├── L0_入門環境起手式.md       # 7 課
+│   ├── L1_拆_三工具與好問題.md    # 4 課（Week1）
+│   ├── L2_建_SOSTAC決策架構.md    # 4 課（Week2 前）
+│   ├── L3_建_最小Agent.md         # 4 課（Week2 後）
+│   ├── L4_修_Skill與殘酷測試.md   # 7 課（Week3）
+│   ├── L5_串通_協作與部署.md      # 9 課（Week4+5）
+│   └── L6_迴圈_Agent自動迴圈.md   # 7 課（新增，對應 /迴圈）
+├── platform/  (2 頁)
+│   ├── 平台架構.md               # 5 權限分區/token後台/影片管線/部署/監察
+│   └── 課程Skill連動.md          # skills.json → 每課 practice 機制
+└── concepts/  (1 頁)
+    └── 教學定位與AGENTS對應.md    # 三件事/三工具軌/AGENTS/AI Agent 定義
+```
+
+**去重原則**：AGENTS 六字訣、SOSTAC、殘酷測試等方法論只存一份在 shuangyun/tbsa，本域連結回去不複製。
+**對應平台**：repo `gjj22622/shuangyun-claude-code-training` → Zeabur `2clouds-claude-code-training.zeabur.app`。
 
 ---
 

@@ -10,6 +10,22 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-23（新建 aischool 域 — 双云 AI Agent School 線上平台）
+
+**背景**：把線上平台「双云 AI Agent School」的所有章節與內容獨立成一個域。平台 repo `gjj22622/shuangyun-claude-code-training` → Zeabur `2clouds-claude-code-training.zeabur.app`。
+
+**素材來源**：平台 `course.json`（42 課單一真相）+ `skills.json` + `README.md` + `product-facts.md` + `index.html`（zones）+ `双云AI_School/` 內容母源。
+
+**新增（12 頁）**：`aischool/AI School索引.md` + `curriculum/`（課程地圖 + L0-L6 共 7 個 Level 章節全文，每課含鉤子/摘要/長度）+ `platform/`（平台架構：5 權限分區/token後台/影片管線/部署/監察 + 課程↔Skill 連動）+ `concepts/教學定位與AGENTS對應.md`（三件事/三工具軌/AGENTS/AI Agent 定義）。
+
+**去重決策**：AGENTS 六字訣、SOSTAC、殘酷測試三色法等方法論**只連回 shuangyun/tbsa 不複製**；L1-L5 對應原 Week1-5 教案（shuangyun/courses），本域記的是「線上影片版重構」（新增 L0 入門、L6 迴圈），標明 Level↔Week 對應。
+
+**為何獨立成域而非塞進 shuangyun**：這是一個「產品／線上學院」，有平台架構、權限分區、部署監察等非方法論內容，獨立域邊界更清楚。雙向連結：aischool ↔ shuangyun（方法論母源）、aischool ↔ portfolio（部署速查）。
+
+**索引更新**：CLAUDE.md 域表 + 拓樸 + 目錄結構；主索引導航表 + 拓樸 + 結構區塊 + 頁數 229→241、域數 9→10；shuangyun 索引加反向指標。
+
+---
+
 ## 2026-06-22（內訓 playbook — 一念清涼每日 FB 自動發文 SOP）
 
 **背景**：把「一念清涼每天更新到 FB 的方法、步驟」整理成教育訓練文件，供同事 / 接手維運的 AI 照做，並可複製到其他粉專。
