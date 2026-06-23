@@ -1529,3 +1529,21 @@ ln -sf ~/jacky-wiki/wiki/ailab/skill/SKILL.md ~/.claude/skills/ailab/SKILL.md
 - ailab 概念頁不自動 push（個人水庫慣例）；education 教材自動 push。
 
 **頁數**：ailab concepts +1；education 28 → 30（README + slides）。
+
+---
+
+## 2026-06-23 — L6「迴圈」章節方法論入庫（SOSTAC 迴圈與逆推除錯）
+
+**做了什麼**：双云 AI School 新增 L6「迴圈」影片章節（7 課）＋ `/迴圈` skill 開發完成後，把核心方法論入庫：
+- `shuangyun/concepts/SOSTAC迴圈與逆推除錯.md`（方法論主頁：SOSTAC 當迴圈＋兩種逆＋逆推除錯階梯＋監控/終止）。
+- `shuangyun/skill/迴圈/`（/迴圈 canonical：拆/設計/跑）、`shuangyun/skill/監察/`（前一輪建的 /監察，本次一併提交）。
+- `education/workshops/2026-06-23-l6-agent迴圈設計/`（教學設計＋採坑：影片語音與換頁對齊的根因＝講稿要「一段一頁」分段）。
+
+**為什麼**：SOSTAC 迴圈是把 L2 學員既有知識長成「會自走的 AI 工作流」的關鍵方法論，值得當 concept 單獨存一份；skill/workshop/章節都連回它（去重）。
+
+**留下決策**：
+- 方法論存 concepts 一份；`/迴圈` skill＝執行、education workshop＝教學設計、L6 章節＝落地，三者連結指向 concept，不複製。
+- 逆向工程借鏡 Jacky 2025-08《數位行銷AI逆向工程》（建構用的逆），與逆推除錯（修正用的逆）併為「兩種逆」。
+- skill 總索引：個人 skill 25 → 26（加 /迴圈）。
+
+**頁數**：shuangyun 30 → 31（concept）；education 41 → 42（L6 workshop）；總 227 → 229。

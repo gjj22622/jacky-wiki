@@ -13,7 +13,7 @@ snapshot: 24 份快照（utm-shortlink 已修復目錄結構）@ 2026-06-21 G2 m
 
 ---
 
-## 個人 Skill（24 支聯集，放 `~/.claude/skills/<名稱>/SKILL.md`）
+## 個人 Skill（26 支聯集，放 `~/.claude/skills/<名稱>/SKILL.md`）
 
 | # | Skill | 觸發 | 用途 | 還原快照 |
 |:--:|---|---|---|---|
@@ -41,6 +41,8 @@ snapshot: 24 份快照（utm-shortlink 已修復目錄結構）@ 2026-06-21 G2 m
 | 22 | **jdong-wiki** | `/jdong-wiki` | J董 Wiki（AgentFlow CEO 知識庫）| [→](個人skills/jdong-wiki.md) |
 | 23 | **jwood-analytics** | （自然語言觸發）| Jwood YouTube 數字與策略速讀 | [→](個人skills/jwood-analytics.md) |
 | 24 | **utm-shortlink** | `/utm-shortlink` | UTM 製造 + airun.tw 短網址發行 | [→](個人skills/utm-shortlink.md) |
+| 25 | **監察** | `/監察` | 双云 AI School 六維監察查核（唯讀，shuangyun 域 skill）| [編輯主版](../../shuangyun/skill/監察/SKILL.md) |
+| 26 | **迴圈** | `/迴圈` | SOSTAC 迴圈設計與執行（AI School L6 實作工具，shuangyun 域 skill）| [編輯主版](../../shuangyun/skill/迴圈/SKILL.md) |
 
 > 第 2/3/4 支（ailab/移機/作品）有更完整的 **canonical 編輯主版**在 wiki 對應域；`個人skills/` 的快照只用於緊急一鍵還原。**要改 skill 改編輯主版，不要改快照。**
 >
