@@ -22,6 +22,8 @@ updated: 2026-06-23
 | **Codex** | 技術層與部署交付主力 | CLI、App、Web/Cloud、IDE extension、GitHub、SDK |
 | **Antigravity** | 多代理與瀏覽器任務實驗場 | IDE、Agent Manager、Browser integration、CLI、Subagents、Permissions |
 
+> 三家都有「先計畫後執行」的 Plan Mode（Claude Code Plan Mode／Codex plan mode／Antigravity Planning Mode），組合 Auto／Goal 模式可逼近全自動，見 [Plan 模式與自動化工作流](Plan模式與自動化工作流.md)。
+
 ## AGENTS 對應（課程主軸）
 
 | 字母 | 正式中文 | 教學短名 | 訓練重點 |

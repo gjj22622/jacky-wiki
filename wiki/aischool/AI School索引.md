@@ -35,8 +35,9 @@ aischool/
 ├── platform/  (2 頁)
 │   ├── 平台架構.md                    # 5 權限分區 / token 後台 / 影片管線 / 部署 / 監察
 │   └── 課程Skill連動.md               # skills.json → 每課 practice 機制
-└── concepts/  (1 頁)
-    └── 教學定位與AGENTS對應.md        # 三件事 / 三工具軌 / AGENTS 對應 / AI Agent 定義
+└── concepts/  (2 頁)
+    ├── 教學定位與AGENTS對應.md        # 三件事 / 三工具軌 / AGENTS 對應 / AI Agent 定義
+    └── Plan模式與自動化工作流.md       # Plan Mode（三工具都有）× Auto × Goal；互鎖雷區
 ```
 
 ## 課程一覽（L0–L6，42 課，92 分 55 秒）

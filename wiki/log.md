@@ -10,6 +10,22 @@ updated: 2026-06-20
 
 ---
 
+## 2026-06-24（aischool 加「Plan 模式與自動化工作流」概念頁）
+
+**背景**：Jacky 要把 plan mode + auto mode、plan mode + goal 模式的開發技巧加進 AI School，並先查證 Antigravity 有沒有 plan mode。
+
+**查證結果**：三工具軌都有 Plan Mode——Claude Code（Plan Mode，Shift+Tab／ExitPlanMode）、Codex（plan mode）、**Antigravity（Planning Mode 對 Fast Mode，產 Implementation Plan + Walkthrough artifact，Google-Docs 式畫線留言核准）**。來源：dev.to playfulprogramming「Planning vs Fast Mode in Google Antigravity」、developers.googleblog.com「Build with Google Antigravity」、多篇 Agent Manager/artifact 佐證。
+
+**新增**：`aischool/concepts/Plan模式與自動化工作流.md`——什麼是 Plan Mode／三工具對照表／Plan+Auto／Plan+Goal（`/goal`+Stop hook）／「plan mode × goal Stop hook 互鎖」雷區與解法。
+
+**放置決策**：放 concepts/ 而非新增 L5-10 影片課——curriculum/ 的 42 課鏡射平台 course.json 的影片，硬塞無影片的一課會跟 course.json 分歧；concepts/ 本就放非影片知識。L5-07、L6、教學定位頁各加一行指標連過去。
+
+**去重**：深度 SOP 留在 education `2026-06-01-文獻知識庫公開內容產品`（母教材）＋ ailab inbox goal-mode 事件，新概念頁連回不複製。同時把「三工具都有 Plan Mode」跨工具對照補進該 education workshop（步驟 1 後一段，updated→2026-06-24）。
+
+**索引更新**：aischool 12→13 頁；主索引導航表+結構區塊、CLAUDE.md 域表+目錄；總頁 241→242。
+
+---
+
 ## 2026-06-23（新建 aischool 域 — 双云 AI Agent School 線上平台）
 
 **背景**：把線上平台「双云 AI Agent School」的所有章節與內容獨立成一個域。平台 repo `gjj22622/shuangyun-claude-code-training` → Zeabur `2clouds-claude-code-training.zeabur.app`。
