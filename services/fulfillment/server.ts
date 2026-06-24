@@ -135,6 +135,33 @@ function readBody(req: IncomingMessage): Promise<string> {
 const server = createServer(async (req, res) => {
   // 只開 POST /order，其餘一律 404（刻意不給瀏覽/枚舉能力）
   if (req.method === "GET" && req.url === "/health") return send(res, 200, { ok: true, build: "freshthread-v2" });
+
+  // 🔧 暫時診斷端點（用完即移除）：用 ANYTHINGLLM_API_KEY 當通行碼，回報容器看到的倉庫連線實況
+  if (req.method === "GET" && req.url?.startsWith("/debug")) {
+    const u = new URL(req.url, "http://x");
+    if (u.searchParams.get("t") !== BRAIN_KEY) return send(res, 404, { error: "not_found" });
+    const out: Record<string, unknown> = { brain_base: BRAIN_BASE, brain_key_set: !!BRAIN_KEY };
+    try {
+      const h = { Authorization: `Bearer ${BRAIN_KEY}`, "Content-Type": "application/json" };
+      const tr = await fetch(`${BRAIN_BASE}/api/v1/workspace/shuangyun-l3/thread/new`, { method: "POST", headers: h, body: "{}" });
+      out.thread_new_status = tr.status;
+      const tj: any = await tr.json().catch(() => null);
+      const slug = tj?.thread?.slug ?? null;
+      out.thread_slug = slug;
+      if (slug) {
+        const cr = await fetch(`${BRAIN_BASE}/api/v1/workspace/shuangyun-l3/thread/${slug}/chat`, {
+          method: "POST", headers: h,
+          body: JSON.stringify({ message: `${PACKAGE_INSTRUCTION}請說明双云 AI Agent 課程「拆建修串管交」六步框架。`, mode: "query" }),
+        });
+        out.chat_status = cr.status;
+        const cj: any = await cr.json().catch(() => null);
+        out.text_preview = (cj?.textResponse ?? "").slice(0, 160);
+        out.sources = (cj?.sources ?? []).length;
+        fetch(`${BRAIN_BASE}/api/v1/workspace/shuangyun-l3/thread/${slug}`, { method: "DELETE", headers: { Authorization: `Bearer ${BRAIN_KEY}` } }).catch(() => {});
+      }
+    } catch (e) { out.error = String(e); }
+    return send(res, 200, out);
+  }
   if (req.method !== "POST" || req.url !== "/order") return send(res, 404, { error: "not_found" });
 
   const member = authMember(req.headers["x-api-key"] as string | undefined);
