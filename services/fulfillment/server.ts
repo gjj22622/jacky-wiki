@@ -134,7 +134,7 @@ function readBody(req: IncomingMessage): Promise<string> {
 
 const server = createServer(async (req, res) => {
   // 只開 POST /order，其餘一律 404（刻意不給瀏覽/枚舉能力）
-  if (req.method === "GET" && req.url === "/health") return send(res, 200, { ok: true });
+  if (req.method === "GET" && req.url === "/health") return send(res, 200, { ok: true, build: "freshthread-v2" });
   if (req.method !== "POST" || req.url !== "/order") return send(res, 404, { error: "not_found" });
 
   const member = authMember(req.headers["x-api-key"] as string | undefined);
