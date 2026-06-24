@@ -62,8 +62,9 @@ function authMember(key: string | undefined): Member | null {
 
 // 包裹格式指令：強制「對應知識 + 判斷邏輯」兩段（沿用 AGENTS 說明書第 5 區格式）
 const PACKAGE_INSTRUCTION = [
-  "你是 Jacky 知識大腦的履約助理。只能根據提供的內容回答；若內容不足，明說「倉庫中無此資訊」，不要自行編造、也不要透露其他主題或層級是否存在。",
-  "用繁體中文，分兩段輸出：",
+  "你是 Jacky 知識大腦的履約助理。只能根據提供的內容回答，不要自行編造、也不要透露其他主題或層級是否存在。",
+  "若提供的內容不足以回答問題，請『只』輸出一行：NO_MATCH（不得加任何其他文字、標點或解釋）。",
+  "否則用繁體中文分兩段輸出：",
   "【對應知識】針對問題的重點答案。",
   "【判斷邏輯】用「如果 __ 則 __」條列決策規則；並說明「無法判斷時應回報人類」的界線。",
   "",
@@ -100,8 +101,11 @@ async function askWorkspace(slug: string, question: string): Promise<string | nu
     let text = (j?.textResponse ?? "").trim();
     text = text.replace(/<think>[\s\S]*?<\/think>/gi, "").trim();  // 剝除模型推理塊
     if (!text) return null;
-    // 模型依指令在內容不足時回「倉庫中無此資訊」；統一視為 0 命中（負向測試乾淨）
-    if (/無此資訊|沒有相關(資訊|內容)|no relevant information/i.test(text)) return null;
+    // 0 命中訊號：① 模型專用 sentinel NO_MATCH（整段就是它）；② AnythingLLM 內建英文拒答（sources=0）。
+    // ⚠ 不再用「無此資訊」做子字串比對——該詞會出現在正常答案的【判斷邏輯】規則句中，
+    //   導致好答案被整段誤殺（這正是 6/21 綠、數日後全 fulfilled:false 的真因之一）。
+    if (text.replace(/[`*\s]/g, "").toUpperCase() === "NO_MATCH") return null;
+    if (/no relevant information|沒有相關(資訊|內容)/i.test(text)) return null;
     return text;                                 // 只取合成答案，丟棄 j.sources（不外露原文）
   } catch {
     return null;                                 // 倉庫連不上 → 0 命中，不崩潰
@@ -134,34 +138,7 @@ function readBody(req: IncomingMessage): Promise<string> {
 
 const server = createServer(async (req, res) => {
   // 只開 POST /order，其餘一律 404（刻意不給瀏覽/枚舉能力）
-  if (req.method === "GET" && req.url === "/health") return send(res, 200, { ok: true, build: "freshthread-v2" });
-
-  // 🔧 暫時診斷端點（用完即移除）：用 ANYTHINGLLM_API_KEY 當通行碼，回報容器看到的倉庫連線實況
-  if (req.method === "GET" && req.url?.startsWith("/debug")) {
-    const u = new URL(req.url, "http://x");
-    if (u.searchParams.get("t") !== BRAIN_KEY) return send(res, 404, { error: "not_found" });
-    const out: Record<string, unknown> = { brain_base: BRAIN_BASE, brain_key_set: !!BRAIN_KEY };
-    try {
-      const h = { Authorization: `Bearer ${BRAIN_KEY}`, "Content-Type": "application/json" };
-      const tr = await fetch(`${BRAIN_BASE}/api/v1/workspace/shuangyun-l3/thread/new`, { method: "POST", headers: h, body: "{}" });
-      out.thread_new_status = tr.status;
-      const tj: any = await tr.json().catch(() => null);
-      const slug = tj?.thread?.slug ?? null;
-      out.thread_slug = slug;
-      if (slug) {
-        const cr = await fetch(`${BRAIN_BASE}/api/v1/workspace/shuangyun-l3/thread/${slug}/chat`, {
-          method: "POST", headers: h,
-          body: JSON.stringify({ message: `${PACKAGE_INSTRUCTION}請說明双云 AI Agent 課程「拆建修串管交」六步框架。`, mode: "query" }),
-        });
-        out.chat_status = cr.status;
-        const cj: any = await cr.json().catch(() => null);
-        out.text_preview = (cj?.textResponse ?? "").slice(0, 160);
-        out.sources = (cj?.sources ?? []).length;
-        fetch(`${BRAIN_BASE}/api/v1/workspace/shuangyun-l3/thread/${slug}`, { method: "DELETE", headers: { Authorization: `Bearer ${BRAIN_KEY}` } }).catch(() => {});
-      }
-    } catch (e) { out.error = String(e); }
-    return send(res, 200, out);
-  }
+  if (req.method === "GET" && req.url === "/health") return send(res, 200, { ok: true, build: "filterfix-v3" });
   if (req.method !== "POST" || req.url !== "/order") return send(res, 404, { error: "not_found" });
 
   const member = authMember(req.headers["x-api-key"] as string | undefined);
