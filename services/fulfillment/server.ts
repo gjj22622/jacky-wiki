@@ -71,8 +71,26 @@ const PACKAGE_INSTRUCTION = [
 ].join("\n");
 
 async function askWorkspace(slug: string, question: string): Promise<string | null> {
+  // ⚠ 每張訂單開一個「用完即丟」的新對話串，再對它提問。
+  // 原因：AnythingLLM 的預設對話串會累積最近 N 則歷史；若所有訂單共用預設串，
+  //   過去的「倉庫中無此資訊」拒答會被當成對話歷史餵回模型，使後續正常問句也被拖著一起拒答
+  //   （實測 6/21 全綠、數日後因歷史污染自我惡化成全部 fulfilled:false）。
+  //   每張訂單獨立新串 → 無歷史可污染，訂單天生無狀態（本來就一問一答）。
+  let threadSlug: string | null = null;
   try {
-    const r = await fetch(`${BRAIN_BASE}/api/v1/workspace/${slug}/chat`, {
+    try {
+      const tr = await fetch(`${BRAIN_BASE}/api/v1/workspace/${slug}/thread/new`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${BRAIN_KEY}`, "Content-Type": "application/json" },
+        body: "{}",
+      });
+      if (tr.ok) threadSlug = ((await tr.json()) as any)?.thread?.slug ?? null;
+    } catch { /* 開串失敗就退回預設串，不阻斷查詢 */ }
+
+    const chatUrl = threadSlug
+      ? `${BRAIN_BASE}/api/v1/workspace/${slug}/thread/${threadSlug}/chat`
+      : `${BRAIN_BASE}/api/v1/workspace/${slug}/chat`;
+    const r = await fetch(chatUrl, {
       method: "POST",
       headers: { Authorization: `Bearer ${BRAIN_KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({ message: `${PACKAGE_INSTRUCTION}${question}`, mode: "query" }),
@@ -87,6 +105,14 @@ async function askWorkspace(slug: string, question: string): Promise<string | nu
     return text;                                 // 只取合成答案，丟棄 j.sources（不外露原文）
   } catch {
     return null;                                 // 倉庫連不上 → 0 命中，不崩潰
+  } finally {
+    // 清掉用完的對話串（fire-and-forget，不等結果、不阻斷回應；避免 thread 無限累積）
+    if (threadSlug) {
+      fetch(`${BRAIN_BASE}/api/v1/workspace/${slug}/thread/${threadSlug}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${BRAIN_KEY}` },
+      }).catch(() => {});
+    }
   }
 }
 
