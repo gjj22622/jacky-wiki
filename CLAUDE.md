@@ -18,7 +18,7 @@ SOSTAC + AI First
 | tbsa | TBSA 商務企劃協會 | 社會職務 | 次要 | ✅ 已建（14 頁）|
 | nchu | 中興大學博士研究 | 學術 | 次要 | ✅ 已建（6 頁）|
 | **jos** | **AI 作業系統**（環境/工具/Skill 機械化清單，換電腦無痛轉移 + 多機一致性）| 工具傳承（新類別）| ⭐ **優先域** | ✅ 已建（15 頁）|
-| **aischool** | **双云 AI Agent School 線上平台**（L0-L6 全 42 課章節全文 + 平台架構/權限分區/課程↔Skill 連動/部署監察 + Plan 模式與自動化工作流〔三工具都有 Plan Mode × Auto × Goal〕；內容方法論連回 shuangyun 不複製）| 產品（線上學院）| 次要 | ✅ 已建（13 頁）|
+| **aischool** | **双云 AI Agent School 線上平台**（L0-L6 全 43 課章節全文 + 平台架構/權限分區/課程↔Skill 連動/部署監察 + Plan 模式與自動化工作流〔三工具都有 Plan Mode × Auto × Goal〕；內容方法論連回 shuangyun 不複製）| 產品（線上學院）| 次要 | ✅ 已建（13 頁）|
 | **portfolio** | **作品域**（分類目錄 A-E + 三大專案家族深掘；本機+OneDrive 全掃；9 個已部署含 speaks-coach/agents.tbsa.tw/双云Agent平台；token 走 gitignored 金庫）| 成果管理（新類別）| 次要 | ✅ 已建（17 頁）|
 | yinian | 一念清涼 | 個人修行 | 次要 | 🔲 待建 |
 | cross-domain | 跨域素材 | 共用框架 | — | ✅ 已建（5 頁）|
@@ -108,7 +108,7 @@ wiki/
 │   └── skill/                  # /作品 canonical 主版 + INSTALL
 ├── aischool/                   # ⭐ 双云 AI Agent School 線上平台（產品域）
 │   ├── AI School索引.md         # 域首頁
-│   ├── curriculum/             # L0-L6 課程地圖 + 7 Level 章節全文（42 課）
+│   ├── curriculum/             # L0-L6 課程地圖 + 7 Level 章節全文（43 課）
 │   ├── platform/               # 平台架構 + 課程↔Skill 連動
 │   └── concepts/               # 教學定位 / 三工具軌 / AGENTS 對應 / AI Agent 定義 + Plan 模式與自動化工作流
 └── yinian/                     # 待建

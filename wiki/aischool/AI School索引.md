@@ -1,7 +1,7 @@
 ---
 title: 双云 AI Agent School 索引
 domain: aischool
-updated: 2026-06-23
+updated: 2026-06-27
 ---
 
 # 双云 AI Agent School（線上教學平台）
@@ -24,13 +24,13 @@ updated: 2026-06-23
 aischool/
 ├── AI School索引.md                  # 本頁
 ├── curriculum/  (8 頁)
-│   ├── 課程地圖.md                    # L0-L6 全 42 課總表 + Level↔Week 對應
+│   ├── 課程地圖.md                    # L0-L6 全 43 課總表 + Level↔Week 對應
 │   ├── L0_入門環境起手式.md           # 7 課
 │   ├── L1_拆_三工具與好問題.md        # 4 課
 │   ├── L2_建_SOSTAC決策架構.md        # 4 課
 │   ├── L3_建_最小Agent.md             # 4 課
 │   ├── L4_修_Skill與殘酷測試.md       # 7 課
-│   ├── L5_串通_協作與部署.md          # 9 課
+│   ├── L5_串通_協作與部署.md          # 10 課
 │   └── L6_迴圈_Agent自動迴圈.md       # 7 課
 ├── platform/  (2 頁)
 │   ├── 平台架構.md                    # 5 權限分區 / token 後台 / 影片管線 / 部署 / 監察
@@ -40,7 +40,7 @@ aischool/
     └── Plan模式與自動化工作流.md       # Plan Mode（三工具都有）× Auto × Goal；互鎖雷區
 ```
 
-## 課程一覽（L0–L6，42 課，92 分 55 秒）
+## 課程一覽（L0–L6，43 課，95 分 35 秒）
 
 | Level | 主題 | 課數 | 重點 | 對應原週 |
 |---|---|:--:|---|---|
@@ -49,7 +49,7 @@ aischool/
 | [L2 建](curriculum/L2_建_SOSTAC決策架構.md) | SOSTAC 決策架構 | 4 | 六格決策、S/O、S/T/A、Control 與資料缺口 | Week2 建 |
 | [L3 建](curriculum/L3_建_最小Agent.md) | 最小 Agent | 4 | 聊天 vs Agent、單一決策、最小說明書、驗收一致 | Week2 建 |
 | [L4 修](curriculum/L4_修_Skill與殘酷測試.md) | Skill 與殘酷測試 | 7 | Agent→Skill、九區塊、Prompt 工程、三色測試、報告修正、設定、知識分享 | Week3 修 |
-| [L5 串通](curriculum/L5_串通_協作與部署.md) | 協作與部署 | 9 | 三種協作、Sub Agent、Agent 工廠、追蹤成本權限、部署、MCP、CLI、長對話、開工收工 | Week4 串 + Week5 通 |
+| [L5 串通](curriculum/L5_串通_協作與部署.md) | 協作與部署 | 10 | 三種協作、Sub Agent、Agent 工廠、追蹤成本權限、部署、MCP、CLI、長對話、開工收工、Plugin 外掛包 | Week4 串 + Week5 通 |
 | [L6 迴圈](curriculum/L6_迴圈_Agent自動迴圈.md) | Agent 自動迴圈 | 7 | 為何迴圈、SOSTAC 六格 Agent、逆向工程定目標、每格成 Agent、監控打分、逆推除錯、動手跑 | 新增（對應 `/迴圈`） |
 
 ## 跨域連結
