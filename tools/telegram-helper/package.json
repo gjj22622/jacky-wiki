@@ -1,0 +1,14 @@
+{
+  "name": "jacky-telegram-helper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Small Telegram helper that pushes progress updates and receives commands.",
+  "scripts": {
+    "start": "node src/bot.mjs",
+    "notify": "node src/bot.mjs notify"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

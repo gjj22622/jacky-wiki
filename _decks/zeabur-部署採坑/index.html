@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeabur CLI 部署採坑點 · 內部分享</title>
+<style>
+  :root{
+    --bg:#14161c; --ink:#eef0f4; --muted:#9aa3b2; --line:#2a2f3a;
+    --panel:#1b1e26; --panel2:#20242e;
+    --amber:#f5b53d;      /* 雷/警告主色 */
+    --red:#ff6b6b;        /* 錯誤做法 */
+    --green:#46d39a;      /* 正確做法 */
+    --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,"Noto Sans TC",monospace;
+    --sans:-apple-system,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:#000;overflow:hidden;font-family:var(--sans)}
+  #stage{position:fixed;top:50%;left:50%;width:1920px;height:1080px;transform-origin:center;
+         background:var(--bg);color:var(--ink);overflow:hidden}
+  .slide{position:absolute;inset:0;padding:96px 120px;display:none;flex-direction:column}
+  .slide.active{display:flex}
+  /* chrome */
+  .pageno{position:absolute;right:64px;bottom:52px;font:600 22px/1 var(--mono);color:var(--muted);letter-spacing:.1em}
+  .kicker{font:700 24px/1 var(--mono);letter-spacing:.28em;color:var(--amber);text-transform:uppercase}
+  .rule{height:4px;width:96px;background:var(--amber);border-radius:2px;margin:26px 0 0}
+  h1{font-size:104px;line-height:1.04;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:62px;line-height:1.08;font-weight:800;letter-spacing:-.01em}
+  .sub{font-size:34px;color:var(--muted);font-weight:500;line-height:1.4}
+  .mono{font-family:var(--mono)}
+  /* cover */
+  .cover{justify-content:center}
+  .cover .meta{margin-top:54px;display:flex;gap:18px;flex-wrap:wrap}
+  .chip{font:600 26px/1 var(--mono);color:var(--muted);border:1.5px solid var(--line);
+        border-radius:999px;padding:16px 28px}
+  .cover .note{margin-top:64px;font-size:30px;color:var(--muted);max-width:1280px;line-height:1.5}
+  .cover .note b{color:var(--amber);font-weight:700}
+  /* pitfall layout */
+  .head{display:flex;align-items:baseline;gap:30px}
+  .num{font:800 84px/1 var(--mono);color:var(--amber);opacity:.9}
+  .cols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px;min-height:0}
+  .card{background:var(--panel);border:1.5px solid var(--line);border-radius:22px;padding:38px 42px;display:flex;flex-direction:column}
+  .card.bad{border-color:rgba(255,107,107,.45)}
+  .card.good{border-color:rgba(70,211,154,.45)}
+  .lab{font:700 24px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+  .lab.bad{color:var(--red)} .lab.good{color:var(--green)}
+  .row{margin-top:26px}
+  .row:first-of-type{margin-top:18px}
+  .row .t{font-size:27px;color:var(--muted);font-weight:700;letter-spacing:.04em;margin-bottom:8px}
+  .row .d{font-size:31px;line-height:1.42}
+  .row .d.hi{color:var(--ink)}
+  code,.code{font-family:var(--mono)}
+  .code{display:block;background:#0e1014;border:1px solid var(--line);border-radius:12px;
+        padding:18px 22px;font-size:26px;line-height:1.5;color:#d7dbe4;margin-top:14px;white-space:pre-wrap;word-break:break-all}
+  .code .err{color:var(--red)} .code .ok{color:var(--green)} .code .cmt{color:var(--muted)}
+  .pill{display:inline-block;font:700 24px/1 var(--mono);padding:10px 18px;border-radius:8px;margin-right:10px}
+  .pill.red{background:rgba(255,107,107,.14);color:var(--red)}
+  .pill.green{background:rgba(70,211,154,.14);color:var(--green)}
+  .pill.amber{background:rgba(245,181,61,.14);color:var(--amber)}
+  /* rules slide */
+  .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:60px;flex:1}
+  .rcard{background:var(--panel);border:1.5px solid var(--line);border-top:6px solid var(--amber);
+         border-radius:22px;padding:46px 40px;display:flex;flex-direction:column}
+  .rcard .rn{font:800 40px/1 var(--mono);color:var(--amber)}
+  .rcard h3{font-size:42px;font-weight:800;margin:22px 0 18px;line-height:1.15}
+  .rcard p{font-size:30px;color:var(--muted);line-height:1.45}
+  .rcard p b{color:var(--ink);font-weight:700}
+  /* layers slide */
+  .layers{display:flex;flex-direction:column;gap:26px;margin-top:56px;flex:1;justify-content:center}
+  .layer{display:grid;grid-template-columns:300px 1fr;align-items:center;gap:36px;
+         background:var(--panel);border:1.5px solid var(--line);border-radius:20px;padding:36px 44px}
+  .layer .badge{font:700 30px/1 var(--mono);color:var(--amber);letter-spacing:.04em}
+  .layer .path{font:600 30px/1 var(--mono);color:var(--ink)}
+  .layer .desc{font-size:29px;color:var(--muted);line-height:1.4;margin-top:10px}
+  .foot{margin-top:46px;font-size:30px;color:var(--muted)}
+  .foot b{color:var(--amber)}
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- 1 · COVER -->
+  <section class="slide cover active">
+    <div class="kicker">Zeabur CLI 部署 · 採坑點</div>
+    <div class="rule"></div>
+    <h1 style="margin-top:40px">AI 大腦團隊上線那晚<br>踩的 <span style="color:var(--amber)">5 個雷</span></h1>
+    <div class="meta">
+      <span class="chip">內部團隊分享</span>
+      <span class="chip">約 10 分鐘</span>
+      <span class="chip">2026-06-22</span>
+    </div>
+    <div class="note">成員、key、環境變數全都備好了——<b>卻卡在「最後一步部署」整整一小時</b>。<br>這 5 個雷全是那晚真實踩出來的。先看雷，再記三條鐵則。</div>
+    <div class="pageno mono">01</div>
+  </section>
+
+  <!-- 2 · PITFALL 1 -->
+  <section class="slide">
+    <div class="head"><span class="num">#1</span><h2>從錯的目錄 deploy，<br>服務直接變 404</h2></div>
+    <div class="cols">
+      <div class="card bad">
+        <div class="lab bad">▼ 現場 · 錯誤做法</div>
+        <div class="row"><div class="t">症狀</div><div class="d hi">deploy 回報「成功」，但帶正確憑證打 API 卻 <span class="pill red">404</span>，連原本好的 endpoint 都不見了。</div>
+          <div class="code"><span class="cmt"># 在 tools/members/ 跑（錯！）</span>
+npx zeabur deploy --service-id …
+<span class="ok">Service deployed successfully</span>
+<span class="cmt"># 但 POST /order →</span> <span class="err">404 not_found</span></div></div>
+        <div class="row"><div class="t">誤區假設</div><div class="d">以為 deploy 認的是 <code>--service-id</code>，在哪個資料夾跑都一樣。</div></div>
+      </div>
+      <div class="card good">
+        <div class="lab good">▲ 真相 · 正確做法</div>
+        <div class="row"><div class="t">真實原因</div><div class="d hi"><code>zeabur deploy</code> 上傳的是<b style="color:var(--amber)">當前工作目錄（CWD）</b>。從 <code>tools/members/</code>（只有一支 CLI）跑，等於把錯內容當服務上傳、把好服務蓋掉。</div></div>
+        <div class="row"><div class="t">解法</div><div class="d hi">先 <code>cd</code> 到該 service 的<b style="color:var(--green)">源碼目錄</b>再 deploy。</div>
+          <div class="code"><span class="ok">cd services/fulfillment</span>  <span class="cmt"># 含 Dockerfile 那層</span>
+npx zeabur deploy --service-id … --environment-id …</div></div>
+        <div class="row"><div class="t">預防</div><div class="d">部署前一律先 <code>pwd</code> 確認；把「cd 對目錄 + deploy」封進腳本。</div></div>
+      </div>
+    </div>
+    <div class="pageno mono">02</div>
+  </section>
+
+  <!-- 3 · PITFALL 2 -->
+  <section class="slide">
+    <div class="head"><span class="num">#2</span><h2>改了 env，<br><span class="mono">restart</span> 不會生效</h2></div>
+    <div class="cols">
+      <div class="card bad">
+        <div class="lab bad">▼ 現場 · 錯誤做法</div>
+        <div class="row"><div class="t">症狀</div><div class="d hi">CLI 更新環境變數成功、<code>restart</code> 也成功，但服務行為沒變——新成員 key 還是 <span class="pill red">401</span>。</div></div>
+        <div class="row"><div class="t">誤區假設</div><div class="d">以為「restart 一下就會重讀新環境變數」。</div>
+          <div class="code"><span class="ok">variable update … MEMBERS_JSON_B64=…  ✓</span>
+<span class="ok">service restart  ✓</span>
+<span class="cmt"># 新 key 仍 →</span> <span class="err">401 unauthorized</span></div></div>
+      </div>
+      <div class="card good">
+        <div class="lab good">▲ 真相 · 正確做法</div>
+        <div class="row"><div class="t">真實原因</div><div class="d hi">服務只在<b style="color:var(--amber)">啟動時</b>讀一次 env；<code>restart</code> 用的是<b>舊部署的 env 快照</b>。<br><code>redeploy</code> 又只給 git 綁定服務（本機上傳型回 <code>CANNOT_REDEPLOY_INPLACE</code>）。</div></div>
+        <div class="row"><div class="t">解法 + 預防</div><div class="d hi">改完 env → 從源碼目錄跑一次成功的 <b style="color:var(--green)">deploy</b>（重新上傳＝把新 env 烘進新部署）。</div>
+          <div class="code"><span class="cmt"># 心法</span>
+<span class="ok">改 env ＝ 要 deploy，不是 restart</span></div></div>
+      </div>
+    </div>
+    <div class="pageno mono">03</div>
+  </section>
+
+  <!-- 4 · PITFALL 3 -->
+  <section class="slide">
+    <div class="head"><span class="num">#3</span><h2>把「上傳逾時」<br>當成部署失敗</h2></div>
+    <div class="cols">
+      <div class="card bad">
+        <div class="lab bad">▼ 現場 · 錯誤做法</div>
+        <div class="row"><div class="t">症狀</div><div class="d hi">deploy 卡在 upload 逾時，以為壞了，反覆改設定、瞎查。</div>
+          <div class="code"><span class="err">failed to prepare upload …
+context deadline exceeded</span></div></div>
+        <div class="row"><div class="t">誤區假設</div><div class="d">逾時 ＝ 我哪裡設錯了。</div></div>
+      </div>
+      <div class="card good">
+        <div class="lab good">▲ 真相 · 正確做法</div>
+        <div class="row"><div class="t">真實原因</div><div class="d hi">那是 Zeabur <b style="color:var(--amber)">上傳端的網路 transient</b>，跟你的設定無關。env 變數那步通常已成功，只是上傳沒過。</div></div>
+        <div class="row"><div class="t">解法</div><div class="d hi"><b style="color:var(--green)">直接重試</b>（多跑幾次）或換較穩網路。</div></div>
+        <div class="row"><div class="t">預防</div><div class="d">看到 <code>deadline exceeded</code> 先重試 2–3 次，再懷疑設定。</div></div>
+      </div>
+    </div>
+    <div class="pageno mono">04</div>
+  </section>
+
+  <!-- 5 · PITFALL 4 -->
+  <section class="slide">
+    <div class="head"><span class="num">#4</span><h2>名冊/憑證不在 git，<br>多機「各說各話」</h2></div>
+    <div class="cols">
+      <div class="card bad">
+        <div class="lab bad">▼ 現場 · 錯誤做法</div>
+        <div class="row"><div class="t">症狀</div><div class="d hi">想讓另一台機器（Linux）也能部署/改成員，但那台的名冊跟主機<span class="pill red">不一致</span>。</div></div>
+        <div class="row"><div class="t">誤區假設</div><div class="d">以為 <code>git pull</code> 會把一切同步過來。</div></div>
+      </div>
+      <div class="card good">
+        <div class="lab good">▲ 真相 · 正確做法</div>
+        <div class="row"><div class="t">真實原因</div><div class="d hi">名冊真相檔（<code>members.json</code>）與金鑰<b style="color:var(--amber)">刻意 gitignored</b>（不能進公開 repo）→ 不跟著 git 走，兩台各改就分歧。</div></div>
+        <div class="row"><div class="t">解法</div><div class="d hi">指定一台當<b style="color:var(--green)">「名冊真相機」</b>只在那台改成員；其他機要用時，經安全管道（非 git）複製最新檔。</div></div>
+        <div class="row"><div class="t">預防</div><div class="d">程式碼走 git；機密與狀態走帶外管道。明確誰是真相機。</div></div>
+      </div>
+    </div>
+    <div class="pageno mono">05</div>
+  </section>
+
+  <!-- 6 · PITFALL 5 -->
+  <section class="slide">
+    <div class="head"><span class="num">#5</span><h2>驗證時把 <span class="mono">401</span> 跟 <span class="mono">404</span><br>混為一談</h2></div>
+    <div class="cols">
+      <div class="card bad">
+        <div class="lab bad">▼ 現場 · 錯誤做法</div>
+        <div class="row"><div class="t">症狀</div><div class="d hi">部署後打 API 失敗，分不清是「沒生效」還是「部署壞了」，亂改一通。</div></div>
+        <div class="row"><div class="t">預防 · 暖機</div><div class="d">剛 deploy 完服務重啟數十秒會短暫 4xx，正常。用 <code>curl --retry</code> 等就緒，<b style="color:var(--amber)">別用 shell sleep</b>。</div></div>
+      </div>
+      <div class="card good">
+        <div class="lab good">▲ 三態判讀 · 一眼定位</div>
+        <div class="row"><div class="t" style="margin-bottom:14px">回傳碼怎麼讀</div>
+          <div class="d hi" style="line-height:1.9">
+            <span class="pill red">401</span> 帶 key 卻 unauthorized → 名冊沒 deploy 生效（雷 #2）<br>
+            <span class="pill red">404</span> 帶對 key 卻 not_found → 上傳錯目錄（雷 #1）<br>
+            <span class="pill green">200 · fulfilled:false</span> → 認證 OK，只是這題沒命中（不是錯）<br>
+            <span class="pill green">200 · fulfilled:true</span> → 完全正常 ✓
+          </div></div>
+      </div>
+    </div>
+    <div class="pageno mono">06</div>
+  </section>
+
+  <!-- 7 · GOLDEN RULES -->
+  <section class="slide">
+    <div class="kicker">收束 · 帶走這個就夠</div>
+    <div class="rule"></div>
+    <h2 style="margin-top:34px">三條黃金鐵則</h2>
+    <div class="rules">
+      <div class="rcard"><div class="rn">01</div><h3>部署前先 <span class="mono">pwd</span></h3>
+        <p>deploy 上傳<b>當前目錄</b>。一定先 <b>cd 到 service 源碼夾</b>（含 Dockerfile）再 deploy，否則服務變 404。</p></div>
+      <div class="rcard"><div class="rn">02</div><h3>改 env ＝ deploy<br>不是 restart</h3>
+        <p>服務只在啟動讀 env。<b>restart 用舊快照、redeploy 需 git 綁定</b>——改完變數必須重新 deploy 才生效。</p></div>
+      <div class="rcard"><div class="rn">03</div><h3>逾時 ＝ transient<br>重試就好</h3>
+        <p><code>prepare upload deadline exceeded</code> 是 Zeabur 網路問題，不是你設錯。<b>重試 2–3 次</b>通常就過。</p></div>
+    </div>
+    <div class="foot">外加兩條：名冊/憑證走<b>帶外管道</b>不走 git（多機真相機）· 驗證時 <b>401 ≠ 404</b> 別亂改。</div>
+    <div class="pageno mono">07</div>
+  </section>
+
+  <!-- 8 · ASSET LAYERS -->
+  <section class="slide">
+    <div class="kicker">這套知識存在哪 · 三層分工</div>
+    <div class="rule"></div>
+    <h2 style="margin-top:34px">需要時去哪查</h2>
+    <div class="layers">
+      <div class="layer">
+        <div><div class="badge">具體案例</div></div>
+        <div><div class="path">docs/ai-brain-部署操作手冊.md</div>
+          <div class="desc">AI 大腦這個專案的實際操作：service / environment ID、兩種日常操作、故障排除。「我要部署這一個」看這份。</div></div>
+      </div>
+      <div class="layer">
+        <div><div class="badge">通用方法論</div></div>
+        <div><div class="path">wiki/ailab/patterns/zeabur自動部署方法.md</div>
+          <div class="desc">抽象成任何 Zeabur 專案都適用的標準流程＋三鐵則。「部署別的專案」看這份。</div></div>
+      </div>
+      <div class="layer">
+        <div><div class="badge">對外教材</div></div>
+        <div><div class="path">wiki/education/pitfalls/zeabur部署採坑點.md</div>
+          <div class="desc">就是今天這份分享的源——5 個採坑的症狀／誤區／真因／解法／預防。「教別人」看這份。</div></div>
+      </div>
+    </div>
+    <div class="foot"><b>docs</b> 給具體 · <b>ailab</b> 給通用 · <b>education</b> 給傳承 — 三層搭起來，不重複造輪子。</div>
+    <div class="pageno mono">08</div>
+  </section>
+
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));localStorage.setItem('zb_deck',i)}
+  function fit(){const s=document.getElementById('stage');const k=Math.min(innerWidth/1920,innerHeight/1080);s.style.transform=`translate(-50%,-50%) scale(${k})`}
+  addEventListener('resize',fit);fit();
+  show(parseInt(localStorage.getItem('zb_deck')||'0',10));
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown',' ','PageDown'].includes(e.key)){e.preventDefault();show(i+1)}
+    if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}
+    if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+    if(e.key==='f'){const d=document.documentElement;document.fullscreenElement?document.exitFullscreen():d.requestFullscreen&&d.requestFullscreen()}
+  });
+  addEventListener('click',e=>{if(e.clientX>innerWidth*0.5)show(i+1);else show(i-1)});
+</script>
+</body>
+</html>
