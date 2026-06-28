@@ -1622,4 +1622,8 @@ ln -sf ~/jacky-wiki/wiki/ailab/skill/SKILL.md ~/.claude/skills/ailab/SKILL.md
 
 **新增**：`education/concepts/Jacky課程與備課系統總覽.md`、`education/playbooks/通用備課LOOP工作流.md`、`education/skill/jacky-course-prep-loop/`。
 
+### 2026-06-28 補充決策｜全域字型統一
+
+Jacky 拍板所有備課與課程交付：**中文一律微軟正黑體；英文、數字、日期、網址與 Email 一律 Arial**。取消 Noto Serif TC、Noto Sans TC、Inter、Cormorant Garamond 等預設。所有可見文字硬下限 16pt，一般內文以 20–24pt 為目標。
+
 ---

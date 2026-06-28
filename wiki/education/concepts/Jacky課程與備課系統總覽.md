@@ -98,3 +98,11 @@ source_chat: 2026-06-28 TBSA 開課流程自動化全資料夾盤點
 - 真正產製：交給簡報、文件、試算表、TBSA 等專門 skills。
 - 單場產出留在課程專案；跨場規則、模板與復盤升格才進 Wiki。
 
+## 五、全域視覺文字規範
+
+- 中文一律使用微軟正黑體；英文、數字、日期、網址與 Email 一律使用 Arial。
+- 中英混排必須分 run／span 指定字型。
+- 所有可見文字硬下限 16pt；一般內文以 20–24pt 為目標。
+- 不再以 Noto Serif TC、Noto Sans TC、Inter 或 Cormorant Garamond 作為備課預設字型。
+- 完整規格見 [`visual-copy-standards.md`](../skill/jacky-course-prep-loop/references/visual-copy-standards.md)。
+
