@@ -11,11 +11,13 @@ source_chat: 2026-06-28 TBSA 開課流程自動化全資料夾盤點
 
 # 通用備課 LOOP 工作流
 
-> 入口：[`jacky-course-prep-loop`](../skill/jacky-course-prep-loop/SKILL.md)。母方法：[SOSTAC 迴圈與逆推除錯](../../shuangyun/concepts/SOSTAC迴圈與逆推除錯.md)。
+> 入口：[`jacky-course-prep-loop`](../skill/jacky-course-prep-loop/SKILL.md)。母方法：[SOSTAC 迴圈與逆推除錯](../../shuangyun/concepts/SOSTAC迴圈與逆推除錯.md)。十階段只是外層 workflow；真正的 LOOP 是每個產出都由監察 AI 驗收，退件後持續修正直到通過。
 
 ## 核心
 
-每階段固定跑 `Input → Decision → Output → Quality Gate → Log`；驗收 C 回到下一輪現況 S。單場追求準時且符合目標，跨場才追求模板化。
+每階段固定跑：`Input → 工作 AI 產出 → 監察 AI 驗收 → RETURN 修正／PASS → 人工 Gate → Log`。
+
+監察 AI 只評不改；不通過就附證據退回工作 AI。通過後才可進下一階段，但公開發布、客戶承諾及目標變更仍由人拍板。
 
 ## 十階段
 
@@ -42,6 +44,9 @@ source_chat: 2026-06-28 TBSA 開課流程自動化全資料夾盤點
 - T-24 小時後凍結非必要視覺變更。
 - 失敗依 A→T→S→O→S 逆推；同一方法無新證據最多三次。
 - 通用規則至少兩場驗證；單場內容不直接污染 skill。
+- AI 產出不得直接交付；必須先有監察 AI 的 `PASS` 紀錄。
+- 監察與執行角色分離：工作 AI 修正，監察 AI 只驗收。
+- 每個 Gate 預設最多 3 輪；無進展就逆推或交人決策。
 
 ## 跨場大循環
 
