@@ -1626,4 +1626,8 @@ ln -sf ~/jacky-wiki/wiki/ailab/skill/SKILL.md ~/.claude/skills/ailab/SKILL.md
 
 Jacky 拍板所有備課與課程交付：**中文一律微軟正黑體；英文、數字、日期、網址與 Email 一律 Arial**。取消 Noto Serif TC、Noto Sans TC、Inter、Cormorant Garamond 等預設。所有可見文字硬下限 16pt，一般內文以 20–24pt 為目標。
 
+### 2026-06-28 補充決策｜監察 AI 才構成真正 LOOP
+
+原十階段只屬外層 workflow，不足以稱為執行迴圈。Jacky 拍板在每個 AI 產出後加入獨立監察 AI：工作 AI 產出 → 監察 AI 驗收；不通過就附缺陷與證據退回修正，持續循環到通過，再進人工 Gate 或交付。監察 AI 只評不改，預設最多 3 輪，無進展時依 A→T→S→O→S 逆推。
+
 ---
