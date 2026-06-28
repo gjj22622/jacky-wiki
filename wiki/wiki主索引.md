@@ -1,14 +1,14 @@
 ---
 title: Jacky Wiki 總覽
 domain: root
-updated: 2026-06-20
+updated: 2026-06-28
 ---
 
 # Jacky Wiki
 
 **擁有者**：鐘基啟（Jacky）
 **核心框架**：SOSTAC + AI First
-**目前頁面數**：243（不含本頁）
+**目前頁面數**：246（不含本頁）
 
 ## 知識域導航（10 個內容域 + 1 個跨域 + 1 個待建）
 
@@ -21,7 +21,7 @@ updated: 2026-06-20
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽**、**工具評估 ForestForTrees 🆕** | 13 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
-| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop（低成本 Jcheck 報告／email + Telegram 通知／LLM 依賴治理）；從演講到業務開發全鏈 workshop + 跟進信寄送 SOP + Gmail 量寄採坑點；文獻知識庫公開內容產品 workshop（確定性零幻覺每日新聞管線）｜🆕 Zeabur CLI 部署採坑點（3 鐵則）+ 部署上線 workshop（含互動 deck，教會 Linux Claude 部署）；🆕 一念清涼每日 FB 自動發文 SOP（GitHub Actions cron 排程社群發文管線）；🆕 L6 Agent 迴圈設計 workshop（SOSTAC 迴圈＋影片語音/換頁對齊根因坑）** | 42 | [進入](education/教育訓練索引.md) |
+| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 通用備課 LOOP（六類課程路由＋十階段 Gate＋跨場升格）；Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop；從演講到業務開發全鏈 workshop；Zeabur CLI 部署；一念清涼每日 FB 自動發文；L6 Agent 迴圈設計** | 45 | [進入](education/教育訓練索引.md) |
 | ⭐ **jos** | **AI 作業系統——Jacky 的 AI 工作環境機械化清單，🆕 換電腦無痛轉移（environment 環境/工具/CLI/MCP/環境變數 + skills 全 18 支 skill 單一真相 + migration 新手友善換電腦 SOP + 多機一致性比對）；對應 `/移機`（capture/restore/sync/diff）；與 ailab/tools 分工：那邊工具觀、這邊怎麼裝回來** | 15 | [進入](jos/作業系統索引.md) |
 | **portfolio** | **作品域——分類目錄（A 線上產品／B 互動成品／C 客戶交付／D 課程方法論／E 工具 + 三大專案家族深掘）；含本機+OneDrive 全掃。已部署 9 個：airun.tw/muzopet/一念清涼/回憶錄/AI大腦/jwood/**speaks-coach/agents.tbsa.tw/双云Agent平台**；token 走 gitignored 金庫。定義：已部署 OR AI 簡報素材 OR 導覽頁/HTML** | 17 | [進入](portfolio/作品索引.md) |
 | **aischool** | **双云 AI Agent School 線上平台——L0-L6 全 43 課章節全文（拆/建/修/串通/迴圈）＋平台架構（5 權限分區/token後台/影片管線/部署/監察）＋課程↔Skill 連動＋三工具軌(Claude/Codex/Antigravity)；🆕 Plan 模式與自動化工作流（三工具都有 Plan Mode × Auto × Goal）；內容方法論連回 shuangyun 不複製** | 13 | [進入](aischool/AI School索引.md) |
@@ -324,6 +324,12 @@ inbox/  →  整理分類  →  wiki/<domain>/  →  raw/（原始備存）
 | Categorize | 判斷屬於哪個域（concepts / courses / skills / cases / sop / stages） |
 | Cross-link | 建立**雙向連結**（CLAUDE.md §前傳↔現況雙向關聯）|
 | Log | 在 [log.md](log.md) 記錄關鍵決策 |
+
+### 通用備課 LOOP（2026-06-28）
+
+- [Jacky 課程與備課系統總覽](education/concepts/Jacky課程與備課系統總覽.md)：六類課程、16 個專案、現行流程、資產與缺口。
+- [通用備課 LOOP 工作流](education/playbooks/通用備課LOOP工作流.md)：單場十階段＋跨場升格閉環。
+- [`jacky-course-prep-loop` canonical skill](education/skill/jacky-course-prep-loop/SKILL.md)：`/備課`、盤點、找前例、驗收、復盤與升格入口。
 
 ## 對外分享
 
