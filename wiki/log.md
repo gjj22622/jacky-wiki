@@ -1,7 +1,7 @@
 ---
 title: Wiki 操作日誌
 domain: root
-updated: 2026-06-20
+updated: 2026-06-28
 ---
 
 # Wiki 操作日誌
@@ -1420,3 +1420,19 @@ ln -sf ~/jacky-wiki/wiki/ailab/skill/SKILL.md ~/.claude/skills/ailab/SKILL.md
 - ailab 概念頁不自動 push（個人水庫慣例）；education 教材自動 push。
 
 **頁數**：ailab concepts +1；education 28 → 30（README + slides）。
+
+---
+
+## 2026-06-28 — TBSA 開課流程全盤點與通用備課 LOOP 入庫
+
+**做了什麼**：盤點 `OneDrive/TBSA開課流程自動化` 的課程、工作流程、SOP、覆盤、todolist、簡報索引與 skill 套件，將課程整理為演講／論壇、短期工作坊、說明會／招募、企業內訓、學期課與課程產品六類；建立 `jacky-course-prep-loop` canonical skill、課程系統總覽與通用備課 LOOP playbook。
+
+**核心決策**：
+
+- Wiki 是唯一真相源；Codex 只用目錄連結安裝，不維護第二份 skill。
+- 新 skill 只做課型路由、Gate、LOOP 與知識回寫；簡報／文件／試算表交給專門 skills。
+- LOOP 母方法沿用既有 SOSTAC 迴圈與逆推除錯，不另造衝突框架。
+- `jacky-teacher-workshop v2.2` 降為教師工作坊參考，不再假裝通吃所有課型。
+- 31 個 `tbsa-class-*` 只有建置計畫；因 `02-Skill大軍` 實體為空，暫不列為現役 skill。
+
+**新增**：`education/concepts/Jacky課程與備課系統總覽.md`、`education/playbooks/通用備課LOOP工作流.md`、`education/skill/jacky-course-prep-loop/`。

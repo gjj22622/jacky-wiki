@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jacky 通用備課 LOOP"
+  short_description: "跨演講、工作坊、企業內訓、說明會與學期課程的閉環備課總指揮"
+  default_prompt: "Use $jacky-course-prep-loop to route, plan, validate, and improve this course preparation workflow."
