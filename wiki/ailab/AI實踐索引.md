@@ -1,7 +1,7 @@
 ---
 title: AI 實踐 — Jacky 的工具觀／方法觀／演化觀
 domain: ailab
-updated: 2026-06-20
+updated: 2026-06-28
 ---
 
 # AI 實踐（ailab）
@@ -132,6 +132,7 @@ Jwood 的 Series A/B/C/D 並行工作流是 ailab 的多模態實驗成果。
 - **協定文件本身**：模型無關，可以複製貼到任何 AI 對話讓它輸出標準格式
 - **跨機跨模型部署** → **[跨機與跨模型部署](concepts/跨機與跨模型部署.md)** ⭐ 包含 Claude Code 多機 + Codex CLI + Gemini Gem + Web AI 完整部署矩陣
 - **多機安裝** → [skill/INSTALL.md](skill/INSTALL.md)（Windows / Ubuntu / WSL2 / macOS 一次性安裝步驟）
+- **Wiki canonical skill 發布模式** → [跨機與跨模型部署](concepts/跨機與跨模型部署.md#wiki-canonical-skill-發布模式--2026-06-28)：主版進 Wiki，Claude／Codex 用 Junction 或 symlink 共用，其他 AI 用 instructions 包裝。
 
 ---
 
