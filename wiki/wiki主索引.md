@@ -21,7 +21,7 @@ updated: 2026-06-28
 | tbsa | TBSA 商務企劃協會——學習行銷起點、SOSTAC、SPEAKS、5 大表單、与双云人才循環 | 14 | [進入](tbsa/TBSA索引.md) |
 | nchu | 中興大學博士研究——博二、9 階段專討工作流、零幻覺 SOP、AGENTS 第三實踐場、**AI Co-Researcher 文獻吸收系統 + 博論總導覽**、**工具評估 ForestForTrees 🆕** | 13 | [進入](nchu/中興博士索引.md) |
 | cross-domain | 跨域素材——入口導覽頁 SOP、來源控制 script_viewer、Commander+Executor、賣點命名、數據儀表板平台建置 | 6 | [進入](cross-domain/跨域索引.md) |
-| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 通用備課 LOOP（六類課程路由＋十階段 Gate＋跨場升格）；Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop；從演講到業務開發全鏈 workshop；文獻知識庫公開內容產品 workshop** | 39 | [進入](education/教育訓練索引.md) |
+| **education** | **教育訓練——把實踐／方法論教給別人的對外成品（與 ailab 分工：個人事件→ailab、對外教材→education）｜🆕 通用備課 LOOP（六類課程路由＋十階段 Gate＋跨場升格）；Jcheck × Jdong 鷹眼到執行交接 SOP；AIRUN 營運風險監察 workshop；從演講到業務開發全鏈 workshop；文獻知識庫公開內容產品 workshop；🆕 週期性任務自動化 workshop** | 41 | [進入](education/教育訓練索引.md) |
 | ⭐ **jos** | **AI 作業系統——Jacky 的 AI 工作環境機械化清單，🆕 換電腦無痛轉移（environment 環境/工具/CLI/MCP/環境變數 + skills 全 18 支 skill 單一真相 + migration 新手友善換電腦 SOP + 多機一致性比對）；對應 `/移機`（capture/restore/sync/diff）；與 ailab/tools 分工：那邊工具觀、這邊怎麼裝回來** | 15 | [進入](jos/作業系統索引.md) |
 | **portfolio** | **作品域——已部署專案速查（資料夾／GitHub／前端／admin／DNS／部署日），token 走 gitignored 金庫不進 wiki；一句 `/作品 <名稱>` 給齊示範資訊（AI大腦／Jwood）** | 6 | [進入](portfolio/作品索引.md) |
 | yinian | 一念清涼——身心靈、冥想、修行紀錄 | 0 | _尚未建立_ |
